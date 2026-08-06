@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: grouppass
-    runtime: node
-    plan: free
-    buildCommand: npm install
-    startCommand: npm start
-    healthCheckPath: /api/health
-    autoDeploy: true
