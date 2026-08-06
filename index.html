@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#214c3a"><title>GroupUp — Find your group discount</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
+
 <link rel="stylesheet" href="./styles.css">
 </head><body data-design="below">
 <section class="below-landing" id="landingView">
@@ -79,7 +80,7 @@
     </section>
 
     <section class="section-block">
-      <div class="section-head"><div><p class="micro">Nearby</p><h3>Activities to build a group around</h3></div><p id="venueCount">Searching nearby places…</p></div>
+      <div class="section-head"><div><p class="micro">Popular nearby</p><h3>Popular activities with group-pricing details</h3></div><p id="venueCount">Ranking venues and checking official prices…</p></div>
       <div class="venue-notice" id="venueNotice" hidden></div>
       <div class="activity-grid" id="venueGrid"></div>
     </section>
@@ -104,5 +105,4 @@
 </div>
 <div class="toast" id="toast"></div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="./app.js"></script></body></html>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="./core.js"></script><script src="./discovery.js"></script><script src="./pricing.js"></script><script src="./ui.js"></script></body></html>
