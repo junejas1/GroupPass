@@ -1,109 +1,75 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#214c3a"><title>GroupUp — Find your group discount</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-
-
-<link rel="stylesheet" href="./styles.css">
-<link rel="stylesheet" href="./pricing.css">
-</head><body data-design="below">
-<section class="below-landing" id="landingView">
-  <nav class="below-nav">
-    <div class="below-brand"><i>▮▮</i><span>GroupUp</span></div>
-    <button class="below-location" id="locationButton">⌖ Use my location</button>
-  </nav>
-
-  <main class="hero-wrap">
-    <section class="hero-copy">
-      <h1>Choose your city.<br><span class="headline-second">Find your group (discount).</span></h1>
-      <p>Search any city to find attractions and activities with group pricing. Join other people who want to go, reach the venue’s required group size, and unlock the discounted rate together.</p>
-      <div class="hero-right">
-        <form class="below-search" id="searchForm">
-          <div class="below-input-wrap">
-            <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.7-3.7"></path></svg>
-            <input class="search-input" id="locationInput" placeholder="City, region, or destination" autocomplete="off">
-          </div>
-          <button class="search-button">Search</button>
-          <div class="place-results" id="placeResults" hidden></div>
-          <div class="search-status" id="searchStatus"></div>
-        </form>
-        <div class="quick"><span>Popular:</span>
-          <button type="button" class="popular-city" data-city="Dallas">Dallas</button>
-          <button type="button" class="popular-city" data-city="New York">New York</button>
-          <button type="button" class="popular-city" data-city="London">London</button>
-          <button type="button" class="popular-city" data-city="Tokyo">Tokyo</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <section class="map-section">
-    <div class="map-label"><strong>Explore the world</strong><span>Select a location to zoom in</span></div>
-    <div id="underMap"></div>
-  </section>
-  <div class="transition-curtain" id="transitionCurtain"></div>
-</section>
-<section class="city-view" id="cityView" hidden>
-  <nav class="city-nav">
-    <div class="city-brand"><i>▮▮</i><span>GroupUp</span></div>
-    <div class="location-summary"><span>Exploring</span><strong id="currentLocationFull">Selected destination</strong></div>
-    <div class="city-actions">
-      <button class="back-button" id="changeLocation">Change location</button>
-      <button class="start-top" id="startGroupTop">Start a group</button>
-    </div>
-  </nav>
-
-  <header class="city-hero">
-    <div class="shell">
-      <button class="back-button" id="returnHome">← Back to world map</button>
-      <p class="eyebrow" id="currentCity">Destination</p>
-      <h2 id="cityHeadline">Groups near your destination</h2>
-      <p id="citySubhead">Explore nearby places and organize a group around the experience.</p>
-    </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#214c3a">
+  <title>GroupUp — Curated group discounts</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <button class="brand" id="homeButton" type="button" aria-label="Go home"><span>▮▮</span>GroupUp</button>
+    <p>Curated group pricing database</p>
   </header>
 
-  <main class="city-main shell">
-    <div class="filter-row">
-      <button class="filter-button active" data-filter="all">All activities</button>
-      <button class="filter-button" data-filter="Attraction">Attractions</button>
-      <button class="filter-button" data-filter="Museums & art">Museums & art</button>
-      <button class="filter-button" data-filter="Entertainment">Entertainment</button>
-      <button class="filter-button" data-filter="Outdoors">Outdoors</button>
-      <button class="filter-button" data-filter="Sports">Sports</button>
-    </div>
-
-    <section class="section-block">
-      <div class="section-head"><div><p class="micro">People-powered</p><h3>Groups forming</h3></div><p>Saved locally on this device</p></div>
-      <div class="empty-box" id="savedEmpty">No community groups here yet. Start the first one for this destination.</div>
-      <div class="group-grid" id="savedGroupGrid"></div>
+  <main>
+    <section class="hero" id="homeView">
+      <div class="hero-copy">
+        <p class="eyebrow">Research first. Fast results.</p>
+        <h1>Find real group discounts without waiting on a live search.</h1>
+        <p>Choose a covered city to see manually researched attractions, regular prices, group rates, minimum sizes, restrictions, and official booking sources.</p>
+        <form id="citySearch" class="search-box">
+          <input id="cityInput" autocomplete="off" placeholder="Search a covered city" aria-label="Search a covered city">
+          <button>Search</button>
+          <div id="cityResults" class="city-results" hidden></div>
+        </form>
+        <p class="search-status" id="searchStatus"></p>
+      </div>
+      <aside class="coverage-card">
+        <span id="cityTotal">10</span>
+        <strong>curated city databases</strong>
+        <p>No venue scraping, map-server searches, or live pricing extraction runs in your browser.</p>
+      </aside>
+      <div class="city-chips" id="cityChips"></div>
     </section>
 
-    <section class="section-block">
-      <div class="section-head"><div><p class="micro">Prototype examples</p><h3>Group ideas</h3></div><p>Examples to show the intended experience</p></div>
-      <div class="group-grid" id="demoGroupGrid"></div>
-    </section>
+    <section class="catalog" id="catalogView" hidden>
+      <div class="catalog-top">
+        <button class="back" id="backButton" type="button">← All cities</button>
+        <div>
+          <p class="eyebrow">Curated city database</p>
+          <h2 id="cityTitle"></h2>
+          <p id="citySummary"></p>
+        </div>
+      </div>
 
-    <section class="section-block">
-      <div class="section-head"><div><p class="micro">Popular nearby</p><h3>Popular activities with group-pricing details</h3></div><p id="venueCount">Ranking venues and checking official prices…</p></div>
-      <div class="venue-notice" id="venueNotice" hidden></div>
-      <div class="activity-grid" id="venueGrid"></div>
+      <div class="toolbar">
+        <div id="filters" class="filters"></div>
+        <p id="venueCount"></p>
+      </div>
+      <div id="notice" class="notice" hidden></div>
+      <div id="venueGrid" class="venue-grid"></div>
     </section>
   </main>
-</section>
 
-<div class="modal-bg" id="groupModal">
-  <div class="modal">
-    <div class="modal-head"><div><p class="micro">Create a plan</p><h3>Start a group</h3></div><button id="modalClose">✕</button></div>
-    <form id="groupForm">
-      <label class="form-label">Activity or venue</label>
-      <input class="form-input" id="groupActivity" required placeholder="Example: museum visit">
-      <div class="form-grid">
-        <div><label class="form-label">Date</label><input class="form-input" id="groupDate" type="date" required></div>
-        <div><label class="form-label">Time</label><input class="form-input" id="groupTime" type="time" required></div>
-      </div>
-      <label class="form-label">Target group size</label>
-      <select class="form-input" id="groupTarget"><option>6</option><option>8</option><option selected>10</option><option>15</option><option>20</option></select>
-      <button class="submit-group">Create group on this device</button>
-    </form>
+  <div class="modal-backdrop" id="groupModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button">✕</button>
+      <p class="eyebrow">Create a local plan</p>
+      <h3 id="modalTitle">Start a group</h3>
+      <form id="groupForm">
+        <label>Activity<input id="groupActivity" required></label>
+        <div class="form-row">
+          <label>Date<input id="groupDate" type="date" required></label>
+          <label>Time<input id="groupTime" type="time" required></label>
+        </div>
+        <label>Target size<select id="groupTarget"><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option></select></label>
+        <button class="primary">Save group on this device</button>
+      </form>
+    </div>
   </div>
-</div>
-<div class="toast" id="toast"></div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="./core.js"></script><script src="./discovery.js"></script><script src="./discovery-pipeline.js"></script><script src="./pricing.js"></script><script src="./ui.js"></script></body></html>
+  <div class="toast" id="toast"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
