@@ -1,8 +1,8 @@
 const POPULAR = {
-  Dallas:{lat:32.7767,lon:-96.7970,city:"Dallas",label:"Dallas, Texas, United States"},
-  "New York":{lat:40.7128,lon:-74.0060,city:"New York",label:"New York, New York, United States"},
-  London:{lat:51.5072,lon:-0.1276,city:"London",label:"London, England, United Kingdom"},
-  Tokyo:{lat:35.6762,lon:139.6503,city:"Tokyo",label:"Tokyo, Japan"}
+  Dallas:{lat:32.7767,lon:-96.7970,city:"Dallas",region:"Texas",country:"United States",label:"Dallas, Texas, United States"},
+  "New York":{lat:40.7128,lon:-74.0060,city:"New York",region:"New York",country:"United States",label:"New York, New York, United States"},
+  London:{lat:51.5072,lon:-0.1276,city:"London",region:"England",country:"United Kingdom",label:"London, England, United Kingdom"},
+  Tokyo:{lat:35.6762,lon:139.6503,city:"Tokyo",region:"Tokyo",country:"Japan",label:"Tokyo, Japan"}
 };
 
 const state = {
@@ -471,8 +471,6 @@ function frameWorldMap(){
 
   const width=Math.max(320,mapEl.clientWidth);
 
-  // At this zoom, one complete Web-Mercator world nearly fills the panel width.
-  // The tiny reduction prevents the date-line edges from being clipped.
   const zoom=Math.log2(width/256)-0.035;
 
   state.map.setView([14,0],zoom,{animate:false});
