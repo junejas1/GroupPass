@@ -194,28 +194,119 @@ async function useMyLocation(){
   },()=>setSearchStatus("Location permission was unavailable. Search for a city instead.",true),{timeout:9000,maximumAge:300000});
 }
 
-async function loadNearbyVenues(place){
-  const grid=$("#venueGrid"), count=$("#venueCount"), notice=$("#venueNotice");
-  if(grid) grid.innerHTML=loadingCards();
-  if(count) count.textContent="Searching nearby places…";
-  if(notice) notice.hidden=true;
+const US_STATE_CODES={
+  Alabama:"AL",Alaska:"AK",Arizona:"AZ",Arkansas:"AR",California:"CA",Colorado:"CO",Connecticut:"CT",Delaware:"DE",
+  Florida:"FL",Georgia:"GA",Hawaii:"HI",Idaho:"ID",Illinois:"IL",Indiana:"IN",Iowa:"IA",Kansas:"KS",Kentucky:"KY",
+  Louisiana:"LA",Maine:"ME",Maryland:"MD",Massachusetts:"MA",Michigan:"MI",Minnesota:"MN",Mississippi:"MS",Missouri:"MO",
+  Montana:"MT",Nebraska:"NE",Nevada:"NV","New Hampshire":"NH","New Jersey":"NJ","New Mexico":"NM","New York":"NY",
+  "North Carolina":"NC","North Dakota":"ND",Ohio:"OH",Oklahoma:"OK",Oregon:"OR",Pennsylvania:"PA","Rhode Island":"RI",
+  "South Carolina":"SC","South Dakota":"SD",Tennessee:"TN",Texas:"TX",Utah:"UT",Vermont:"VT",Virginia:"VA",Washington:"WA",
+  "West Virginia":"WV",Wisconsin:"WI",Wyoming:"WY","District of Columbia":"DC"
+};
+
+function slugPart(value=""){
+  return String(value).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+}
+
+function catalogCityId(place){
+  const country=String(place.country||"").toLowerCase();
+  if(country && !country.includes("united states") && country!=="us" && country!=="usa") return "";
+  const region=String(place.region||"").trim();
+  const code=(US_STATE_CODES[region]||region).toUpperCase();
+  if(!/^[A-Z]{2}$/.test(code)) return "";
+  if(code==="DC") return "washington-dc";
+  return `${slugPart(cityName(place))}-${code.toLowerCase()}`;
+}
+
+function venueKey(name=""){
+  return String(name).toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+}
+
+function standardVenueType(value=""){
+  const text=String(value).toLowerCase();
+  if(/museum|gallery|art|science|history|cultural|planetarium|observatory/.test(text)) return "Museums & art";
+  if(/park|zoo|aquarium|garden|outdoor|cruise|boat|kayak|rafting|trail|nature/.test(text)) return "Outdoors";
+  if(/sport|stadium|arena|golf|bowling|climbing|skating|archery|paintball|kart/.test(text)) return "Sports";
+  if(/theatre|theater|cinema|amusement|theme|escape|arcade|laser|trampoline|entertainment/.test(text)) return "Entertainment";
+  return "Attraction";
+}
+
+function normalizeStaticVenue(v){
+  return {
+    name:v.name,
+    type:standardVenueType(v.category||v.type),
+    address:v.address||"Near the selected city",
+    url:v.groupSource||v.website||v.regularSource||"",
+    sourceBacked:Boolean(v.sourceBacked),
+    groupPrice:v.groupPrice||"",
+    groupDetails:Array.isArray(v.groupDetails)?v.groupDetails:[],
+    savings:v.savings||"",
+    minimum:v.minimum||"",
+    eligibility:v.eligibility||"",
+    bookingNotes:Array.isArray(v.bookingNotes)?v.bookingNotes:[],
+    lastVerified:v.lastVerified||"",
+    regularPrice:v.regularPrice||"",
+    rateStatus:v.rateStatus||""
+  };
+}
+
+async function loadStaticCatalog(place){
+  const id=catalogCityId(place);
+  if(!id) return [];
+  try{
+    const r=await fetch(`./data/venues/${encodeURIComponent(id)}.json`,{cache:"no-store"});
+    if(!r.ok) return [];
+    const rows=await r.json();
+    return Array.isArray(rows)?rows.map(normalizeStaticVenue).filter(v=>v.name):[];
+  }catch(e){
+    return [];
+  }
+}
+
+function mergeVenues(primary,secondary){
+  const seen=new Set(), out=[];
+  for(const venue of [...primary,...secondary]){
+    const key=venueKey(venue.name);
+    if(!key||seen.has(key)) continue;
+    seen.add(key); out.push(venue);
+  }
+  return out;
+}
+
+async function loadOverpassVenues(place){
   const q=`[out:json][timeout:14];(
     nwr["tourism"~"attraction|museum|gallery|zoo|aquarium|theme_park"](around:10000,${place.lat},${place.lon});
     nwr["leisure"~"park|sports_centre|stadium|bowling_alley|escape_game|water_park|amusement_arcade"](around:10000,${place.lat},${place.lon});
     nwr["amenity"~"theatre|arts_centre|cinema"](around:10000,${place.lat},${place.lon});
   );out center tags 45;`;
   const endpoints=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter"];
-  let data=null;
   for(const endpoint of endpoints){
     try{
       const controller=new AbortController();
-      const timer=setTimeout(()=>controller.abort(),15000);
+      const timer=setTimeout(()=>controller.abort(),13000);
       const r=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:"data="+encodeURIComponent(q),signal:controller.signal});
       clearTimeout(timer);
-      if(r.ok){ data=await r.json(); break; }
+      if(r.ok) return normalizeVenues((await r.json())?.elements||[]);
     }catch(e){}
   }
-  state.venues=normalizeVenues(data?.elements||[]);
+  return [];
+}
+
+async function loadNearbyVenues(place){
+  const grid=$("#venueGrid"), count=$("#venueCount"), notice=$("#venueNotice");
+  if(grid) grid.innerHTML=loadingCards();
+  if(count) count.textContent="Loading the saved city catalog…";
+  if(notice) notice.hidden=true;
+
+  const saved=await loadStaticCatalog(place);
+  state.venues=saved;
+  if(saved.length){
+    renderVenues();
+    if(count) count.textContent=`${saved.length} saved places · checking for more nearby`;
+  }
+
+  const discovered=await loadOverpassVenues(place);
+  state.venues=mergeVenues(saved,discovered);
   renderVenues();
 }
 
@@ -223,19 +314,16 @@ function normalizeVenues(items){
   const seen=new Set(), out=[];
   for(const x of items){
     const t=x.tags||{}, name=t.name||t["name:en"];
-    if(!name || seen.has(name.toLowerCase())) continue;
-    seen.add(name.toLowerCase());
+    const key=venueKey(name);
+    if(!name || seen.has(key)) continue;
+    seen.add(key);
     const all=[t.tourism,t.leisure,t.amenity].filter(Boolean).join(" ");
-    let type="Attraction";
-    if(/museum|gallery|arts/.test(all)) type="Museums & art";
-    else if(/park|zoo|aquarium/.test(all)) type="Outdoors";
-    else if(/sports|stadium|bowling/.test(all)) type="Sports";
-    else if(/theatre|cinema|theme_park|escape|arcade|water_park/.test(all)) type="Entertainment";
+    const type=standardVenueType(all);
     const addr=[t["addr:housenumber"],t["addr:street"],t["addr:city"]].filter(Boolean).join(" ") || "Near the selected city";
     const url=t.website||t["contact:website"]||`https://www.openstreetmap.org/${x.type}/${x.id}`;
-    out.push({name,type,address:addr,url});
+    out.push({name,type,address:addr,url,sourceBacked:false,groupPrice:"",groupDetails:[],savings:"",minimum:"",eligibility:"",bookingNotes:[],lastVerified:"",regularPrice:"",rateStatus:"Venue discovered; group rate not yet verified"});
   }
-  return out.sort((a,b)=>a.name.localeCompare(b.name)).slice(0,30);
+  return out.sort((a,b)=>a.name.localeCompare(b.name)).slice(0,45);
 }
 
 function loadingCards(){
@@ -246,32 +334,47 @@ function renderVenues(){
   const grid=$("#venueGrid"), count=$("#venueCount"), notice=$("#venueNotice");
   let list=state.venues;
   if(state.filter!=="all") list=list.filter(v=>v.type===state.filter);
-  if(count) count.textContent=list.length ? `${list.length} nearby places` : "No places returned";
+  const published=list.filter(v=>v.sourceBacked).length;
+  if(count){
+    count.textContent=list.length
+      ? `${list.length} nearby places${published?` · ${published} with source-backed group information`:""}`
+      : "No places returned";
+  }
   if(!list.length){
     if(grid) grid.innerHTML="";
     if(notice){
       notice.hidden=false;
-      notice.innerHTML=`Nearby discovery did not return results right now. You can still create a custom group for ${safe(state.selected?.city||"this destination")}.`;
+      notice.innerHTML=`The saved catalog does not have results for ${safe(state.selected?.city||"this destination")} yet, and live discovery did not respond. The scheduled GitHub update will keep filling city files.`;
     }
     return;
   }
   if(notice) notice.hidden=true;
-  if(grid) grid.innerHTML=list.map((v,i)=>`
+  if(grid) grid.innerHTML=list.map((v,i)=>{
+    const detail=[v.savings,v.minimum,v.eligibility].filter(Boolean).join(" · ");
+    const groupDetails=(v.groupDetails||[]).join(" · ");
+    const notes=(v.bookingNotes||[]).slice(0,2).join(" · ");
+    const sourceUrl=v.url||`https://www.google.com/search?q=${encodeURIComponent(v.name+" "+(state.selected?.label||""))}`;
+    const price=v.sourceBacked?(v.groupPrice||"See the official group page"):"Group price not yet verified";
+    const explanation=v.sourceBacked
+      ? [groupDetails,detail,notes,v.lastVerified?`Checked ${v.lastVerified}`:""].filter(Boolean).join(" · ")
+      : "Confirm directly with the venue before collecting money.";
+    return `
     <article class="activity-card">
       <div class="card-art art-${(i%5)+1}">
         <span>${safe(v.type)}</span>
       </div>
       <div class="card-copy">
-        <p class="micro">Nearby activity</p>
+        <p class="micro">${v.sourceBacked?"Published group information":"Nearby activity"}</p>
         <h4>${safe(v.name)}</h4>
         <p class="address">${safe(v.address)}</p>
-        <div class="rate-line"><strong>Group price not yet verified</strong><span>Confirm directly with the venue before collecting money.</span></div>
+        <div class="rate-line"><strong>${safe(price)}</strong><span>${safe(explanation)}</span></div>
         <div class="card-actions">
-          <a href="${safe(v.url)}" target="_blank" rel="noopener">Venue page</a>
+          <a href="${safe(sourceUrl)}" target="_blank" rel="noopener">${v.sourceBacked?"Official group source":"Venue page"}</a>
           <button data-venue="${safe(v.name)}">Start a group</button>
         </div>
       </div>
-    </article>`).join("");
+    </article>`;
+  }).join("");
   $$("[data-venue]",grid).forEach(b=>b.onclick=()=>openGroupModal(b.dataset.venue));
 }
 
