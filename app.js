@@ -52,8 +52,8 @@ async function openCity(city,push=true){
     state.venues=await response.json();renderFilters();renderVenues();window.scrollTo({top:0,behavior:"smooth"});
   }catch(error){state.venues=[];$("#venueCount").textContent="No records available";$("#notice").hidden=false;$("#notice").textContent="This city is listed, but its venue file is not available yet."}
 }
-function showHome(){history.pushState({},"",location.pathname);$("#catalogView").hidden=true;$("#homeView").hidden=false;window.scrollTo({top:0,behavior:"smooth"})}
-window.addEventListener("popstate",()=>{const id=new URLSearchParams(location.search).get("city");const city=state.cities.find(c=>c.id===id);city?openCity(city,false):showHome()});
+function showHome(push=true){if(push)history.pushState({},"",location.pathname);$("#catalogView").hidden=true;$("#homeView").hidden=false;window.scrollTo({top:0,behavior:"smooth"})}
+window.addEventListener("popstate",()=>{const id=new URLSearchParams(location.search).get("city");const city=state.cities.find(c=>c.id===id);city?openCity(city,false):showHome(false)});
 
 function renderFilters(){
   const categories=["All",...new Set(state.venues.map(v=>v.category).filter(Boolean))];$("#filters").innerHTML=categories.map(c=>`<button class="filter ${c===state.filter?"active":""}" data-filter="${esc(c)}">${esc(c)}</button>`).join("");
@@ -64,7 +64,7 @@ function renderVenues(){
   $("#venueGrid").innerHTML=list.map((v,i)=>`<article class="venue-card"><div class="card-top"><p>#${i+1} · ${esc(v.category||"Attraction")}</p><h3>${esc(v.name)}</h3></div><div class="card-body"><p class="address">${esc(v.address||"")}</p><div class="price-grid"><div><span>Regular admission</span><strong>${esc(v.regularPrice||"See official site")}</strong></div><div><span>Group rate</span><strong>${esc(v.groupPrice||"Request a quote")}</strong></div><div><span>Minimum group</span><strong>${esc(v.minimum||"Not published")}</strong></div><div><span>Eligibility</span><strong>${esc(v.eligibility||"Confirm with venue")}</strong></div></div>${v.savings?`<p class="saving">${esc(v.savings)}</p>`:""}${detailList(v)}<span class="verified">Official source reviewed ${esc(formatDate(v.lastVerified))}</span><div class="card-actions"><a href="${esc(v.groupSource||v.website||v.regularSource)}" target="_blank" rel="noopener">Official details</a><button data-start="${esc(v.name)}">Start a group</button></div></div></article>`).join("");
   $$('[data-start]',$("#venueGrid")).forEach(b=>b.onclick=()=>openModal(b.dataset.start));
 }
-function detailList(v){const details=[...(v.groupDetails||[]),...(v.bookingNotes||[])].filter(Boolean);return details.length?`<ul class="details">${details.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
+function detailList(v){const details=[...(v.groupDetails||[]),...(v.bookingNotes||[]),v.restrictions,v.availability,v.bookingContact?`Booking contact: ${v.bookingContact}`:""].filter(Boolean);return details.length?`<ul class="details">${details.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
 function formatDate(v){if(!v)return "not recorded";try{return new Date(`${v}T12:00:00`).toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"})}catch{return v}}
 
 function openModal(name){$("#groupActivity").value=name;$("#groupDate").value=new Date(Date.now()+7*86400000).toISOString().slice(0,10);$("#groupTime").value="11:00";$("#groupModal").hidden=false}
