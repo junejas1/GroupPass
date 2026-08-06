@@ -1,2 +1,0 @@
-overturemaps
-requests>=2.32

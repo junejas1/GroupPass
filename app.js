@@ -1,24 +1,425 @@
-const state={cities:[],city:null,venues:[],filter:"All",selectedVenue:null};
-const $=s=>document.querySelector(s);
-const cityInput=$("#cityInput"), cityList=$("#cityList"), grid=$("#venueGrid"), count=$("#resultCount"), note=$("#catalogNote"), filters=$("#filters");
-const popularIds=["dallas-tx","new-york-ny","los-angeles-ca","chicago-il","orlando-fl","boston-ma"];
-const seededCenters={"dallas-tx":[32.7767,-96.797],"new-york-ny":[40.7128,-74.006],"los-angeles-ca":[34.0522,-118.2437],"chicago-il":[41.8781,-87.6298],"orlando-fl":[28.5383,-81.3792],"boston-ma":[42.3601,-71.0589],"washington-dc":[38.9072,-77.0369],"philadelphia-pa":[39.9526,-75.1652],"seattle-wa":[47.6062,-122.3321],"houston-tx":[29.7604,-95.3698]};
-function cityId(c){if(c.name==="Washington"&&c.state==="DC")return "washington-dc";return `${c.name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}-${c.state.toLowerCase()}`}
-function esc(v=""){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-function normalize(v=""){return String(v).toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}
-function osmEmbed(lat,lon){const d=.20;return `https://www.openstreetmap.org/export/embed.html?bbox=${lon-d}%2C${lat-d}%2C${lon+d}%2C${lat+d}&layer=mapnik&marker=${lat}%2C${lon}`}
-function osmLink(lat,lon){return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=12/${lat}/${lon}`}
-async function loadJSON(url,fallback){try{const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw new Error(r.status);return await r.json()}catch{return fallback}}
-async function init(){const raw=await loadJSON("./top-100-cities.json",[]);state.cities=raw.map(c=>{const id=cityId(c),center=seededCenters[id];return {...c,id,label:`${c.name}, ${c.state}`,lat:center?.[0]??null,lon:center?.[1]??null}});cityList.innerHTML=state.cities.map(c=>`<option value="${esc(c.label)}"></option>`).join("");$("#popularCities").innerHTML=popularIds.map(id=>{const c=state.cities.find(x=>x.id===id);return c?`<button class="city-chip" data-city="${c.id}">${esc(c.name)}</button>`:""}).join("");document.addEventListener("click",e=>{const b=e.target.closest("[data-city]");if(b)selectCityById(b.dataset.city)});const requested=new URLSearchParams(location.search).get("city");await selectCityById(requested&&state.cities.some(c=>c.id===requested)?requested:"dallas-tx");const status=await loadJSON("./data/refresh-status.json",null);if(status?.lastRefresh)note.dataset.refresh=`Catalog refreshed ${status.lastRefresh}`}
-function findCity(value){const n=normalize(value);return state.cities.find(c=>normalize(c.label)===n||normalize(c.name)===n)||state.cities.find(c=>normalize(c.label).includes(n)||normalize(c.name).includes(n))}
-async function geocodeCity(city){if(Number.isFinite(city.lat)&&Number.isFinite(city.lon))return city;const q=encodeURIComponent(city.query||city.label);const urls=[`https://photon.komoot.io/api/?limit=1&q=${q}`,`https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q=${q}`];for(const url of urls){try{const r=await fetch(url,{headers:{Accept:"application/json"}});if(!r.ok)continue;const d=await r.json();let lat,lon;if(d?.features?.[0]){lon=Number(d.features[0].geometry.coordinates[0]);lat=Number(d.features[0].geometry.coordinates[1])}else if(d?.[0]){lat=Number(d[0].lat);lon=Number(d[0].lon)}if(Number.isFinite(lat)&&Number.isFinite(lon)){city.lat=lat;city.lon=lon;return city}}catch{}}return city}
-async function selectCityById(id){const city=state.cities.find(c=>c.id===id);if(!city)return;state.city=await geocodeCity(city);cityInput.value=city.label;history.replaceState(null,"",`?city=${encodeURIComponent(city.id)}`);await loadCity()}
-async function loadCity(){const city=state.city;$("#mapTitle").textContent=city.label;if(Number.isFinite(city.lat)&&Number.isFinite(city.lon)){$("#cityMap").src=osmEmbed(city.lat,city.lon);$("#openMapLink").href=osmLink(city.lat,city.lon)}else{$("#cityMap").removeAttribute("src");$("#openMapLink").removeAttribute("href")}state.venues=await loadJSON(`./data/venues/${city.id}.json`,[]);state.filter="All";renderFilters();renderVenues()}
-function renderFilters(){const cats=["All",...new Set(state.venues.map(v=>v.category||"Activity"))].slice(0,10);filters.innerHTML=cats.map(c=>`<button class="filter-chip ${c===state.filter?"active":""}" data-filter="${esc(c)}">${esc(c)}</button>`).join("");filters.onclick=e=>{const b=e.target.closest("[data-filter]");if(!b)return;state.filter=b.dataset.filter;renderFilters();renderVenues()}}
-function detailsLine(v){const bits=[];if(v.minimum)bits.push(v.minimum);if(v.eligibility)bits.push(v.eligibility);return bits.join(" · ")}
-function renderVenues(){const shown=state.filter==="All"?state.venues:state.venues.filter(v=>(v.category||"Activity")===state.filter);count.textContent=`${shown.length} ${shown.length===1?"place":"places"}`;note.textContent=state.venues.length?`${note.dataset.refresh||"Catalog data loaded"}. Published rates are linked to their source; discovered venues are labeled separately.`:`This city does not have a generated catalog file yet. The GitHub refresh workflow will add venues without needing a server.`;if(!shown.length){grid.innerHTML=`<div class="empty-state"><h3>No cached venues yet for ${esc(state.city.label)}</h3><p>The static site is working. This city will fill in when the scheduled GitHub catalog refresh runs. You can still create a custom group now.</p><button class="primary-btn" id="customGroup" style="margin-top:20px;padding:14px 20px">Create a custom group</button></div>`;$("#customGroup").onclick=()=>openGroup({name:`${state.city.name} activity`,minimum:""});return}grid.innerHTML=shown.map(v=>{const published=Boolean(v.sourceBacked);const rate=published?(v.groupPrice||"See official group page"):(v.groupPrice||"Group rate not published in catalog");const source=v.groupSource||v.website||v.regularSource||"";const detail=(v.groupDetails||[]).join(" · ");return `<article class="venue-card"><div class="card-top"><span class="category">${esc(v.category||"Activity")}</span><span class="status-badge ${published?"":"discovery"}">${published?"SOURCE-BACKED":"DISCOVERED"}</span></div><h3>${esc(v.name)}</h3><div class="address">${esc(v.address||state.city.label)}</div><div class="rate-box"><div class="rate-label">${published?"GROUP INFORMATION":"RATE STATUS"}</div><div class="rate-main">${esc(rate)}</div>${detail?`<div class="rate-detail">${esc(detail)}</div>`:""}${v.savings?`<div class="savings">${esc(v.savings)}</div>`:""}${detailsLine(v)?`<div class="minimum">${esc(detailsLine(v))}</div>`:""}</div><div class="card-actions">${source?`<a class="source-link" href="${esc(source)}" target="_blank" rel="noopener">Official source ↗</a>`:`<a class="source-link" href="https://www.google.com/search?q=${encodeURIComponent(v.name+" "+state.city.label)}" target="_blank" rel="noopener">Find website ↗</a>`}<button class="group-btn" data-group="${esc(v.id)}">Start a group</button></div></article>`}).join("");grid.querySelectorAll("[data-group]").forEach(b=>b.onclick=()=>openGroup(state.venues.find(v=>v.id===b.dataset.group)))}
-function openGroup(v){state.selectedVenue=v;$("#dialogVenue").textContent=v.name;$("#groupName").value=`${v.name} group`;const m=String(v.minimum||"").match(/\d+/);$("#groupTarget").value=m?m[0]:10;$("#groupDialog").showModal()}
-$("#groupForm").addEventListener("submit",e=>{if(e.submitter?.value==="cancel")return;const groups=JSON.parse(localStorage.getItem("grouppass-groups")||"[]");groups.push({id:crypto.randomUUID?.()||Date.now(),venue:state.selectedVenue?.name||"Custom activity",city:state.city.label,name:$("#groupName").value,target:Number($("#groupTarget").value),date:$("#groupDate").value,createdAt:new Date().toISOString()});localStorage.setItem("grouppass-groups",JSON.stringify(groups));setTimeout(()=>alert("Group saved on this device."),0)});
-$("#searchBtn").onclick=()=>{const c=findCity(cityInput.value);if(c)selectCityById(c.id);else alert("Choose a city from the list.")};cityInput.addEventListener("keydown",e=>{if(e.key==="Enter")$("#searchBtn").click()});$("#homeBtn").onclick=()=>scrollTo({top:0,behavior:"smooth"});
-$("#locationBtn").onclick=()=>{if(!navigator.geolocation){alert("Location is not available in this browser.");return}const btn=$("#locationBtn");btn.textContent="Finding you…";navigator.geolocation.getCurrentPosition(async p=>{try{const u=`https://nominatim.openstreetmap.org/reverse?format=json&lat=${p.coords.latitude}&lon=${p.coords.longitude}`;const d=await(await fetch(u)).json();const name=d.address?.city||d.address?.town||d.address?.village||d.address?.county;const stateCode=d.address?.['ISO3166-2-lvl4']?.split('-')[1]||"";const city=state.cities.find(c=>normalize(c.name)===normalize(name)&&(!stateCode||c.state===stateCode))||state.cities.find(c=>normalize(c.name)===normalize(name));if(city)await selectCityById(city.id);else{state.city={id:"near-me",name:name||"Near me",state:stateCode,label:[name,stateCode].filter(Boolean).join(", "),lat:p.coords.latitude,lon:p.coords.longitude};state.venues=[];await loadCity()}}catch{alert("We found your location but could not match it to the city list.")}finally{btn.textContent="⌖ Use my location"}},()=>{btn.textContent="⌖ Use my location";alert("Location permission was not granted.")},{enableHighAccuracy:false,timeout:10000})};
-init();
+const POPULAR = {
+  Dallas:{lat:32.7767,lon:-96.7970,city:"Dallas",label:"Dallas, Texas, United States"},
+  "New York":{lat:40.7128,lon:-74.0060,city:"New York",label:"New York, New York, United States"},
+  London:{lat:51.5072,lon:-0.1276,city:"London",label:"London, England, United Kingdom"},
+  Tokyo:{lat:35.6762,lon:139.6503,city:"Tokyo",label:"Tokyo, Japan"}
+};
+
+const state = {
+  selected:null,
+  venues:[],
+  filter:"all",
+  map:null,
+  marker:null
+};
+
+const $ = (sel, root=document) => root.querySelector(sel);
+const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+function safe(text=""){
+  return String(text).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+
+function cityName(place){
+  return place.city || place.town || place.village || place.municipality || place.name || "Selected destination";
+}
+
+function normalizeNominatim(item){
+  const a = item.address || {};
+  const city = a.city || a.town || a.village || a.municipality || a.county || String(item.display_name||"").split(",")[0];
+  return {
+    lat:Number(item.lat),
+    lon:Number(item.lon),
+    city,
+    region:a.state || a.region || "",
+    country:a.country || "",
+    label:item.display_name || [city,a.state,a.country].filter(Boolean).join(", ")
+  };
+}
+
+function normalizePhoton(feature){
+  const p=feature.properties||{}, c=feature.geometry?.coordinates||[];
+  const city=p.city||p.name||p.county||p.state||"Selected destination";
+  return {
+    lat:Number(c[1]), lon:Number(c[0]), city,
+    region:p.state||"", country:p.country||"",
+    label:[p.name!==city?p.name:null,city,p.state,p.country].filter(Boolean).join(", ")
+  };
+}
+
+async function geocode(query){
+  const encoded=encodeURIComponent(query.trim());
+  try{
+    const u=`https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=5&q=${encoded}`;
+    const r=await fetch(u);
+    if(r.ok){
+      const data=await r.json();
+      const out=data.map(normalizeNominatim).filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lon));
+      if(out.length) return out;
+    }
+  }catch(e){}
+  try{
+    const u=`https://photon.komoot.io/api/?limit=5&q=${encoded}`;
+    const r=await fetch(u);
+    if(r.ok){
+      const data=await r.json();
+      const out=(data.features||[]).map(normalizePhoton).filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lon));
+      if(out.length) return out;
+    }
+  }catch(e){}
+  const known=Object.values(POPULAR).filter(p=>p.label.toLowerCase().includes(query.toLowerCase()) || p.city.toLowerCase().includes(query.toLowerCase()));
+  return known;
+}
+
+function setSearchStatus(text, error=false){
+  const el=$("#searchStatus");
+  if(!el) return;
+  el.textContent=text;
+  el.classList.toggle("error",error);
+}
+
+async function runSearch(value){
+  const input=$("#locationInput");
+  const q=(value ?? input?.value ?? "").trim();
+  if(!q){ setSearchStatus("Enter a city, region, or destination.",true); input?.focus(); return; }
+  if(input) input.value=q;
+  setSearchStatus("Finding matching locations…");
+  const menu=$("#placeResults");
+  if(menu){ menu.hidden=true; menu.innerHTML=""; }
+  const results=await geocode(q);
+  if(!results.length){ setSearchStatus("No matching destination was found. Try a nearby city.",true); return; }
+  setSearchStatus(results.length===1 ? "Choose this destination." : "Choose the correct destination.");
+  if(!menu) return;
+  menu.innerHTML=results.map((p,i)=>`
+    <button class="place-result" data-i="${i}">
+      <span><strong>${safe(p.city)}</strong><small>${safe(p.label)}</small></span>
+      <span class="result-arrow">→</span>
+    </button>`).join("");
+  menu.hidden=false;
+  $$(".place-result",menu).forEach(b=>b.onclick=()=>choosePlace(results[Number(b.dataset.i)]));
+}
+
+async function choosePlace(place){
+  state.selected=place;
+  $("#placeResults")?.setAttribute("hidden","");
+  setSearchStatus(`Zooming into ${place.city}…`);
+  await animateDestination(place);
+  openCityPage(place);
+}
+
+function equirectPoint(place){
+  return {x:((place.lon+180)/360)*100,y:((90-place.lat)/180)*100};
+}
+
+async function animateDestination(place){
+  if(document.body.dataset.design==="background"){
+    const scene=$("#earthScene"), pin=$("#destinationPin"), p=equirectPoint(place);
+    if(pin){
+      pin.style.left=p.x+"%"; pin.style.top=p.y+"%"; pin.classList.add("show");
+    }
+    if(scene){
+      scene.style.transformOrigin=`${p.x}% ${p.y}%`;
+      scene.classList.add("zooming");
+    }
+    await sleep(1450);
+    $("#transitionCurtain")?.classList.add("show");
+    await sleep(430);
+  } else {
+    if(state.map && window.L){
+      if(state.marker) state.marker.remove();
+      state.marker=L.marker([place.lat,place.lon]).addTo(state.map);
+      state.map.flyTo([place.lat,place.lon],11,{duration:1.65});
+    }else{
+      const mapEl=$("#underMap");
+      if(mapEl){
+        mapEl.classList.add("map-loading-focus");
+      }
+    }
+    await sleep(1650);
+    $("#transitionCurtain")?.classList.add("show");
+    await sleep(430);
+  }
+}
+
+function openCityPage(place){
+  $("#landingView").hidden=true;
+  $("#cityView").hidden=false;
+  $("#transitionCurtain")?.classList.remove("show");
+  $("#currentCity").textContent=place.city;
+  $("#currentLocationFull").textContent=place.label;
+  $("#cityHeadline").textContent=`Groups near ${place.city}`;
+  $("#citySubhead").textContent=`Explore nearby places in ${place.label} and organize a group around the experience.`;
+  window.scrollTo({top:0,behavior:"instant"});
+  renderSavedGroups();
+  renderDemoGroups();
+  loadNearbyVenues(place);
+}
+
+function returnHome(){
+  $("#cityView").hidden=true;
+  $("#landingView").hidden=false;
+  const scene=$("#earthScene");
+  if(scene) scene.classList.remove("zooming");
+  const mapEl=$("#underMap");
+  if(mapEl) mapEl.classList.remove("map-loading-focus");
+  $("#destinationPin")?.classList.remove("show");
+  setSearchStatus("");
+  window.scrollTo({top:0,behavior:"instant"});
+  if(state.map && window.L){
+    requestAnimationFrame(()=>{
+      state.map.invalidateSize();
+      frameWorldMap();
+    });
+  }
+}
+
+async function useMyLocation(){
+  setSearchStatus("Finding your location…");
+  if(!navigator.geolocation){
+    setSearchStatus("Location access is not supported. Search for your city instead.",true);
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(async pos=>{
+    const coords={lat:pos.coords.latitude,lon:pos.coords.longitude};
+    try{
+      const u=`https://nominatim.openstreetmap.org/reverse?format=jsonv2&addressdetails=1&lat=${coords.lat}&lon=${coords.lon}`;
+      const r=await fetch(u);
+      if(r.ok){
+        const p=normalizeNominatim(await r.json());
+        choosePlace(p); return;
+      }
+    }catch(e){}
+    choosePlace({...coords,city:"Your location",label:"Your current location"});
+  },()=>setSearchStatus("Location permission was unavailable. Search for a city instead.",true),{timeout:9000,maximumAge:300000});
+}
+
+async function loadNearbyVenues(place){
+  const grid=$("#venueGrid"), count=$("#venueCount"), notice=$("#venueNotice");
+  if(grid) grid.innerHTML=loadingCards();
+  if(count) count.textContent="Searching nearby places…";
+  if(notice) notice.hidden=true;
+  const q=`[out:json][timeout:14];(
+    nwr["tourism"~"attraction|museum|gallery|zoo|aquarium|theme_park"](around:10000,${place.lat},${place.lon});
+    nwr["leisure"~"park|sports_centre|stadium|bowling_alley|escape_game|water_park|amusement_arcade"](around:10000,${place.lat},${place.lon});
+    nwr["amenity"~"theatre|arts_centre|cinema"](around:10000,${place.lat},${place.lon});
+  );out center tags 45;`;
+  const endpoints=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter"];
+  let data=null;
+  for(const endpoint of endpoints){
+    try{
+      const controller=new AbortController();
+      const timer=setTimeout(()=>controller.abort(),15000);
+      const r=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:"data="+encodeURIComponent(q),signal:controller.signal});
+      clearTimeout(timer);
+      if(r.ok){ data=await r.json(); break; }
+    }catch(e){}
+  }
+  state.venues=normalizeVenues(data?.elements||[]);
+  renderVenues();
+}
+
+function normalizeVenues(items){
+  const seen=new Set(), out=[];
+  for(const x of items){
+    const t=x.tags||{}, name=t.name||t["name:en"];
+    if(!name || seen.has(name.toLowerCase())) continue;
+    seen.add(name.toLowerCase());
+    const all=[t.tourism,t.leisure,t.amenity].filter(Boolean).join(" ");
+    let type="Attraction";
+    if(/museum|gallery|arts/.test(all)) type="Museums & art";
+    else if(/park|zoo|aquarium/.test(all)) type="Outdoors";
+    else if(/sports|stadium|bowling/.test(all)) type="Sports";
+    else if(/theatre|cinema|theme_park|escape|arcade|water_park/.test(all)) type="Entertainment";
+    const addr=[t["addr:housenumber"],t["addr:street"],t["addr:city"]].filter(Boolean).join(" ") || "Near the selected city";
+    const url=t.website||t["contact:website"]||`https://www.openstreetmap.org/${x.type}/${x.id}`;
+    out.push({name,type,address:addr,url});
+  }
+  return out.sort((a,b)=>a.name.localeCompare(b.name)).slice(0,30);
+}
+
+function loadingCards(){
+  return Array.from({length:6},()=>`<div class="activity-card skeleton"><div></div><span></span><span></span><span></span></div>`).join("");
+}
+
+function renderVenues(){
+  const grid=$("#venueGrid"), count=$("#venueCount"), notice=$("#venueNotice");
+  let list=state.venues;
+  if(state.filter!=="all") list=list.filter(v=>v.type===state.filter);
+  if(count) count.textContent=list.length ? `${list.length} nearby places` : "No places returned";
+  if(!list.length){
+    if(grid) grid.innerHTML="";
+    if(notice){
+      notice.hidden=false;
+      notice.innerHTML=`Nearby discovery did not return results right now. You can still create a custom group for ${safe(state.selected?.city||"this destination")}.`;
+    }
+    return;
+  }
+  if(notice) notice.hidden=true;
+  if(grid) grid.innerHTML=list.map((v,i)=>`
+    <article class="activity-card">
+      <div class="card-art art-${(i%5)+1}">
+        <span>${safe(v.type)}</span>
+      </div>
+      <div class="card-copy">
+        <p class="micro">Nearby activity</p>
+        <h4>${safe(v.name)}</h4>
+        <p class="address">${safe(v.address)}</p>
+        <div class="rate-line"><strong>Group price not yet verified</strong><span>Confirm directly with the venue before collecting money.</span></div>
+        <div class="card-actions">
+          <a href="${safe(v.url)}" target="_blank" rel="noopener">Venue page</a>
+          <button data-venue="${safe(v.name)}">Start a group</button>
+        </div>
+      </div>
+    </article>`).join("");
+  $$("[data-venue]",grid).forEach(b=>b.onclick=()=>openGroupModal(b.dataset.venue));
+}
+
+function setFilter(button){
+  $$(".filter-button").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  state.filter=button.dataset.filter;
+  renderVenues();
+}
+
+const GROUP_KEY="groupup-earth-groups-v1";
+function getGroups(){ try{return JSON.parse(localStorage.getItem(GROUP_KEY)||"[]")}catch{return[]} }
+function saveGroups(list){localStorage.setItem(GROUP_KEY,JSON.stringify(list))}
+
+function renderSavedGroups(){
+  const grid=$("#savedGroupGrid"), empty=$("#savedEmpty");
+  const label=state.selected?.label;
+  const list=getGroups().filter(g=>g.location===label);
+  if(empty) empty.hidden=!!list.length;
+  if(grid) grid.innerHTML=list.map(g=>`
+    <article class="group-card">
+      <p class="micro">Community-created</p>
+      <h4>${safe(g.activity)}</h4>
+      <p>${safe(formatDate(g.date))} · ${safe(g.time)}</p>
+      <div class="progress"><span style="width:${Math.min(100,(g.joined/g.target)*100)}%"></span></div>
+      <div class="group-bottom"><span>${g.joined} of ${g.target} joined</span><button data-join="${g.id}">Join</button></div>
+    </article>`).join("");
+  $$("[data-join]",grid||document).forEach(b=>b.onclick=()=>joinGroup(b.dataset.join));
+}
+
+function renderDemoGroups(){
+  const grid=$("#demoGroupGrid");
+  if(!grid) return;
+  const c=state.selected?.city||"this city";
+  const ideas=[
+    {name:`Weekend museum group in ${c}`,date:"Saturday",joined:7,target:12},
+    {name:`Outdoor day with new people`,date:"Sunday",joined:4,target:10},
+    {name:`Local attraction group plan`,date:"Next weekend",joined:9,target:15}
+  ];
+  grid.innerHTML=ideas.map((g,i)=>`
+    <article class="group-card demo">
+      <p class="micro">Example group</p>
+      <h4>${safe(g.name)}</h4>
+      <p>${safe(g.date)} · Time selected by organizer</p>
+      <div class="progress"><span style="width:${(g.joined/g.target)*100}%"></span></div>
+      <div class="group-bottom"><span>${g.joined} of ${g.target} interested</span><button onclick="openGroupModal('${safe(g.name)}')">Create similar</button></div>
+    </article>`).join("");
+}
+
+function joinGroup(id){
+  const list=getGroups(), g=list.find(x=>x.id===id);
+  if(!g)return;
+  g.joined=Math.min(g.target,g.joined+1);
+  saveGroups(list); renderSavedGroups(); toast("You joined the group");
+}
+
+function openGroupModal(name=""){
+  $("#groupActivity").value=name;
+  $("#groupDate").value=new Date(Date.now()+7*86400000).toISOString().slice(0,10);
+  $("#groupTime").value="11:00";
+  $("#groupModal").classList.add("open");
+}
+function closeGroupModal(){ $("#groupModal").classList.remove("open"); }
+
+function createGroup(event){
+  event.preventDefault();
+  const list=getGroups();
+  list.unshift({
+    id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())),
+    location:state.selected?.label,
+    activity:$("#groupActivity").value.trim(),
+    date:$("#groupDate").value,
+    time:$("#groupTime").value,
+    target:Number($("#groupTarget").value),
+    joined:1
+  });
+  saveGroups(list); closeGroupModal(); renderSavedGroups(); toast("Group created on this device");
+}
+
+function formatDate(v){
+  try{return new Date(v+"T12:00:00").toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"})}
+  catch{return v}
+}
+
+function toast(text){
+  const el=$("#toast"); if(!el)return;
+  el.textContent=text; el.classList.add("show");
+  clearTimeout(window.__toast); window.__toast=setTimeout(()=>el.classList.remove("show"),2400);
+}
+
+function frameWorldMap(){
+  const mapEl=$("#underMap");
+  if(!state.map || !mapEl) return;
+
+  const width=Math.max(320,mapEl.clientWidth);
+
+  // At this zoom, one complete Web-Mercator world nearly fills the panel width.
+  // The tiny reduction prevents the date-line edges from being clipped.
+  const zoom=Math.log2(width/256)-0.035;
+
+  state.map.setView([14,0],zoom,{animate:false});
+}
+
+function initLeaflet(){
+  const mapEl=$("#underMap");
+  if(!mapEl || !window.L) return;
+  state.map=L.map(mapEl,{
+    zoomControl:true,
+    attributionControl:true,
+    worldCopyJump:false,
+    minZoom:1,
+    maxZoom:18,
+    zoomSnap:0,
+    zoomDelta:0.25,
+    maxBounds:[[-85.0511,-180],[85.0511,180]],
+    maxBoundsViscosity:1
+  });
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+    maxZoom:18,
+    noWrap:true,
+    detectRetina:true,
+    bounds:[[-85.0511,-180],[85.0511,180]],
+    attribution:'© OpenStreetMap contributors'
+  }).addTo(state.map);
+  const frame=()=>{state.map.invalidateSize();frameWorldMap();};
+  requestAnimationFrame(frame);
+  setTimeout(frame,200);
+  window.addEventListener("resize",()=>{
+    clearTimeout(window.__mapResize);
+    window.__mapResize=setTimeout(frame,100);
+  });
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  $("#searchForm")?.addEventListener("submit",e=>{e.preventDefault();runSearch()});
+  $$(".popular-city").forEach(b=>b.onclick=()=>{
+    const p=POPULAR[b.dataset.city]; $("#locationInput").value=b.dataset.city; choosePlace(p);
+  });
+  $("#locationButton")?.addEventListener("click",useMyLocation);
+  $("#returnHome")?.addEventListener("click",returnHome);
+  $("#changeLocation")?.addEventListener("click",returnHome);
+  $("#startGroupTop")?.addEventListener("click",()=>openGroupModal(""));
+  $("#groupForm")?.addEventListener("submit",createGroup);
+  $("#modalClose")?.addEventListener("click",closeGroupModal);
+  $("#groupModal")?.addEventListener("click",e=>{if(e.target.id==="groupModal")closeGroupModal()});
+  $$(".filter-button").forEach(b=>b.onclick=()=>setFilter(b));
+  if(document.body.dataset.design==="below"){
+    if(window.L) initLeaflet();
+    else window.addEventListener("load",initLeaflet,{once:true});
+  }
+});
