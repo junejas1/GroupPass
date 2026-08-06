@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#234a3c">
+  <meta name="description" content="Find nearby activities, published group rates, and people to join your group.">
+  <title>GroupPass — Find your group discount</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <button class="brand" id="homeBtn" aria-label="GroupPass home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M32 3C18.2 3 7 14.2 7 28c0 18.1 25 33 25 33s25-14.9 25-33C57 14.2 45.8 3 32 3Z"/><circle cx="32" cy="23" r="7"/><path d="M19 41c1.8-7 7-11 13-11s11.2 4 13 11"/></svg>
+      </span>
+      <span><strong>GroupPass</strong><small>Find people. Unlock group rates.</small></span>
+    </button>
+    <button class="location-pill" id="locationBtn">⌖ Use my location</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">GROUP DISCOUNTS, MADE SOCIAL</p>
+        <h1>Choose your city.<br>Find your group discount.</h1>
+        <p class="hero-description">Discover activities near you, compare published group information, and start a temporary group when you need more people to qualify.</p>
+      </div>
+      <div class="search-panel">
+        <label for="cityInput">Where do you want to go?</label>
+        <div class="search-row">
+          <input id="cityInput" list="cityList" autocomplete="off" placeholder="Search a U.S. city">
+          <datalist id="cityList"></datalist>
+          <button id="searchBtn">Search</button>
+        </div>
+        <div class="popular" id="popularCities" aria-label="Popular cities"></div>
+      </div>
+    </section>
+
+    <section class="map-shell" aria-label="Selected city map">
+      <div class="map-topline">
+        <div><span class="section-kicker">EXPLORE</span><h2 id="mapTitle">Dallas, TX</h2></div>
+        <a id="openMapLink" target="_blank" rel="noopener">Open full map ↗</a>
+      </div>
+      <iframe id="cityMap" title="Map of selected city" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="nearby-section" id="nearby">
+      <div class="section-heading">
+        <div><span class="section-kicker">NEARBY</span><h2>Nearby activities and group rates</h2></div>
+        <div class="result-count" id="resultCount">Loading…</div>
+      </div>
+      <div class="catalog-note" id="catalogNote"></div>
+      <div class="filters" id="filters"></div>
+      <div class="venue-grid" id="venueGrid"></div>
+    </section>
+  </main>
+
+  <dialog id="groupDialog">
+    <form method="dialog" id="groupForm">
+      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <p class="eyebrow">START A GROUP</p>
+      <h2 id="dialogVenue">Activity group</h2>
+      <label>Group name<input id="groupName" required maxlength="60" placeholder="Saturday museum crew"></label>
+      <label>People needed<input id="groupTarget" type="number" required min="2" max="100" value="10"></label>
+      <label>Date<input id="groupDate" type="date"></label>
+      <button class="primary-btn" value="default">Create group on this device</button>
+      <p class="dialog-note">Prototype groups are saved only in this browser.</p>
+    </form>
+  </dialog>
+
+  <footer><strong>GroupPass</strong><span>Venue and rate details should be confirmed with the official source before booking.</span></footer>
+  <script src="./app.js"></script>
+</body>
+</html>
