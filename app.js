@@ -42,17 +42,30 @@ function chooseFromInput(){
   if(city)openCity(city);else{$("#searchStatus").textContent="That city is not in the curated database yet.";$("#cityResults").hidden=true}
 }
 
+async function loadVenueParts(city){
+  const parts=Math.max(1,Number(city.parts||1));
+  const rows=[];
+  for(let part=1;part<=parts;part++){
+    const suffix=part===1?"":`-${part}`;
+    const response=await fetch(`./data/venues/${city.id}${suffix}.json`,{cache:"no-store"});
+    if(!response.ok)throw new Error(`Missing curated database part ${part}`);
+    const data=await response.json();
+    if(!Array.isArray(data))throw new Error(`Invalid curated database part ${part}`);
+    rows.push(...data);
+  }
+  return rows;
+}
+
 async function openCity(city,push=true){
   state.city=city;state.filter="All";$("#cityResults").hidden=true;$("#searchStatus").textContent="";
   $("#homeView").hidden=true;$("#catalogView").hidden=false;$("#cityTitle").textContent=city.name;$("#citySummary").textContent=`${city.venueCount} manually researched venues in ${city.name}, ${city.region}. Prices were last reviewed ${formatDate(city.lastVerified)} and should be confirmed on the linked official source before payment.`;
   $("#venueGrid").innerHTML="";$("#notice").hidden=true;$("#venueCount").textContent="Loading curated records…";
   if(push)history.pushState({},"",`?city=${encodeURIComponent(city.id)}`);
   try{
-    const response=await fetch(`./data/venues/${city.id}.json`,{cache:"no-store"});if(!response.ok)throw new Error();
-    state.venues=await response.json();renderFilters();renderVenues();window.scrollTo({top:0,behavior:"smooth"});
-  }catch(error){state.venues=[];$("#venueCount").textContent="No records available";$("#notice").hidden=false;$("#notice").textContent="This city is listed, but its venue file is not available yet."}
+    state.venues=await loadVenueParts(city);renderFilters();renderVenues();window.scrollTo({top:0,behavior:"smooth"});
+  }catch(error){state.venues=[];$("#venueCount").textContent="No records available";$("#notice").hidden=false;$("#notice").textContent="This city is listed, but one or more curated database files are not available yet."}
 }
-function showHome(push=true){if(push)history.pushState({},"",location.pathname);$("#catalogView").hidden=true;$("#homeView").hidden=false;window.scrollTo({top:0,behavior:"smooth"})}
+function showHome(push=true){if(push)history.pushState({},"",location.pathname);$("#catalogView").hidden=true;$("#homeView").hidden=false;window.scrollTo({top:0,behavior:"smooth")}
 window.addEventListener("popstate",()=>{const id=new URLSearchParams(location.search).get("city");const city=state.cities.find(c=>c.id===id);city?openCity(city,false):showHome(false)});
 
 function renderFilters(){
