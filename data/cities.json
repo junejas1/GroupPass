@@ -11,8 +11,16 @@
   {"id":"jacksonville-fl","name":"Jacksonville","region":"Florida","country":"United States","aliases":["Jax"],"venueCount":20,"lastVerified":"2026-08-06"},
   {"id":"austin-tx","name":"Austin","region":"Texas","country":"United States","aliases":[],"venueCount":20,"lastVerified":"2026-08-06"},
   {"id":"fort-worth-tx","name":"Fort Worth","region":"Texas","country":"United States","aliases":[],"venueCount":20,"lastVerified":"2026-08-06"},
+  {"id":"san-jose-ca","name":"San Jose","region":"California","country":"United States","aliases":["San José"],"venueCount":20,"lastVerified":"2026-08-06"},
+  {"id":"charlotte-nc","name":"Charlotte","region":"North Carolina","country":"United States","aliases":[],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
+  {"id":"columbus-oh","name":"Columbus","region":"Ohio","country":"United States","aliases":[],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
+  {"id":"indianapolis-in","name":"Indianapolis","region":"Indiana","country":"United States","aliases":["Indy"],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
+  {"id":"san-francisco-ca","name":"San Francisco","region":"California","country":"United States","aliases":["SF"],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
+  {"id":"seattle-wa","name":"Seattle","region":"Washington","country":"United States","aliases":[],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
+  {"id":"denver-co","name":"Denver","region":"Colorado","country":"United States","aliases":[],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
+  {"id":"nashville-tn","name":"Nashville","region":"Tennessee","country":"United States","aliases":[],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
+  {"id":"oklahoma-city-ok","name":"Oklahoma City","region":"Oklahoma","country":"United States","aliases":["OKC"],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
+  {"id":"washington-dc","name":"Washington","region":"District of Columbia","country":"United States","aliases":["Washington DC","DC"],"venueCount":20,"format":"compact-v1","lastVerified":"2026-08-06"},
   {"id":"orlando-fl","name":"Orlando","region":"Florida","country":"United States","aliases":[],"venueCount":2,"lastVerified":"2026-08-05"},
-  {"id":"washington-dc","name":"Washington","region":"District of Columbia","country":"United States","aliases":["Washington DC","DC"],"venueCount":2,"lastVerified":"2026-08-05"},
-  {"id":"seattle-wa","name":"Seattle","region":"Washington","country":"United States","aliases":[],"venueCount":2,"lastVerified":"2026-08-05"},
   {"id":"boston-ma","name":"Boston","region":"Massachusetts","country":"United States","aliases":[],"venueCount":2,"lastVerified":"2026-08-05"}
 ]
