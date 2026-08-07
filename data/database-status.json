@@ -3,9 +3,9 @@
   "targetCities":100,
   "targetVenuesPerCity":20,
   "targetVenueRecords":2000,
-  "completedCities":2,
-  "completedCityIds":["new-york-ny","dallas-tx"],
-  "completedVenueRecords":40,
-  "method":"Manual review of official attraction, admission, group-sales, field-trip, and reservation pages. Missing prices are labeled quote required rather than estimated.",
+  "completedCities":12,
+  "completedCityIds":["new-york-ny","los-angeles-ca","chicago-il","houston-tx","phoenix-az","philadelphia-pa","san-antonio-tx","san-diego-ca","dallas-tx","jacksonville-fl","austin-tx","fort-worth-tx"],
+  "completedVenueRecords":240,
+  "method":"Manual review of official attraction, admission, group-sales, field-trip, and reservation pages. Exact published rates are stored when available; missing or variable prices are labeled quote required or date based rather than estimated.",
   "lastUpdated":"2026-08-06"
 }
