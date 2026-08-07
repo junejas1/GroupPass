@@ -4,54 +4,62 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#214c3a">
-  <title>GroupUp — Curated group discounts</title>
+  <title>GroupUp — Find your group discount</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./restore.css">
 </head>
 <body>
-  <header class="site-header">
-    <button class="brand" id="homeButton" type="button" aria-label="Go home"><span>▮▮</span>GroupUp</button>
-    <p>Curated group pricing database</p>
-  </header>
+  <section class="below-landing" id="homeView">
+    <nav class="below-nav">
+      <div class="below-brand"><i>▮▮</i><span>GroupUp</span></div>
+      <button class="below-location" id="locationButton" type="button">⌖ Use my location</button>
+    </nav>
 
-  <main>
-    <section class="hero" id="homeView">
-      <div class="hero-copy">
-        <p class="eyebrow">Research first. Fast results.</p>
-        <h1>Find real group discounts without waiting on a live search.</h1>
-        <p>Choose a covered city to see manually researched attractions, regular prices, group rates, minimum sizes, restrictions, and official booking sources.</p>
-        <form id="citySearch" class="search-box">
-          <input id="cityInput" autocomplete="off" placeholder="Search a covered city" aria-label="Search a covered city">
-          <button>Search</button>
-          <div id="cityResults" class="city-results" hidden></div>
-        </form>
-        <p class="search-status" id="searchStatus"></p>
-      </div>
-      <aside class="coverage-card">
-        <span id="cityTotal">10</span>
-        <strong>curated city databases</strong>
-        <p>No venue scraping, map-server searches, or live pricing extraction runs in your browser.</p>
-      </aside>
-      <div class="city-chips" id="cityChips"></div>
-    </section>
-
-    <section class="catalog" id="catalogView" hidden>
-      <div class="catalog-top">
-        <button class="back" id="backButton" type="button">← All cities</button>
-        <div>
-          <p class="eyebrow">Curated city database</p>
-          <h2 id="cityTitle"></h2>
-          <p id="citySummary"></p>
+    <main class="hero-wrap">
+      <section class="hero-copy">
+        <h1>Choose your city.<br><span class="headline-second">Find your group (discount).</span></h1>
+        <p>Search any city to find attractions and activities with group pricing. Join other people who want to go, reach the venue’s required group size, and unlock the discounted rate together.</p>
+        <div class="hero-right">
+          <form class="below-search" id="citySearch">
+            <div class="below-input-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.7-3.7"></path></svg>
+              <input class="search-input" id="cityInput" placeholder="City, region, or destination" autocomplete="off" aria-label="Search a covered city">
+            </div>
+            <button class="search-button">Search</button>
+            <div class="place-results" id="cityResults" hidden></div>
+            <div class="search-status" id="searchStatus"></div>
+          </form>
+          <div class="quick"><span>Popular:</span><div class="quick-cities" id="cityChips"></div></div>
         </div>
-      </div>
+      </section>
+    </main>
 
-      <div class="toolbar">
-        <div id="filters" class="filters"></div>
-        <p id="venueCount"></p>
-      </div>
-      <div id="notice" class="notice" hidden></div>
-      <div id="venueGrid" class="venue-grid"></div>
+    <section class="map-section">
+      <div class="map-label"><strong>Explore the United States</strong><span>Select a covered city to view its curated database</span></div>
+      <div id="underMap"></div>
     </section>
-  </main>
+  </section>
+
+  <section class="catalog" id="catalogView" hidden>
+    <div class="catalog-nav">
+      <button class="brand" id="homeButton" type="button" aria-label="Go home"><span>▮▮</span>GroupUp</button>
+      <button class="back" id="backButton" type="button">← All cities</button>
+    </div>
+    <div class="catalog-top">
+      <div>
+        <p class="eyebrow">Curated city database</p>
+        <h2 id="cityTitle"></h2>
+        <p id="citySummary"></p>
+      </div>
+    </div>
+    <div class="toolbar">
+      <div id="filters" class="filters"></div>
+      <p id="venueCount"></p>
+    </div>
+    <div id="notice" class="notice" hidden></div>
+    <div id="venueGrid" class="venue-grid"></div>
+  </section>
 
   <div class="modal-backdrop" id="groupModal" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -70,6 +78,9 @@
     </div>
   </div>
   <div class="toast" id="toast"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./app.js"></script>
+  <script src="./map.js"></script>
 </body>
 </html>
