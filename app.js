@@ -65,7 +65,7 @@ async function openCity(city,push=true){
     state.venues=await loadVenueParts(city);renderFilters();renderVenues();window.scrollTo({top:0,behavior:"smooth"});
   }catch(error){state.venues=[];$("#venueCount").textContent="No records available";$("#notice").hidden=false;$("#notice").textContent="This city is listed, but one or more curated database files are not available yet."}
 }
-function showHome(push=true){if(push)history.pushState({},"",location.pathname);$("#catalogView").hidden=true;$("#homeView").hidden=false;window.scrollTo({top:0,behavior:"smooth")}
+function showHome(push=true){if(push)history.pushState({},"",location.pathname);$("#catalogView").hidden=true;$("#homeView").hidden=false;window.scrollTo({top:0,behavior:"smooth"})}
 window.addEventListener("popstate",()=>{const id=new URLSearchParams(location.search).get("city");const city=state.cities.find(c=>c.id===id);city?openCity(city,false):showHome(false)});
 
 function renderFilters(){
