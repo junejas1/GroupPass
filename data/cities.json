@@ -3,7 +3,7 @@
   {"id":"los-angeles-ca","name":"Los Angeles","region":"California","country":"United States","aliases":["LA"],"venueCount":2,"lastVerified":"2026-08-05"},
   {"id":"chicago-il","name":"Chicago","region":"Illinois","country":"United States","aliases":[],"venueCount":2,"lastVerified":"2026-08-05"},
   {"id":"houston-tx","name":"Houston","region":"Texas","country":"United States","aliases":[],"venueCount":2,"lastVerified":"2026-08-05"},
-  {"id":"dallas-tx","name":"Dallas","region":"Texas","country":"United States","aliases":["Dallas-Fort Worth","DFW"],"venueCount":7,"lastVerified":"2026-08-05"},
+  {"id":"dallas-tx","name":"Dallas","region":"Texas","country":"United States","aliases":["Dallas-Fort Worth","DFW"],"venueCount":20,"parts":5,"lastVerified":"2026-08-06"},
   {"id":"orlando-fl","name":"Orlando","region":"Florida","country":"United States","aliases":[],"venueCount":2,"lastVerified":"2026-08-05"},
   {"id":"philadelphia-pa","name":"Philadelphia","region":"Pennsylvania","country":"United States","aliases":["Philly"],"venueCount":2,"lastVerified":"2026-08-05"},
   {"id":"washington-dc","name":"Washington","region":"District of Columbia","country":"United States","aliases":["Washington DC","DC"],"venueCount":2,"lastVerified":"2026-08-05"},
