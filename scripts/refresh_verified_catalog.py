@@ -139,6 +139,22 @@ def fetch_html(url: str, timeout: int = 20):
         return None, "", url
 
 
+def canonical_url(soup: BeautifulSoup | None, final_url: str) -> str:
+    if soup:
+        link = soup.find("link", rel=lambda v: v and "canonical" in str(v).lower())
+        if link and link.get("href"):
+            candidate = urljoin(final_url, link["href"])
+            if same_site(candidate, final_url):
+                return candidate.split("#")[0]
+        for obj in jsonld_objects(soup):
+            candidate = obj.get("url")
+            if isinstance(candidate, str):
+                candidate = urljoin(final_url, candidate)
+                if same_site(candidate, final_url):
+                    return candidate.split("#")[0]
+    return (final_url or "").split("#")[0]
+
+
 def fingerprint(text: str) -> str:
     normalized = re.sub(r"\d{1,2}:\d{2}", "", text.lower())
     normalized = re.sub(r"\s+", " ", normalized)[:220000]
@@ -457,20 +473,20 @@ def verify_candidate(candidate: dict, city: dict, api_key: str):
 
         group_page, group_soup, group_text = "", None, ""
         if has_group_evidence(text):
-            group_page, group_soup, group_text = final or url, soup, text
+            group_page, group_soup, group_text = canonical_url(soup, final or url), soup, text
         else:
             links = links_from_page(soup, final or url, group=True)
             for _, link in links[:3]:
                 gsoup, gtext, gfinal = fetch_html(link)
                 if gtext and has_group_evidence(gtext):
-                    group_page, group_soup, group_text = gfinal or link, gsoup, gtext
+                    group_page, group_soup, group_text = canonical_url(gsoup, gfinal or link), gsoup, gtext
                     break
         if not group_page:
             found = search_site_page(api_key, final or url, page_name, group=True)
             if found:
                 gsoup, gtext, gfinal = fetch_html(found)
                 if gtext and has_group_evidence(gtext):
-                    group_page, group_soup, group_text = gfinal or found, gsoup, gtext
+                    group_page, group_soup, group_text = canonical_url(gsoup, gfinal or found), gsoup, gtext
         if not group_page:
             continue
 
@@ -492,7 +508,7 @@ def verify_candidate(candidate: dict, city: dict, api_key: str):
             "cityId": city["id"], "name": page_name,
             "category": candidate["category"], "address": address,
             "lat": lat, "lon": lon, "website": website,
-            "regularSource": rfinal or regular_page, "groupSource": group_page,
+            "regularSource": canonical_url(rsoup, rfinal or regular_page), "groupSource": group_page,
             "regularPrice": regular_price or "See current official admission",
             "regularDetails": [],
             "groupPrice": group_price or "See current official group rate",
@@ -507,8 +523,7 @@ def verify_candidate(candidate: dict, city: dict, api_key: str):
             "confidence": 0.98 if group_price else 0.92,
             "groupSourceFingerprint": fingerprint(group_text),
             "verificationStatus": "verified_current",
-            "discoveredBy": "Brave Search prominence + official-site verification",
-            "majorAttractionScore": round(candidate["score"], 2),
+            "discoveredBy": "transient web discovery + official-site verification",
         }
     return None
 
@@ -517,18 +532,18 @@ def refresh_existing_record(record: dict, api_key: str) -> dict:
     out = dict(record)
     for key in ("googlePlaceId", "googleRating", "googleUserRatingCount"):
         out.pop(key, None)
-    out.setdefault("majorAttractionScore", 100 if str(out.get("id", "")).startswith("curated-") else 60)
+    out.pop("majorAttractionScore", None)
 
     website = out.get("website") or out.get("groupSource") or out.get("regularSource") or ""
     group_page = out.get("groupSource") or ""
-    _, group_text, group_final = fetch_html(group_page) if group_page else (None, "", "")
+    group_soup, group_text, group_final = fetch_html(group_page) if group_page else (None, "", "")
 
     if not group_text or not has_group_evidence(group_text):
         replacement = search_site_page(api_key, website, out.get("name", ""), group=True) if website else ""
         if replacement:
-            _, group_text, group_final = fetch_html(replacement)
+            group_soup, group_text, group_final = fetch_html(replacement)
             if group_text and has_group_evidence(group_text):
-                out["groupSource"] = group_final or replacement
+                out["groupSource"] = canonical_url(group_soup, group_final or replacement)
 
     out["lastChecked"] = today()
     if not group_text or not has_group_evidence(group_text):
@@ -558,7 +573,7 @@ def refresh_existing_record(record: dict, api_key: str) -> dict:
     new_notes = extract_restrictions(group_text)
 
     regular_page = out.get("regularSource") or website
-    _, regular_text, regular_final = fetch_html(regular_page) if regular_page else (None, "", "")
+    regular_soup, regular_text, regular_final = fetch_html(regular_page) if regular_page else (None, "", "")
     new_regular = compact_price(choose_money_line(regular_text, group=False)) if regular_text else ""
 
     if new_group:
@@ -579,7 +594,7 @@ def refresh_existing_record(record: dict, api_key: str) -> dict:
     if new_notes:
         out["bookingNotes"] = new_notes
     if regular_final:
-        out["regularSource"] = regular_final
+        out["regularSource"] = canonical_url(regular_soup, regular_final)
     out["savings"] = savings_text(out.get("regularPrice", ""), out.get("groupPrice", ""))
     return out
 
@@ -649,15 +664,21 @@ def update_city(city: dict, api_key: str, city_index: list[dict]) -> int:
                 break
             time.sleep(0.1)
 
+    for order, record in enumerate(refreshed):
+        record["_transientOrder"] = order
+
     def rank_record(r):
         return (
             1 if r.get("verificationStatus") == "verified_current" else 0,
-            float(r.get("majorAttractionScore") or 0),
             1 if str(r.get("id", "")).startswith("curated-") else 0,
             float(r.get("confidence") or 0),
+            -int(r.get("_transientOrder") or 0),
         )
 
     refreshed.sort(key=rank_record, reverse=True)
+    for record in refreshed:
+        record.pop("_transientOrder", None)
+        record.pop("majorAttractionScore", None)
     write_city(city, refreshed, city_index)
     count = min(20, len(refreshed))
     log(f"{city['name']}: saved {count} records")
@@ -688,11 +709,11 @@ def update_status(targets: list[dict], city_index: list[dict]) -> None:
         "completedCityIds": [c["id"] for c in complete],
         "completedVenueRecords": total_records,
         "method": (
-            "Major attraction candidates are found with attraction-specific web searches and ranked by repeated "
-            "search prominence. Directory, review, social, and booking aggregators are excluded as database sources. "
-            "A new venue is accepted only after GroupPass fetches an official venue-domain page and confirms a group "
-            "program. Official group pages are fingerprinted and rechecked; exact stale prices are removed whenever "
-            "a changed source cannot be confidently re-extracted."
+            "Major attraction candidates are found with attraction-specific web searches and ranked transiently. "
+            "Search results are not persisted. Directory, review, social, and booking aggregators are excluded as database sources. "
+            "A new venue is accepted only after GroupPass fetches an official venue-domain page and confirms a group program. "
+            "Official canonical source URLs and factual pricing details are stored. Official group pages are fingerprinted and rechecked; "
+            "exact stale prices are removed whenever a changed source cannot be confidently re-extracted."
         ),
         "lastUpdated": today(),
     })
