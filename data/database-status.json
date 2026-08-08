@@ -1,11 +1,14 @@
 {
-  "project":"GroupPass manually curated U.S. attractions database",
+  "project":"GroupPass verified attraction and group-pricing database",
+  "architectureVersion":"3.1-web-search-official-sites",
   "targetCities":100,
   "targetVenuesPerCity":20,
   "targetVenueRecords":2000,
   "completedCities":22,
   "completedCityIds":["new-york-ny","los-angeles-ca","chicago-il","houston-tx","phoenix-az","philadelphia-pa","san-antonio-tx","san-diego-ca","dallas-tx","jacksonville-fl","austin-tx","fort-worth-tx","san-jose-ca","charlotte-nc","columbus-oh","indianapolis-in","san-francisco-ca","seattle-wa","denver-co","nashville-tn","oklahoma-city-ok","washington-dc"],
   "completedVenueRecords":440,
-  "method":"Manual review of official attraction, admission, group-sales, field-trip, and reservation pages. Exact published rates are stored when available; missing or variable prices are labeled quote required or date based rather than estimated.",
-  "lastUpdated":"2026-08-06"
+  "method":"Existing curated records are retained as trusted seed data. New major attraction candidates are found with attraction-specific web searches and ranked by repeated search prominence. Directory, review, social, and booking aggregators are excluded as database sources. A new venue is accepted only after an official venue-domain page confirms a group program. Official group pages are fingerprinted and rechecked; stale exact prices are hidden or removed when they cannot be re-verified.",
+  "automationReady":true,
+  "activationRequired":"Add BRAVE_SEARCH_API_KEY as a GitHub Actions repository secret, then run Refresh verified GroupPass catalog once.",
+  "lastUpdated":"2026-08-08"
 }
