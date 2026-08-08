@@ -22,15 +22,8 @@ TARGETS_FILE = DATA / "target-cities.json"
 CITIES_FILE = DATA / "cities.json"
 STATUS_FILE = DATA / "database-status.json"
 
-GOOGLE_URL = "https://places.googleapis.com/v1/places:searchText"
 BRAVE_URL = "https://api.search.brave.com/res/v1/web/search"
-UA = "GroupPassCatalogBot/2.0 (+https://github.com/junejas1/GroupPass)"
-
-SEARCH_TYPES = [
-    "tourist_attraction", "museum", "amusement_park", "aquarium", "zoo",
-    "historical_landmark", "botanical_garden", "observation_deck", "stadium",
-    "art_gallery", "performing_arts_theater", "planetarium", "water_park", "arena",
-]
+UA = "GroupPassCatalogBot/3.1 (+https://github.com/junejas1/GroupPass)"
 
 GROUP_TERMS = (
     "group tickets", "group ticket", "group rates", "group rate", "group admission",
@@ -38,7 +31,7 @@ GROUP_TERMS = (
     "group reservation", "field trips", "field trip", "school groups", "tour groups",
     "corporate groups", "youth groups", "group booking", "group bookings",
 )
-REGULAR_TERMS = ("tickets", "admission", "pricing", "prices", "plan your visit", "visit", "buy tickets")
+REGULAR_TERMS = ("tickets", "admission", "pricing", "prices", "plan your visit", "buy tickets")
 MONEY_RE = re.compile(r"(?:(?:US)?\$|USD\s*)\s*\d{1,4}(?:\.\d{1,2})?", re.I)
 MINIMUM_PATTERNS = [
     re.compile(r"(?:minimum(?:\s+group(?:\s+size)?)?|at least)\s*(?:of\s*)?(\d{1,3})", re.I),
@@ -47,21 +40,36 @@ MINIMUM_PATTERNS = [
     re.compile(r"(\d{1,3})\s*(?:or more)\s*(?:guests?|people|persons?|visitors?)", re.I),
 ]
 
-CATEGORY_BY_TYPE = {
-    "museum": "Museums & art", "art_gallery": "Museums & art", "art_museum": "Museums & art",
-    "history_museum": "Museums & art", "planetarium": "Museums & art", "aquarium": "Outdoors",
-    "zoo": "Outdoors", "botanical_garden": "Outdoors", "garden": "Outdoors", "national_park": "Outdoors",
-    "state_park": "Outdoors", "wildlife_park": "Outdoors", "wildlife_refuge": "Outdoors",
-    "stadium": "Sports", "arena": "Sports", "sports_complex": "Sports", "golf_course": "Sports",
-    "amusement_park": "Entertainment", "water_park": "Entertainment", "observation_deck": "Entertainment",
-    "performing_arts_theater": "Entertainment", "concert_hall": "Entertainment", "opera_house": "Entertainment",
-    "casino": "Entertainment",
+DISCOVERY_QUERIES = [
+    ("Attraction", 24, '"{city}" attractions "group tickets"'),
+    ("Attraction", 22, '"{city}" attraction "group rates"'),
+    ("Museums & art", 25, '"{city}" museum "group visits"'),
+    ("Museums & art", 23, '"{city}" museum "group admission"'),
+    ("Outdoors", 25, '"{city}" zoo aquarium "group tickets"'),
+    ("Outdoors", 22, '"{city}" botanical garden "group visits"'),
+    ("Entertainment", 25, '"{city}" amusement park "group tickets"'),
+    ("Entertainment", 22, '"{city}" observation deck "group tickets"'),
+    ("Sports", 20, '"{city}" stadium tours "group tickets"'),
+    ("Attraction", 20, '"{city}" science center "group visits"'),
+    ("Museums & art", 20, '"{city}" children museum "group visits"'),
+    ("Attraction", 18, '"{city}" historic site "group tours"'),
+    ("Attraction", 16, '"{city}" tourist attraction "group sales"'),
+    ("Attraction", 12, '"{city}" top attractions official tickets'),
+]
+
+BLOCKED_DOMAINS = {
+    "tripadvisor.com", "yelp.com", "viator.com", "getyourguide.com", "expedia.com",
+    "booking.com", "groupon.com", "eventbrite.com", "reddit.com", "wikipedia.org",
+    "facebook.com", "instagram.com", "tiktok.com", "youtube.com", "pinterest.com",
+    "x.com", "twitter.com", "mapquest.com", "foursquare.com", "wanderlog.com",
+    "trip.com", "travelocity.com", "kayak.com", "hotels.com", "lonelyplanet.com",
+    "timeout.com", "thrillist.com", "usnews.com", "forbes.com",
 }
-TYPE_BONUS = {
-    "tourist_attraction": 28, "museum": 24, "amusement_park": 32, "aquarium": 31, "zoo": 31,
-    "historical_landmark": 22, "botanical_garden": 20, "observation_deck": 28, "stadium": 24,
-    "art_gallery": 18, "performing_arts_theater": 18, "planetarium": 20, "water_park": 23, "arena": 20,
-}
+
+GENERIC_TITLE_WORDS = (
+    "things to do", "best attractions", "top attractions", "visitor guide",
+    "official tourism", "visit ", "tourism", "tripadvisor", "travel guide",
+)
 
 session = requests.Session()
 session.headers.update({"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
@@ -97,6 +105,10 @@ def host(url: str) -> str:
         return ""
 
 
+def blocked_domain(domain: str) -> bool:
+    return any(domain == d or domain.endswith("." + d) for d in BLOCKED_DOMAINS)
+
+
 def same_site(a: str, b: str) -> bool:
     ha, hb = host(a), host(b)
     if not ha or not hb:
@@ -121,7 +133,7 @@ def fetch_html(url: str, timeout: int = 20):
         soup = BeautifulSoup(r.text, "html.parser")
         for tag in soup(["script", "style", "noscript", "svg"]):
             tag.decompose()
-        text = clean_text(soup.get_text(" ", strip=True))[:300000]
+        text = clean_text(soup.get_text(" ", strip=True))[:320000]
         return soup, text, r.url
     except requests.RequestException:
         return None, "", url
@@ -133,159 +145,220 @@ def fingerprint(text: str) -> str:
     return hashlib.sha256(normalized.encode("utf-8", "ignore")).hexdigest()
 
 
-def google_text_search(api_key: str, city: dict, place_type: str) -> list[dict]:
-    query = f"{place_type.replace('_', ' ')} attractions in {city['query']}"
-    payload = {
-        "textQuery": query,
-        "includedType": place_type,
-        "strictTypeFiltering": True,
-        "pageSize": 20,
-        "rankPreference": "RELEVANCE",
-        "regionCode": "US",
-        "languageCode": "en",
-    }
-    fields = ",".join([
-        "places.id", "places.displayName", "places.formattedAddress", "places.location", "places.types",
-        "places.primaryType", "places.rating", "places.userRatingCount", "places.websiteUri", "places.businessStatus",
-    ])
-    r = session.post(
-        GOOGLE_URL,
-        headers={"Content-Type": "application/json", "X-Goog-Api-Key": api_key, "X-Goog-FieldMask": fields},
-        json=payload,
-        timeout=30,
-    )
-    if r.status_code >= 400:
-        log(f"Google Places error {r.status_code} for {city['name']} / {place_type}: {r.text[:300]}")
+def brave_search(api_key: str, q: str, count: int = 20) -> list[dict]:
+    try:
+        r = session.get(
+            BRAVE_URL,
+            headers={"Accept": "application/json", "X-Subscription-Token": api_key},
+            params={
+                "q": q, "count": min(20, count), "country": "US",
+                "search_lang": "en", "safesearch": "moderate",
+                "extra_snippets": "true",
+            },
+            timeout=30,
+        )
+        if r.status_code >= 400:
+            log(f"Brave Search error {r.status_code}: {r.text[:250]}")
+            return []
+        return (r.json().get("web") or {}).get("results") or []
+    except requests.RequestException as exc:
+        log(f"Brave Search request failed: {exc}")
         return []
-    return r.json().get("places", [])
 
 
-def place_score(place: dict) -> float:
-    ratings = max(0, int(place.get("userRatingCount") or 0))
-    rating = float(place.get("rating") or 0)
-    types = set(place.get("types") or [])
-    primary = place.get("primaryType")
-    score = math.log10(ratings + 1) * 42 + rating * 8
-    score += max([TYPE_BONUS.get(t, 0) for t in types | ({primary} if primary else set())] or [0])
-    if place.get("websiteUri"):
-        score += 15
-    if place.get("businessStatus") == "OPERATIONAL":
-        score += 8
-    return score
-
-
-def discover_candidates(api_key: str, city: dict, desired_pool: int = 50) -> list[dict]:
-    by_id: dict[str, dict] = {}
-    for place_type in SEARCH_TYPES:
-        for p in google_text_search(api_key, city, place_type):
-            if p.get("businessStatus") not in (None, "", "OPERATIONAL"):
-                continue
-            pid = p.get("id")
-            name = (p.get("displayName") or {}).get("text")
-            if not pid or not name:
-                continue
-            existing = by_id.get(pid)
-            if existing:
-                existing["types"] = sorted(set(existing.get("types", [])) | set(p.get("types", [])))
-                continue
-            by_id[pid] = p
-        if len(by_id) >= desired_pool and place_type in {"historical_landmark", "botanical_garden"}:
-            break
-        time.sleep(0.15)
-    return sorted(by_id.values(), key=place_score, reverse=True)
-
-
-def score_anchor(label: str, href: str, group: bool) -> int:
-    text = f"{label} {href}".lower()
-    score = 0
-    terms = GROUP_TERMS if group else REGULAR_TERMS
-    for term in terms:
-        if term in text:
-            score += 8 if "group" in term or "field" in term else 4
-    if any(x in text for x in ("privacy", "terms", "careers", "donate", "membership", "login", "press")):
-        score -= 20
-    if group and any(x in text for x in ("group sales", "group tickets", "group visit", "field trip", "/groups", " groups ")):
-        score += 12
-    return score
-
-
-def links_from_home(website: str, group: bool) -> list[tuple[int, str]]:
-    soup, _, final = fetch_html(website)
-    if not soup:
-        return []
-    out = []
-    for a in soup.find_all("a", href=True):
-        href = urljoin(final or website, a["href"])
-        if not same_site(href, website):
-            continue
-        label = clean_text(a.get_text(" ", strip=True))
-        score = score_anchor(label, href, group)
-        if score > 0:
-            out.append((score, href))
-    seen, ranked = set(), []
-    for score, href in sorted(out, reverse=True):
-        key = href.split("#")[0].rstrip("/")
-        if key in seen:
-            continue
-        seen.add(key)
-        ranked.append((score, key))
-    return ranked[:8]
-
-
-def brave_search(api_key: str, q: str) -> list[dict]:
-    r = session.get(
-        BRAVE_URL,
-        headers={"Accept": "application/json", "X-Subscription-Token": api_key},
-        params={"q": q, "count": 10, "country": "US", "search_lang": "en", "safesearch": "moderate", "extra_snippets": "true"},
-        timeout=30,
-    )
-    if r.status_code >= 400:
-        log(f"Brave Search error {r.status_code}: {r.text[:250]}")
-        return []
-    return (r.json().get("web") or {}).get("results") or []
-
-
-def search_official_page(brave_key: str, website: str, venue_name: str, group: bool) -> str:
-    domain = host(website)
-    if not domain:
-        return ""
-    keywords = "groups group tickets group admission rates field trips group sales" if group else "tickets admission pricing visit"
-    q = f'site:{domain} "{venue_name}" {keywords}'
-    results = brave_search(brave_key, q)
-    best_url, best_score = "", -999
-    for result in results:
-        url = result.get("url") or ""
-        if not same_site(url, website):
-            continue
-        blob = clean_text(" ".join([
-            result.get("title") or "", result.get("description") or "",
-            " ".join(result.get("extra_snippets") or []), url,
-        ]))
-        s = score_anchor(blob, url, group)
-        if group and any(term in blob.lower() for term in GROUP_TERMS):
-            s += 12
-        if s > best_score:
-            best_url, best_score = url, s
-    return best_url if best_score > 0 else ""
-
-
-def find_official_page(brave_key: str, website: str, venue_name: str, group: bool) -> str:
-    home_links = links_from_home(website, group)
-    if home_links and home_links[0][0] >= (12 if group else 6):
-        return home_links[0][1]
-    return search_official_page(brave_key, website, venue_name, group)
-
-
-def split_sentences(text: str) -> list[str]:
-    text = clean_text(text)
-    return [s.strip() for s in re.split(r"(?<=[.!?])\s+|\s*[|•]\s*", text) if 8 <= len(s.strip()) <= 500]
+def result_blob(result: dict) -> str:
+    return clean_text(" ".join([
+        result.get("title") or "",
+        result.get("description") or "",
+        " ".join(result.get("extra_snippets") or []),
+        result.get("url") or "",
+    ]))
 
 
 def has_group_evidence(text: str) -> bool:
     low = text.lower()
     if any(term in low for term in GROUP_TERMS):
         return True
-    return bool(re.search(r"\bgroups?\b.{0,100}\b(?:\d{1,3}|minimum|reservation|booking|discount|admission|ticket)", low))
+    return bool(re.search(
+        r"\bgroups?\b.{0,120}\b(?:\d{1,3}|minimum|reservation|booking|discount|admission|ticket)",
+        low,
+    ))
+
+
+def group_signal(text: str) -> int:
+    low = text.lower()
+    score = sum(4 for term in GROUP_TERMS if term in low)
+    if "group sales" in low or "group tickets" in low:
+        score += 10
+    if "field trip" in low:
+        score += 5
+    return score
+
+
+def discover_candidates(api_key: str, city: dict) -> list[dict]:
+    by_domain: dict[str, dict] = {}
+    city_label = f"{city['name']}, {city['state']}"
+    for category, weight, template in DISCOVERY_QUERIES:
+        query = template.format(city=city_label)
+        results = brave_search(api_key, query)
+        for rank, result in enumerate(results, 1):
+            url = result.get("url") or ""
+            domain = host(url)
+            if not domain or blocked_domain(domain):
+                continue
+            blob = result_blob(result)
+            candidate = by_domain.setdefault(domain, {
+                "domain": domain, "score": 0.0, "hits": 0, "urls": [],
+                "titles": [], "categoryScores": {},
+            })
+            prominence = max(0, 21 - rank)
+            candidate["score"] += weight + prominence + group_signal(blob)
+            candidate["hits"] += 1
+            candidate["urls"].append((group_signal(blob), prominence, url))
+            candidate["titles"].append(result.get("title") or "")
+            candidate["categoryScores"][category] = candidate["categoryScores"].get(category, 0) + weight
+        time.sleep(0.12)
+
+    for candidate in by_domain.values():
+        candidate["score"] += min(45, (candidate["hits"] - 1) * 9)
+        candidate["urls"] = sorted(candidate["urls"], reverse=True)
+        candidate["category"] = max(candidate["categoryScores"], key=candidate["categoryScores"].get)
+    return sorted(by_domain.values(), key=lambda c: c["score"], reverse=True)
+
+
+def score_anchor(label: str, href: str, group: bool) -> int:
+    text = f"{label} {href}".lower()
+    terms = GROUP_TERMS if group else REGULAR_TERMS
+    score = sum(8 if ("group" in term or "field" in term) else 4 for term in terms if term in text)
+    if any(x in text for x in ("privacy", "terms", "careers", "donate", "membership", "login", "press")):
+        score -= 20
+    return score
+
+
+def links_from_page(soup: BeautifulSoup | None, base_url: str, group: bool) -> list[tuple[int, str]]:
+    if not soup:
+        return []
+    out = []
+    for a in soup.find_all("a", href=True):
+        href = urljoin(base_url, a["href"])
+        if not same_site(href, base_url):
+            continue
+        label = clean_text(a.get_text(" ", strip=True))
+        score = score_anchor(label, href, group)
+        if score > 0:
+            out.append((score, href.split("#")[0].rstrip("/")))
+    seen, ranked = set(), []
+    for score, href in sorted(out, reverse=True):
+        if href in seen:
+            continue
+        seen.add(href)
+        ranked.append((score, href))
+    return ranked[:10]
+
+
+def search_site_page(api_key: str, website: str, venue_name: str, group: bool) -> str:
+    domain = host(website)
+    if not domain:
+        return ""
+    terms = "group tickets group admission group rates group visits group sales field trips" if group else "tickets admission pricing"
+    query = f'site:{domain} "{venue_name}" {terms}'
+    best_url, best_score = "", -999
+    for result in brave_search(api_key, query):
+        url = result.get("url") or ""
+        if not same_site(url, website):
+            continue
+        blob = result_blob(result)
+        score = score_anchor(blob, url, group)
+        if group:
+            score += group_signal(blob)
+        if score > best_score:
+            best_url, best_score = url, score
+    return best_url if best_score > 0 else ""
+
+
+def jsonld_objects(soup: BeautifulSoup | None):
+    if not soup:
+        return
+    for tag in soup.find_all("script", attrs={"type": re.compile("ld\\+json", re.I)}):
+        raw = tag.string or tag.get_text()
+        if not raw:
+            continue
+        try:
+            data = json.loads(raw)
+        except Exception:
+            continue
+        stack = data if isinstance(data, list) else [data]
+        while stack:
+            obj = stack.pop()
+            if isinstance(obj, dict):
+                yield obj
+                graph = obj.get("@graph")
+                if isinstance(graph, list):
+                    stack.extend(graph)
+            elif isinstance(obj, list):
+                stack.extend(obj)
+
+
+def first_jsonld_value(soup: BeautifulSoup | None, key: str):
+    for obj in jsonld_objects(soup):
+        value = obj.get(key)
+        if value:
+            return value
+    return None
+
+
+def venue_name_from_page(soup: BeautifulSoup | None, fallback_title: str, domain: str) -> str:
+    for obj in jsonld_objects(soup):
+        typ = obj.get("@type")
+        types = typ if isinstance(typ, list) else [typ]
+        if any(str(t).lower() in {
+            "touristattraction", "museum", "zoo", "aquarium", "amusementpark",
+            "organization", "localbusiness", "sportsactivitylocation", "performingartstheater",
+        } for t in types):
+            name = clean_text(str(obj.get("name") or ""))
+            if 2 < len(name) < 120:
+                return name
+    if soup:
+        h1 = soup.find("h1")
+        if h1:
+            name = clean_text(h1.get_text(" ", strip=True))
+            if 2 < len(name) < 120 and not any(w in name.lower() for w in GENERIC_TITLE_WORDS):
+                return name
+        if soup.title:
+            fallback_title = clean_text(soup.title.get_text(" ", strip=True))
+    title = re.split(r"\s+[|–—]\s+|\s+-\s+", fallback_title or "")[0].strip()
+    if 2 < len(title) < 120 and not any(w in title.lower() for w in GENERIC_TITLE_WORDS):
+        return title
+    return domain.split(".")[0].replace("-", " ").title()
+
+
+def address_from_jsonld(soup: BeautifulSoup | None) -> str:
+    value = first_jsonld_value(soup, "address")
+    if isinstance(value, str):
+        return clean_text(value)
+    if isinstance(value, dict):
+        return ", ".join(filter(None, [
+            clean_text(str(value.get("streetAddress") or "")),
+            clean_text(str(value.get("addressLocality") or "")),
+            clean_text(str(value.get("addressRegion") or "")),
+            clean_text(str(value.get("postalCode") or "")),
+        ]))
+    return ""
+
+
+def geo_from_jsonld(soup: BeautifulSoup | None):
+    value = first_jsonld_value(soup, "geo")
+    if isinstance(value, dict):
+        try:
+            return float(value.get("latitude")), float(value.get("longitude"))
+        except (TypeError, ValueError):
+            pass
+    return None, None
+
+
+def split_sentences(text: str) -> list[str]:
+    text = clean_text(text)
+    return [s.strip() for s in re.split(r"(?<=[.!?])\s+|\s*[|•]\s*", text) if 8 <= len(s.strip()) <= 500]
 
 
 def extract_minimum(text: str) -> str:
@@ -310,19 +383,13 @@ def choose_money_line(text: str, group: bool):
         if group:
             if not any(term in low for term in GROUP_TERMS):
                 continue
-            score = 10
-            if "per person" in low or "per guest" in low or "each" in low:
-                score += 4
-            if "starting" in low or "from " in low:
-                score -= 1
+            score = 10 + (4 if ("per person" in low or "per guest" in low or "each" in low) else 0)
         else:
             if any(term in low for term in GROUP_TERMS):
                 continue
             if not any(term in low for term in ("admission", "ticket", "general admission", "adult")):
                 continue
-            score = 7
-            if "adult" in low or "general admission" in low:
-                score += 3
+            score = 7 + (3 if ("adult" in low or "general admission" in low) else 0)
         if len(money) > 4:
             score -= 3
         candidates.append((score, sentence, money))
@@ -336,8 +403,8 @@ def compact_price(line_info) -> str:
     values = list(dict.fromkeys(v.replace(" ", "") for v in values))
     if not values:
         return ""
-    low = sentence.lower()
     value = values[0]
+    low = sentence.lower()
     if "per person" in low:
         return f"{value} per person"
     if "per guest" in low:
@@ -348,12 +415,12 @@ def compact_price(line_info) -> str:
 
 
 def extract_restrictions(text: str) -> list[str]:
-    out = []
     needles = (
         "advance reservation", "advance booking", "reservation required", "must be booked",
         "book at least", "reserve at least", "prepaid", "prepay", "deposit", "weekday",
         "blackout", "not valid", "tax", "gratuity", "chaperone",
     )
+    out = []
     for sentence in split_sentences(text):
         low = sentence.lower()
         if ("group" in low or "field trip" in low) and any(n in low for n in needles):
@@ -377,75 +444,87 @@ def savings_text(regular: str, group: str) -> str:
     return f"Save about ${dollars:.2f} per comparable ticket ({pct}%)".replace(".00", "")
 
 
-def category_for(place: dict) -> str:
-    primary = place.get("primaryType")
-    if primary in CATEGORY_BY_TYPE:
-        return CATEGORY_BY_TYPE[primary]
-    for t in place.get("types") or []:
-        if t in CATEGORY_BY_TYPE:
-            return CATEGORY_BY_TYPE[t]
-    return "Attraction"
-
-
-def build_new_record(city: dict, place: dict, brave_key: str):
-    name = (place.get("displayName") or {}).get("text") or ""
-    website = place.get("websiteUri") or ""
-    if not name or not website:
-        return None
-
-    group_page = find_official_page(brave_key, website, name, group=True)
-    if not group_page:
-        return None
-    _, group_text, group_final = fetch_html(group_page)
-    if not group_text or not has_group_evidence(group_text):
-        return None
-
-    regular_page = find_official_page(brave_key, website, name, group=False) or website
-    _, regular_text, regular_final = fetch_html(regular_page)
-    regular_text = regular_text or group_text
-
-    group_price = compact_price(choose_money_line(group_text, group=True))
-    regular_price = compact_price(choose_money_line(regular_text, group=False))
-    minimum = extract_minimum(group_text)
-    restrictions = extract_restrictions(group_text)
-
-    rate_status = "Published group rate" if group_price else "Group program confirmed — current rate varies or requires quote"
-    if not group_price:
-        group_price = "See current official group rate"
-    if not regular_price:
-        regular_price = "See current official admission"
-
-    loc = place.get("location") or {}
-    return {
-        "id": f"auto-{city['id']}-{slug(name)}", "cityId": city["id"], "name": name,
-        "category": category_for(place), "address": place.get("formattedAddress") or "",
-        "lat": loc.get("latitude"), "lon": loc.get("longitude"), "website": website,
-        "regularSource": regular_final or regular_page, "groupSource": group_final or group_page,
-        "regularPrice": regular_price, "regularDetails": [], "groupPrice": group_price, "groupDetails": [],
-        "savings": savings_text(regular_price, group_price), "minimum": minimum or "Confirm with venue",
-        "eligibility": "Confirm on official group page", "bookingNotes": restrictions,
-        "lastVerified": today(), "lastChecked": today(), "sourceBacked": True,
-        "rateStatus": rate_status, "confidence": 0.98 if rate_status == "Published group rate" else 0.9,
-        "googlePlaceId": place.get("id"), "googleRating": place.get("rating"),
-        "googleUserRatingCount": place.get("userRatingCount"), "groupSourceFingerprint": fingerprint(group_text),
-        "verificationStatus": "verified_current", "discoveredBy": "Google Places",
-        "groupPageFoundBy": "official-site/Brave Search",
-    }
-
-
 def looks_exact_price(value: str) -> bool:
     return bool(MONEY_RE.search(value or ""))
 
 
-def refresh_existing_record(record: dict, brave_key: str) -> dict:
+def verify_candidate(candidate: dict, city: dict, api_key: str):
+    for signal, prominence, url in candidate["urls"][:6]:
+        soup, text, final = fetch_html(url)
+        if not soup or not text:
+            continue
+        page_name = venue_name_from_page(soup, candidate["titles"][0] if candidate["titles"] else "", candidate["domain"])
+
+        group_page, group_soup, group_text = "", None, ""
+        if has_group_evidence(text):
+            group_page, group_soup, group_text = final or url, soup, text
+        else:
+            links = links_from_page(soup, final or url, group=True)
+            for _, link in links[:3]:
+                gsoup, gtext, gfinal = fetch_html(link)
+                if gtext and has_group_evidence(gtext):
+                    group_page, group_soup, group_text = gfinal or link, gsoup, gtext
+                    break
+        if not group_page:
+            found = search_site_page(api_key, final or url, page_name, group=True)
+            if found:
+                gsoup, gtext, gfinal = fetch_html(found)
+                if gtext and has_group_evidence(gtext):
+                    group_page, group_soup, group_text = gfinal or found, gsoup, gtext
+        if not group_page:
+            continue
+
+        website = f"{urlparse(group_page).scheme}://{urlparse(group_page).netloc}/"
+        regular_page = search_site_page(api_key, website, page_name, group=False) or website
+        rsoup, regular_text, rfinal = fetch_html(regular_page)
+        if not regular_text:
+            regular_text, rsoup, rfinal = group_text, group_soup, regular_page
+
+        group_price = compact_price(choose_money_line(group_text, group=True))
+        regular_price = compact_price(choose_money_line(regular_text, group=False))
+        address = address_from_jsonld(group_soup) or address_from_jsonld(rsoup) or f"{city['name']}, {city['state']}"
+        lat, lon = geo_from_jsonld(group_soup)
+        if lat is None:
+            lat, lon = geo_from_jsonld(rsoup)
+
+        return {
+            "id": f"auto-{city['id']}-{slug(page_name)}",
+            "cityId": city["id"], "name": page_name,
+            "category": candidate["category"], "address": address,
+            "lat": lat, "lon": lon, "website": website,
+            "regularSource": rfinal or regular_page, "groupSource": group_page,
+            "regularPrice": regular_price or "See current official admission",
+            "regularDetails": [],
+            "groupPrice": group_price or "See current official group rate",
+            "groupDetails": [],
+            "savings": savings_text(regular_price, group_price),
+            "minimum": extract_minimum(group_text) or "Confirm with venue",
+            "eligibility": "Confirm on official group page",
+            "bookingNotes": extract_restrictions(group_text),
+            "lastVerified": today(), "lastChecked": today(),
+            "sourceBacked": True,
+            "rateStatus": "Published group rate" if group_price else "Official group program; current rate varies or requires quote",
+            "confidence": 0.98 if group_price else 0.92,
+            "groupSourceFingerprint": fingerprint(group_text),
+            "verificationStatus": "verified_current",
+            "discoveredBy": "Brave Search prominence + official-site verification",
+            "majorAttractionScore": round(candidate["score"], 2),
+        }
+    return None
+
+
+def refresh_existing_record(record: dict, api_key: str) -> dict:
     out = dict(record)
-    name = out.get("name") or ""
+    for key in ("googlePlaceId", "googleRating", "googleUserRatingCount"):
+        out.pop(key, None)
+    out.setdefault("majorAttractionScore", 100 if str(out.get("id", "")).startswith("curated-") else 60)
+
     website = out.get("website") or out.get("groupSource") or out.get("regularSource") or ""
     group_page = out.get("groupSource") or ""
     _, group_text, group_final = fetch_html(group_page) if group_page else (None, "", "")
 
     if not group_text or not has_group_evidence(group_text):
-        replacement = find_official_page(brave_key, website, name, group=True) if website else ""
+        replacement = search_site_page(api_key, website, out.get("name", ""), group=True) if website else ""
         if replacement:
             _, group_text, group_final = fetch_html(replacement)
             if group_text and has_group_evidence(group_text):
@@ -453,27 +532,31 @@ def refresh_existing_record(record: dict, brave_key: str) -> dict:
 
     out["lastChecked"] = today()
     if not group_text or not has_group_evidence(group_text):
-        out["verificationStatus"] = "official_group_page_unavailable"
-        out["rateStatus"] = "Group information could not be re-verified"
+        failures = int(out.get("verificationFailures") or 0) + 1
+        out["verificationFailures"] = failures
+        out["verificationStatus"] = "needs_recheck"
+        out["rateStatus"] = "Official group information could not be re-verified"
         if looks_exact_price(out.get("groupPrice", "")):
-            out["groupPrice"] = "Recheck official group rate"
+            out["groupPrice"] = "Recheck current official group rate"
+        if failures >= 2 and looks_exact_price(out.get("regularPrice", "")):
+            out["regularPrice"] = "Recheck current official admission"
+        out["confidence"] = min(float(out.get("confidence") or 0.8), 0.7)
         return out
 
+    out["verificationFailures"] = 0
+    out["verificationStatus"] = "verified_current"
+    out["lastVerified"] = today()
     new_fp = fingerprint(group_text)
     old_fp = out.get("groupSourceFingerprint")
     out["groupSourceFingerprint"] = new_fp
-    out["verificationStatus"] = "verified_current"
-    out["lastVerified"] = today()
 
-    # First automated check establishes a baseline and preserves manually researched rates.
-    if not old_fp:
-        return out
-    if old_fp == new_fp:
+    if not old_fp or old_fp == new_fp:
         return out
 
     new_group = compact_price(choose_money_line(group_text, group=True))
     new_minimum = extract_minimum(group_text)
     new_notes = extract_restrictions(group_text)
+
     regular_page = out.get("regularSource") or website
     _, regular_text, regular_final = fetch_html(regular_page) if regular_page else (None, "", "")
     new_regular = compact_price(choose_money_line(regular_text, group=False)) if regular_text else ""
@@ -483,9 +566,8 @@ def refresh_existing_record(record: dict, brave_key: str) -> dict:
         out["rateStatus"] = "Published group rate — automatically re-verified"
         out["confidence"] = 0.98
     else:
-        # Never leave an old exact dollar figure visible after the official source changes.
         out["groupPrice"] = "See current official group rate"
-        out["rateStatus"] = "Official group page changed — current rate varies or requires confirmation"
+        out["rateStatus"] = "Official group page changed — confirm current rate"
         out["confidence"] = 0.85
 
     if new_regular:
@@ -521,8 +603,7 @@ def write_city(city: dict, records: list[dict], city_index: list[dict]) -> None:
     meta = next((c for c in city_index if c.get("id") == city["id"]), None)
     if not meta and len(records) >= 20:
         meta = {
-            "id": city["id"], "name": city["name"],
-            "region": "District of Columbia" if city["state"] == "DC" else city["state"],
+            "id": city["id"], "name": city["name"], "region": city["state"],
             "country": "United States", "aliases": [],
         }
         city_index.append(meta)
@@ -532,52 +613,55 @@ def write_city(city: dict, records: list[dict], city_index: list[dict]) -> None:
         meta.pop("parts", None)
 
 
-def update_city(city: dict, google_key: str, brave_key: str, city_index: list[dict]) -> int:
+def update_city(city: dict, api_key: str, city_index: list[dict]) -> int:
     city_meta = next((c for c in city_index if c.get("id") == city["id"]), None)
     existing = load_existing_city(city["id"], city_meta)
-    log(f"\n{city['name']}: refreshing {len(existing)} existing records")
+    log(f"\n{city['name']}: rechecking {len(existing)} saved records")
 
-    refreshed, seen_names = [], set()
+    refreshed, seen_names, seen_domains = [], set(), set()
     for record in existing:
-        updated = refresh_existing_record(record, brave_key)
+        updated = refresh_existing_record(record, api_key)
         key = slug(updated.get("name", ""))
+        domain = host(updated.get("website") or updated.get("groupSource") or "")
         if key and key not in seen_names:
             refreshed.append(updated)
             seen_names.add(key)
-        time.sleep(0.1)
+            if domain:
+                seen_domains.add(domain)
+        time.sleep(0.08)
 
-    if len(refreshed) < 20:
-        log(f"{city['name']}: discovering major attractions with Google Places")
-        candidates = discover_candidates(google_key, city)
-        for place in candidates:
-            name = (place.get("displayName") or {}).get("text") or ""
-            key = slug(name)
+    if len(refreshed) < 20 or any(r.get("verificationStatus") != "verified_current" for r in refreshed):
+        log(f"{city['name']}: searching the web for major group-capable attractions")
+        for candidate in discover_candidates(api_key, city):
+            if candidate["domain"] in seen_domains:
+                continue
+            record = verify_candidate(candidate, city, api_key)
+            if not record:
+                continue
+            key = slug(record["name"])
             if not key or key in seen_names:
                 continue
-            log(f"  checking group program: {name}")
-            record = build_new_record(city, place, brave_key)
-            if record:
-                refreshed.append(record)
-                seen_names.add(key)
-                log("    accepted")
-            else:
-                log("    skipped: no verifiable official group program")
-            if len(refreshed) >= 20:
+            refreshed.append(record)
+            seen_names.add(key)
+            seen_domains.add(candidate["domain"])
+            log(f"  accepted: {record['name']}")
+            if len([r for r in refreshed if r.get("verificationStatus") == "verified_current"]) >= 20:
                 break
-            time.sleep(0.15)
+            time.sleep(0.1)
 
     def rank_record(r):
-        manual = 1 if str(r.get("id", "")).startswith("curated-") else 0
-        ratings = int(r.get("googleUserRatingCount") or 0)
         return (
             1 if r.get("verificationStatus") == "verified_current" else 0,
-            manual, math.log10(ratings + 1), float(r.get("confidence") or 0),
+            float(r.get("majorAttractionScore") or 0),
+            1 if str(r.get("id", "")).startswith("curated-") else 0,
+            float(r.get("confidence") or 0),
         )
 
     refreshed.sort(key=rank_record, reverse=True)
     write_city(city, refreshed, city_index)
-    log(f"{city['name']}: saved {min(20, len(refreshed))} verified/group-capable records")
-    return min(20, len(refreshed))
+    count = min(20, len(refreshed))
+    log(f"{city['name']}: saved {count} records")
+    return count
 
 
 def choose_batch(targets: list[dict], batch_size: int, batch_index: int | None):
@@ -595,21 +679,23 @@ def update_status(targets: list[dict], city_index: list[dict]) -> None:
     active = {c["id"]: c for c in city_index if int(c.get("venueCount") or 0) > 0}
     complete = [c for c in targets if int(active.get(c["id"], {}).get("venueCount") or 0) >= 20]
     total_records = sum(min(20, int(active.get(c["id"], {}).get("venueCount") or 0)) for c in targets)
-    status = {
+    save_json(STATUS_FILE, {
         "project": "GroupPass verified attraction and group-pricing database",
-        "architectureVersion": "3.0-google-places-brave-official-sites",
+        "architectureVersion": "3.1-web-search-official-sites",
         "targetCities": len(targets), "targetVenuesPerCity": 20,
-        "targetVenueRecords": len(targets) * 20, "completedCities": len(complete),
-        "completedCityIds": [c["id"] for c in complete], "completedVenueRecords": total_records,
+        "targetVenueRecords": len(targets) * 20,
+        "completedCities": len(complete),
+        "completedCityIds": [c["id"] for c in complete],
+        "completedVenueRecords": total_records,
         "method": (
-            "Major attractions are discovered with Google Places and ranked using place prominence signals. "
-            "Only venues with an official group-program source are accepted. Brave Search is used only to locate "
-            "pages on the venue's official domain. Official pages are rechecked and stale exact prices are removed "
-            "when a source changes and a new exact rate cannot be confidently extracted."
+            "Major attraction candidates are found with attraction-specific web searches and ranked by repeated "
+            "search prominence. Directory, review, social, and booking aggregators are excluded as database sources. "
+            "A new venue is accepted only after GroupPass fetches an official venue-domain page and confirms a group "
+            "program. Official group pages are fingerprinted and rechecked; exact stale prices are removed whenever "
+            "a changed source cannot be confidently re-extracted."
         ),
         "lastUpdated": today(),
-    }
-    save_json(STATUS_FILE, status)
+    })
 
 
 def main():
@@ -619,15 +705,9 @@ def main():
     parser.add_argument("--city", action="append", default=[])
     args = parser.parse_args()
 
-    google_key = os.getenv("GOOGLE_PLACES_API_KEY", "").strip()
-    brave_key = os.getenv("BRAVE_SEARCH_API_KEY", "").strip()
-    if not google_key or not brave_key:
-        missing = []
-        if not google_key:
-            missing.append("GOOGLE_PLACES_API_KEY")
-        if not brave_key:
-            missing.append("BRAVE_SEARCH_API_KEY")
-        raise SystemExit("Missing required GitHub Actions secrets: " + ", ".join(missing))
+    api_key = os.getenv("BRAVE_SEARCH_API_KEY", "").strip()
+    if not api_key:
+        raise SystemExit("Missing required GitHub Actions secret: BRAVE_SEARCH_API_KEY")
 
     targets = load_json(TARGETS_FILE, [])
     if not targets:
@@ -649,7 +729,7 @@ def main():
     log("Selected cities: " + ", ".join(c["name"] for c in selected))
     for city in selected:
         try:
-            update_city(city, google_key, brave_key, city_index)
+            update_city(city, api_key, city_index)
         except Exception as exc:
             log(f"{city['name']}: ERROR: {exc}")
 
