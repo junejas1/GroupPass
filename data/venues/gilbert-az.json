@@ -1,0 +1,56 @@
+[
+  {
+    "id": "verified-gilbert-az-chicago-white-sox",
+    "cityId": "gilbert-az",
+    "name": "Chicago White Sox",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://chicago.whitesox.mlb.com",
+    "regularSource": "http://chicago.whitesox.mlb.com",
+    "groupSource": "https://www.mlb.com/whitesox/tickets/group-tickets",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-09",
+    "lastVerified": "2026-08-09",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-gilbert-az-windsor-castle",
+    "cityId": "gilbert-az",
+    "name": "Windsor Castle",
+    "category": "Attractions",
+    "address": "",
+    "website": "https://www.rct.uk/visit/windsorcastle",
+    "regularSource": "https://www.rct.uk/visit/windsorcastle",
+    "groupSource": "https://www.rct.uk/visit/windsor-castle/information-for-groups-visiting-windsor-castle",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-09",
+    "lastVerified": "2026-08-09",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "verified-plano-tx-alamo-mission",
+    "cityId": "plano-tx",
+    "name": "Alamo Mission",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.thealamo.org/",
+    "regularSource": "https://www.thealamo.org/",
+    "groupSource": "https://www.thealamo.org/teach/field-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-09",
+    "lastVerified": "2026-08-09",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

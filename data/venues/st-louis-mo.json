@@ -1,0 +1,56 @@
+[
+  {
+    "id": "verified-st-louis-mo-missouri-botanical-garden",
+    "cityId": "st-louis-mo",
+    "name": "Missouri Botanical Garden",
+    "category": "Museums & art",
+    "address": "",
+    "website": "http://www.missouribotanicalgarden.org/",
+    "regularSource": "http://www.missouribotanicalgarden.org/",
+    "groupSource": "https://www.missouribotanicalgarden.org/learn-discover/students-teachers/school-programs-and-field-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$16.00",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-09",
+    "lastVerified": "2026-08-09",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-st-louis-mo-laumeier-sculpture-park",
+    "cityId": "st-louis-mo",
+    "name": "Laumeier Sculpture Park",
+    "category": "Attractions",
+    "address": "",
+    "website": "http://www.laumeiersculpturepark.org/",
+    "regularSource": "http://www.laumeiersculpturepark.org/",
+    "groupSource": "https://www.laumeiersculpturepark.org/tours",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-09",
+    "lastVerified": "2026-08-09",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]
