@@ -1,0 +1,56 @@
+[
+  {
+    "id": "verified-glendale-az-chicago-white-sox",
+    "cityId": "glendale-az",
+    "name": "Chicago White Sox",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://chicago.whitesox.mlb.com",
+    "regularSource": "http://chicago.whitesox.mlb.com",
+    "groupSource": "https://www.mlb.com/whitesox/tickets/group-tickets",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-10",
+    "lastVerified": "2026-08-10",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-glendale-az-arizona-cardinals",
+    "cityId": "glendale-az",
+    "name": "Arizona Cardinals",
+    "category": "Sports",
+    "address": "",
+    "website": "http://www.azcardinals.com",
+    "regularSource": "http://www.azcardinals.com",
+    "groupSource": "https://www.azcardinals.com/tickets/group-tickets/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-10",
+    "lastVerified": "2026-08-10",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

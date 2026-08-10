@@ -1,0 +1,83 @@
+[
+  {
+    "id": "verified-winston-salem-nc-old-salem",
+    "cityId": "winston-salem-nc",
+    "name": "Old Salem",
+    "category": "Museums & art",
+    "address": "",
+    "website": "http://www.oldsalem.org/",
+    "regularSource": "http://www.oldsalem.org/",
+    "groupSource": "https://www.oldsalem.org/studentfieldtrip/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-10",
+    "lastVerified": "2026-08-10",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-winston-salem-nc-north-carolina-zoo",
+    "cityId": "winston-salem-nc",
+    "name": "North Carolina Zoo",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.nczoo.org/",
+    "regularSource": "https://www.nczoo.org/",
+    "groupSource": "https://www.nczoo.org/visit/school-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-10",
+    "lastVerified": "2026-08-10",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-winston-salem-nc-north-carolina-arboretum",
+    "cityId": "winston-salem-nc",
+    "name": "North Carolina Arboretum",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.ncarboretum.org",
+    "regularSource": "https://www.ncarboretum.org",
+    "groupSource": "https://ncarboretum.org/plan-a-visit/group-tours-guided-walks/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-10",
+    "lastVerified": "2026-08-10",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

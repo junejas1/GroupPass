@@ -308,5 +308,75 @@
     "venueCount": 3,
     "parts": 1,
     "lastVerified": "2026-08-09"
+  },
+  {
+    "id": "fort-wayne-in",
+    "name": "Fort Wayne",
+    "region": "IN",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-10"
+  },
+  {
+    "id": "buffalo-ny",
+    "name": "Buffalo",
+    "region": "NY",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-10"
+  },
+  {
+    "id": "st-petersburg-fl",
+    "name": "St. Petersburg",
+    "region": "FL",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-10"
+  },
+  {
+    "id": "toledo-oh",
+    "name": "Toledo",
+    "region": "OH",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-10"
+  },
+  {
+    "id": "glendale-az",
+    "name": "Glendale",
+    "region": "AZ",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-10"
+  },
+  {
+    "id": "winston-salem-nc",
+    "name": "Winston-Salem",
+    "region": "NC",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 3,
+    "parts": 1,
+    "lastVerified": "2026-08-10"
+  },
+  {
+    "id": "irving-tx",
+    "name": "Irving",
+    "region": "TX",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-10"
   }
 ]

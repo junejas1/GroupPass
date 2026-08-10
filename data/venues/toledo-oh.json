@@ -1,0 +1,29 @@
+[
+  {
+    "id": "verified-toledo-oh-cedar-point",
+    "cityId": "toledo-oh",
+    "name": "Cedar Point",
+    "category": "Entertainment",
+    "address": "",
+    "website": "https://www.sixflags.com/cedarpoint",
+    "regularSource": "https://www.sixflags.com/cedarpoint",
+    "groupSource": "https://www.sixflags.com/cedarpoint/groups/tickets",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$47",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-10",
+    "lastVerified": "2026-08-10",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

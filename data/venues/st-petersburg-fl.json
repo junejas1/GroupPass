@@ -1,0 +1,29 @@
+[
+  {
+    "id": "verified-st-petersburg-fl-museum-of-fine-arts-st-petersburg-florida",
+    "cityId": "st-petersburg-fl",
+    "name": "Museum of Fine Arts (St. Petersburg, Florida)",
+    "category": "Museums & art",
+    "address": "",
+    "website": "https://mfastpete.org/",
+    "regularSource": "https://mfastpete.org/",
+    "groupSource": "https://mfastpete.org/visit/group-tours/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-10",
+    "lastVerified": "2026-08-10",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]
