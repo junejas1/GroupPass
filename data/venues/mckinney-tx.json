@@ -1,0 +1,29 @@
+[
+  {
+    "id": "verified-mckinney-tx-mckinney-falls-state-park",
+    "cityId": "mckinney-tx",
+    "name": "McKinney Falls State Park",
+    "category": "History",
+    "address": "",
+    "website": "https://tpwd.texas.gov/state-parks/mckinney-falls",
+    "regularSource": "https://tpwd.texas.gov/state-parks/mckinney-falls",
+    "groupSource": "https://tpwd.texas.gov/state-parks/mckinney-falls/field-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-11",
+    "lastVerified": "2026-08-11",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

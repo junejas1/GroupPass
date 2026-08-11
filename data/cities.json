@@ -378,5 +378,45 @@
     "venueCount": 1,
     "parts": 1,
     "lastVerified": "2026-08-10"
+  },
+  {
+    "id": "chesapeake-va",
+    "name": "Chesapeake",
+    "region": "VA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-11"
+  },
+  {
+    "id": "richmond-va",
+    "name": "Richmond",
+    "region": "VA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-11"
+  },
+  {
+    "id": "frisco-tx",
+    "name": "Frisco",
+    "region": "TX",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-11"
+  },
+  {
+    "id": "mckinney-tx",
+    "name": "McKinney",
+    "region": "TX",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-11"
   }
 ]
