@@ -9,8 +9,8 @@
       "New York City"
     ],
     "venueCount": 20,
-    "parts": 2,
-    "lastVerified": "2026-08-06"
+    "parts": 1,
+    "lastVerified": "2026-08-12"
   },
   {
     "id": "los-angeles-ca",
@@ -21,7 +21,8 @@
       "LA"
     ],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-12",
+    "parts": 1
   },
   {
     "id": "chicago-il",
@@ -30,7 +31,8 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-12",
+    "parts": 1
   },
   {
     "id": "houston-tx",
@@ -39,7 +41,8 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-12",
+    "parts": 1
   },
   {
     "id": "phoenix-az",
@@ -48,7 +51,8 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-12",
+    "parts": 1
   },
   {
     "id": "philadelphia-pa",
@@ -59,7 +63,8 @@
       "Philly"
     ],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-12",
+    "parts": 1
   },
   {
     "id": "san-antonio-tx",
@@ -68,7 +73,8 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-12",
+    "parts": 1
   },
   {
     "id": "san-diego-ca",
@@ -77,7 +83,8 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-12",
+    "parts": 1
   },
   {
     "id": "dallas-tx",
@@ -89,8 +96,8 @@
       "DFW"
     ],
     "venueCount": 20,
-    "parts": 5,
-    "lastVerified": "2026-08-06"
+    "parts": 1,
+    "lastVerified": "2026-08-12"
   },
   {
     "id": "fort-worth-tx",
@@ -99,7 +106,8 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-12",
+    "parts": 1
   },
   {
     "id": "jacksonville-fl",

@@ -1,1 +1,710 @@
-[{"id":"curated-dallas-tx-perot-museum-of-nature-and-science","cityId":"dallas-tx","name":"Perot Museum of Nature and Science","category":"Museums & art","address":"2201 N Field St, Dallas, TX","lat":32.7869,"lon":-96.8067,"website":"https://www.perotmuseum.org/visit/groups/","regularSource":"https://www.perotmuseum.org/visit/","groupSource":"https://www.perotmuseum.org/visit/groups/","regularPrice":"$27 adult","regularDetails":["$17 youth"],"groupPrice":"$17 adult","groupDetails":["$14 youth"],"savings":"Save $10 per adult and $3 per youth","minimum":"20+ guests","eligibility":"Open to general groups","bookingNotes":["Reserve at least 7 days ahead","Extra guests pay the normal rate"],"lastVerified":"2026-08-05","sourceBacked":true,"rateStatus":"Published group information","confidence":1.0},{"id":"curated-dallas-tx-dallas-arboretum-and-botanical-garden","cityId":"dallas-tx","name":"Dallas Arboretum and Botanical Garden","category":"Outdoors","address":"8525 Garland Rd, Dallas, TX","lat":32.8231,"lon":-96.7169,"website":"https://www.dallasarboretum.org/visitor-information/group-tickets/","regularSource":"https://www.dallasarboretum.org/visitor-information/hours-and-admission/","groupSource":"https://www.dallasarboretum.org/visitor-information/group-tickets/","regularPrice":"$21.95 weekday adult","regularDetails":["$17.95 child","$25.95 weekend adult / $21.95 child"],"groupPrice":"$17.50 weekday adult","groupDetails":["$14 child","$21 weekend adult / $17.50 child"],"savings":"Save up to $4.95 per ticket","minimum":"15+ guests","eligibility":"Open to groups of all kinds","bookingNotes":["Weekday and weekend rates differ","Parking and guided tours cost extra"],"lastVerified":"2026-08-05","sourceBacked":true,"rateStatus":"Published group information","confidence":1.0},{"id":"curated-dallas-tx-six-flags-over-texas","cityId":"dallas-tx","name":"Six Flags Over Texas","category":"Entertainment","address":"2201 E Road to Six Flags St, Arlington, TX","lat":32.7555,"lon":-97.0708,"website":"https://www.sixflags.com/overtexas/groups/tickets","regularSource":"https://www.sixflags.com/overtexas/daily-tickets","groupSource":"https://www.sixflags.com/overtexas/groups/tickets","regularPrice":"From $39 online","regularDetails":["$90 gate price"],"groupPrice":"From $36","groupDetails":["Groups of 15–99"],"savings":"Save from $3 versus current online pricing","minimum":"15+ guests","eligibility":"Open to general groups","bookingNotes":["Taxes and fees are additional","One free admission for every 15 purchased"],"lastVerified":"2026-08-05","sourceBacked":true,"rateStatus":"Published group information","confidence":1.0},{"id":"curated-dallas-tx-legoland-discovery-center-dallas-fort-worth","cityId":"dallas-tx","name":"LEGOLAND Discovery Center Dallas/Fort Worth","category":"Entertainment","address":"3000 Grapevine Mills Pkwy, Grapevine, TX","lat":32.9669,"lon":-97.0412,"website":"https://www.legolanddiscoverycenter.com/dallas-fw/schools-groups/groups/","regularSource":"https://www.legolanddiscoverycenter.com/dallas-fw/","groupSource":"https://www.legolanddiscoverycenter.com/dallas-fw/schools-groups/groups/","regularPrice":"From $29.99 online","regularDetails":["From $37.99 walk-up"],"groupPrice":"$12 child","groupDetails":["$14 adult"],"savings":"Save at least $15.99 versus advance admission","minimum":"10+ children","eligibility":"Organized youth, camp, club and sports groups","bookingNotes":["Monday–Friday only","Book 14 days ahead","One free adult per 10 paid children"],"lastVerified":"2026-08-05","sourceBacked":true,"rateStatus":"Published group information","confidence":1.0},{"id":"curated-dallas-tx-meow-wolf-grapevine-the-real-unreal","cityId":"dallas-tx","name":"Meow Wolf Grapevine: The Real Unreal","category":"Museums & art","address":"3000 Grapevine Mills Pkwy, Grapevine, TX","lat":32.9674,"lon":-97.0423,"website":"https://meowwolf.com/visit/grapevine/field-trips","regularSource":"https://meowwolf.com/visit/grapevine/tickets","groupSource":"https://meowwolf.com/visit/grapevine/field-trips","regularPrice":"From $35 adult","regularDetails":["Kids from $19"],"groupPrice":"$15 per student","groupDetails":["Required chaperones free"],"savings":"Save from $4 per student","minimum":"No published minimum","eligibility":"K–12, homeschool and summer-school field trips","bookingNotes":["Bookings depend on availability","One required chaperone per 8 students is complimentary"],"lastVerified":"2026-08-05","sourceBacked":true,"rateStatus":"Published group information","confidence":1.0},{"id":"curated-dallas-tx-dallas-zoo","cityId":"dallas-tx","name":"Dallas Zoo","category":"Outdoors","address":"650 S R L Thornton Fwy, Dallas, TX","lat":32.741,"lon":-96.8152,"website":"https://www.dallaszoo.com/plan-your-visit/field-trip-planner/","regularSource":"https://www.dallaszoo.com/plan-your-visit/buy-tickets/","groupSource":"https://www.dallaszoo.com/plan-your-visit/field-trip-planner/","regularPrice":"$15 summer admission","regularDetails":["Year-round tickets normally start at $18"],"groupPrice":"$9 field-trip rate","groupDetails":["General group rate: quote required"],"savings":"Save $6 versus the current summer price","minimum":"Eligibility required","eligibility":"Eligible educational and organized field-trip groups","bookingNotes":["General groups of 15+ must request a quote","Teachers and additional adults are also $9 for eligible field trips"],"lastVerified":"2026-08-05","sourceBacked":true,"rateStatus":"Published group information","confidence":1.0},{"id":"curated-dallas-tx-sea-life-grapevine-aquarium","cityId":"dallas-tx","name":"SEA LIFE Grapevine Aquarium","category":"Outdoors","address":"3000 Grapevine Mills Pkwy, Grapevine, TX","lat":32.9673,"lon":-97.0419,"website":"https://www.visitsealife.com/grapevine/groups-birthdays/groups/","regularSource":"https://www.visitsealife.com/grapevine/tickets-passes/","groupSource":"https://www.visitsealife.com/grapevine/groups-birthdays/groups/","regularPrice":"From $19 online","regularDetails":["From $24 walk-up"],"groupPrice":"$12 child","groupDetails":["$14 adult"],"savings":"Save from $5 per child","minimum":"10+ children","eligibility":"Organized groups, camps, clubs, teams and tour groups","bookingNotes":["Monday–Friday only","Book 14 days ahead","One free adult per 10 paid children"],"lastVerified":"2026-08-05","sourceBacked":true,"rateStatus":"Published group information","confidence":1.0}]
+[
+  {
+    "id": "curated-dallas-tx-perot-museum-of-nature-and-science",
+    "cityId": "dallas-tx",
+    "name": "Perot Museum of Nature and Science",
+    "category": "Museums & art",
+    "address": "2201 N Field St, Dallas, TX",
+    "lat": 32.7869,
+    "lon": -96.8067,
+    "website": "https://www.perotmuseum.org/visit/groups/",
+    "regularSource": "https://www.perotmuseum.org/visit/",
+    "groupSource": "https://www.perotmuseum.org/visit/groups/",
+    "regularPrice": "$27 adult",
+    "regularDetails": [
+      "$17 youth"
+    ],
+    "groupPrice": "$ 250",
+    "groupDetails": [
+      "$14 youth"
+    ],
+    "savings": "Save $10 per adult and $3 per youth",
+    "minimum": "20+ guests",
+    "eligibility": "Open to general groups",
+    "bookingNotes": [
+      "Reserve at least 7 days ahead",
+      "Extra guests pay the normal rate"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-dallas-arboretum-and-botanical-garden",
+    "cityId": "dallas-tx",
+    "name": "Dallas Arboretum and Botanical Garden",
+    "category": "Outdoors",
+    "address": "8525 Garland Rd, Dallas, TX",
+    "lat": 32.8231,
+    "lon": -96.7169,
+    "website": "https://www.dallasarboretum.org/visitor-information/group-tickets/",
+    "regularSource": "https://www.dallasarboretum.org/visitor-information/hours-and-admission/",
+    "groupSource": "https://www.dallasarboretum.org/visitor-information/group-tickets/",
+    "regularPrice": "$21.95 weekday adult",
+    "regularDetails": [
+      "$17.95 child",
+      "$25.95 weekend adult / $21.95 child"
+    ],
+    "groupPrice": "$17.50",
+    "groupDetails": [
+      "$14 child",
+      "$21 weekend adult / $17.50 child"
+    ],
+    "savings": "Save up to $4.95 per ticket",
+    "minimum": "15+ guests",
+    "eligibility": "Open to groups of all kinds",
+    "bookingNotes": [
+      "Weekday and weekend rates differ",
+      "Parking and guided tours cost extra"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-six-flags-over-texas",
+    "cityId": "dallas-tx",
+    "name": "Six Flags Over Texas",
+    "category": "Entertainment",
+    "address": "2201 E Road to Six Flags St, Arlington, TX",
+    "lat": 32.7555,
+    "lon": -97.0708,
+    "website": "https://www.sixflags.com/overtexas/groups/tickets",
+    "regularSource": "https://www.sixflags.com/overtexas/daily-tickets",
+    "groupSource": "https://www.sixflags.com/overtexas/groups/tickets",
+    "regularPrice": "From $39 online",
+    "regularDetails": [
+      "$90 gate price"
+    ],
+    "groupPrice": "$36",
+    "groupDetails": [
+      "Groups of 15–99"
+    ],
+    "savings": "Save from $3 versus current online pricing",
+    "minimum": "15+ guests",
+    "eligibility": "Open to general groups",
+    "bookingNotes": [
+      "Taxes and fees are additional",
+      "One free admission for every 15 purchased"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-legoland-discovery-center-dallas-fort-worth",
+    "cityId": "dallas-tx",
+    "name": "LEGOLAND Discovery Center Dallas/Fort Worth",
+    "category": "Entertainment",
+    "address": "3000 Grapevine Mills Pkwy, Grapevine, TX",
+    "lat": 32.9669,
+    "lon": -97.0412,
+    "website": "https://www.legolanddiscoverycenter.com/dallas-fw/schools-groups/groups/",
+    "regularSource": "https://www.legolanddiscoverycenter.com/dallas-fw/",
+    "groupSource": "https://www.legolanddiscoverycenter.com/dallas-fw/schools-groups/groups/",
+    "regularPrice": "From $29.99 online",
+    "regularDetails": [
+      "From $37.99 walk-up"
+    ],
+    "groupPrice": "$12",
+    "groupDetails": [
+      "$14 adult"
+    ],
+    "savings": "Save at least $15.99 versus advance admission",
+    "minimum": "10+ children",
+    "eligibility": "Organized youth, camp, club and sports groups",
+    "bookingNotes": [
+      "Monday–Friday only",
+      "Book 14 days ahead",
+      "One free adult per 10 paid children"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-meow-wolf-grapevine-the-real-unreal",
+    "cityId": "dallas-tx",
+    "name": "Meow Wolf Grapevine: The Real Unreal",
+    "category": "Museums & art",
+    "address": "3000 Grapevine Mills Pkwy, Grapevine, TX",
+    "lat": 32.9674,
+    "lon": -97.0423,
+    "website": "https://meowwolf.com/visit/grapevine/field-trips",
+    "regularSource": "https://meowwolf.com/visit/grapevine/tickets",
+    "groupSource": "https://meowwolf.com/visit/grapevine/field-trips",
+    "regularPrice": "From $35 adult",
+    "regularDetails": [
+      "Kids from $19"
+    ],
+    "groupPrice": "$15 per student",
+    "groupDetails": [
+      "Required chaperones free"
+    ],
+    "savings": "Save from $4 per student",
+    "minimum": "No published minimum",
+    "eligibility": "K–12, homeschool and summer-school field trips",
+    "bookingNotes": [
+      "Bookings depend on availability",
+      "One required chaperone per 8 students is complimentary"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-dallas-zoo",
+    "cityId": "dallas-tx",
+    "name": "Dallas Zoo",
+    "category": "Outdoors",
+    "address": "650 S R L Thornton Fwy, Dallas, TX",
+    "lat": 32.741,
+    "lon": -96.8152,
+    "website": "https://www.dallaszoo.com/plan-your-visit/field-trip-planner/",
+    "regularSource": "https://www.dallaszoo.com/plan-your-visit/buy-tickets/",
+    "groupSource": "https://www.dallaszoo.com/plan-your-visit/field-trip-planner/",
+    "regularPrice": "$15 summer admission",
+    "regularDetails": [
+      "Year-round tickets normally start at $18"
+    ],
+    "groupPrice": "$10",
+    "groupDetails": [
+      "General group rate: quote required"
+    ],
+    "savings": "Save $6 versus the current summer price",
+    "minimum": "Eligibility required",
+    "eligibility": "Eligible educational and organized field-trip groups",
+    "bookingNotes": [
+      "General groups of 15+ must request a quote",
+      "Teachers and additional adults are also $9 for eligible field trips"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-sea-life-grapevine-aquarium",
+    "cityId": "dallas-tx",
+    "name": "SEA LIFE Grapevine Aquarium",
+    "category": "Outdoors",
+    "address": "3000 Grapevine Mills Pkwy, Grapevine, TX",
+    "lat": 32.9673,
+    "lon": -97.0419,
+    "website": "https://www.visitsealife.com/grapevine/groups-birthdays/groups/",
+    "regularSource": "https://www.visitsealife.com/grapevine/tickets-passes/",
+    "groupSource": "https://www.visitsealife.com/grapevine/groups-birthdays/groups/",
+    "regularPrice": "From $19 online",
+    "regularDetails": [
+      "From $24 walk-up"
+    ],
+    "groupPrice": "$12",
+    "groupDetails": [
+      "$14 adult"
+    ],
+    "savings": "Save from $5 per child",
+    "minimum": "10+ children",
+    "eligibility": "Organized groups, camps, clubs, teams and tour groups",
+    "bookingNotes": [
+      "Monday–Friday only",
+      "Book 14 days ahead",
+      "One free adult per 10 paid children"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-dallas-museum-of-art",
+    "cityId": "dallas-tx",
+    "name": "Dallas Museum of Art",
+    "category": "Museums & art",
+    "address": "1717 N Harwood St, Dallas, TX 75201",
+    "lat": 32.7876,
+    "lon": -96.8011,
+    "website": "https://dma.org/visit/group-booking",
+    "regularSource": "https://dma.org/visit",
+    "groupSource": "https://dma.org/visit/group-booking",
+    "regularPrice": "General collection admission is free",
+    "regularDetails": [
+      "Paid special-exhibition prices vary"
+    ],
+    "groupPrice": "$2 off each paid ticket",
+    "groupDetails": [
+      "Private collection tour: $150–$500 depending on day and group size",
+      "Private paid-exhibition tour: $400–$1,500"
+    ],
+    "savings": "Save $2 per paid exhibition ticket for 10+ tickets",
+    "minimum": "10+ guests",
+    "eligibility": "General groups",
+    "bookingNotes": [
+      "Contact group sales at least three weeks ahead",
+      "Weekday visits are encouraged",
+      "Private tours must be arranged in advance"
+    ],
+    "lastVerified": "2026-08-06",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "needs_recheck"
+  },
+  {
+    "id": "curated-dallas-tx-george-w-bush-presidential-museum",
+    "cityId": "dallas-tx",
+    "name": "George W. Bush Presidential Museum",
+    "category": "Museums & art",
+    "address": "2943 SMU Blvd, Dallas, TX 75205",
+    "lat": 32.841,
+    "lon": -96.7782,
+    "website": "https://www.bushcenter.org/plan-your-visit/admission-and-hours",
+    "regularSource": "https://www.bushcenter.org/plan-your-visit/admission-and-hours",
+    "groupSource": "https://www.bushcenter.org/plan-your-visit/admission-and-hours",
+    "regularPrice": "$26 adult",
+    "regularDetails": [
+      "$23 senior",
+      "$24 youth ages 13–17",
+      "$20 child ages 5–12"
+    ],
+    "groupPrice": "$20",
+    "groupDetails": [
+      "$19 senior",
+      "$19 youth",
+      "$16 child",
+      "One bus driver and one escort free"
+    ],
+    "savings": "Save $6 per adult",
+    "minimum": "20+ guests",
+    "eligibility": "General groups",
+    "bookingNotes": [
+      "Schedule a group visit in advance",
+      "Timed tickets recommended",
+      "Security screening required"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-reunion-tower-geodeck",
+    "cityId": "dallas-tx",
+    "name": "Reunion Tower GeO-Deck",
+    "category": "Entertainment",
+    "address": "300 Reunion Blvd E, Dallas, TX 75207",
+    "lat": 32.7756,
+    "lon": -96.8089,
+    "website": "https://reuniontower.com/plan-your-visit/",
+    "regularSource": "https://reuniontower.com/plan-your-visit/",
+    "groupSource": "https://reuniontower.com/plan-your-visit/",
+    "regularPrice": "$19–$40 adult",
+    "regularDetails": [
+      "$16–$35 senior",
+      "$10–$20 youth",
+      "Prices vary by date and package"
+    ],
+    "groupPrice": "Discounted rate by quote",
+    "groupDetails": [
+      "School-tour rates also available by quote"
+    ],
+    "savings": "Exact group savings supplied by group sales",
+    "minimum": "15+ guests",
+    "eligibility": "General, school, scout and social groups",
+    "bookingNotes": [
+      "Email sales@reuniontower.com with group size and preferred date",
+      "Advance booking and availability requirements apply"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Quote required",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-sixth-floor-museum-at-dealey-plaza",
+    "cityId": "dallas-tx",
+    "name": "The Sixth Floor Museum at Dealey Plaza",
+    "category": "Museums & art",
+    "address": "411 Elm St, Dallas, TX 75202",
+    "lat": 32.7798,
+    "lon": -96.8085,
+    "website": "https://www.jfk.org/plan-your-visit/",
+    "regularSource": "https://www.jfk.org/plan-your-visit/",
+    "groupSource": "https://www.jfk.org/plan-your-visit/",
+    "regularPrice": "$24 adult online",
+    "regularDetails": [
+      "$27 adult onsite",
+      "$22 senior online",
+      "$20 youth online",
+      "$1 online convenience fee"
+    ],
+    "groupPrice": "Traditional group visits unavailable",
+    "groupDetails": [
+      "Curatorial presentation: $1,000 donation for up to 50 guests",
+      "Museum admission is purchased separately",
+      "Eligible school groups of 20+ may request a discounted visit"
+    ],
+    "savings": "No general group discount currently published",
+    "minimum": "20 students for school pricing",
+    "eligibility": "Accredited K–12/college classes; curatorial presentation for other groups",
+    "bookingNotes": [
+      "School groups book at least three weeks ahead",
+      "Traditional general group visits are not currently accommodated",
+      "Curatorial presentations are limited and advance-scheduled"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Special group arrangement",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-dallas-holocaust-and-human-rights-museum",
+    "cityId": "dallas-tx",
+    "name": "Dallas Holocaust and Human Rights Museum",
+    "category": "Museums & art",
+    "address": "300 N Houston St, Dallas, TX 75202",
+    "lat": 32.781,
+    "lon": -96.807,
+    "website": "https://www.dhhrm.org/visit/groups/",
+    "regularSource": "https://www.dhhrm.org/visit/general-admission/",
+    "groupSource": "https://www.dhhrm.org/visit/groups/",
+    "regularPrice": "$19 adult",
+    "regularDetails": [
+      "$17 senior, educator, military, first responder or visitor with disability",
+      "$12 student"
+    ],
+    "groupPrice": "$8 student group rate",
+    "groupDetails": [
+      "Adult group rate supplied during reservation"
+    ],
+    "savings": "Students save $4 versus public student admission",
+    "minimum": "15+ guests",
+    "eligibility": "Adult organizations; student groups grade 6 through college",
+    "bookingNotes": [
+      "Adult request submitted at least three weeks ahead",
+      "Reservation and payment completed at least two weeks ahead",
+      "Student visits generally last at least three hours"
+    ],
+    "lastVerified": "2026-08-06",
+    "sourceBacked": true,
+    "rateStatus": "Published student rate; adult quote required",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "needs_recheck"
+  },
+  {
+    "id": "curated-dallas-tx-att-stadium-tours",
+    "cityId": "dallas-tx",
+    "name": "AT&T Stadium Tours",
+    "category": "Sports",
+    "address": "1 AT&T Way, Arlington, TX 76011",
+    "lat": 32.7473,
+    "lon": -97.0945,
+    "website": "https://attstadium.com/tours/",
+    "regularSource": "https://attstadium.com/tours/",
+    "groupSource": "https://attstadium.com/tours/self-guided-tour/",
+    "regularPrice": "Varies by tour type and date",
+    "regularDetails": [
+      "VIP guided, self-guided, art, educational and game-day tours are offered"
+    ],
+    "groupPrice": "Group discount by quote",
+    "groupDetails": [
+      "Call 817-892-TOUR for current group pricing"
+    ],
+    "savings": "Exact discount supplied by stadium tour sales",
+    "minimum": "20+ guests",
+    "eligibility": "General, educational and organized groups",
+    "bookingNotes": [
+      "Book at least one week in advance",
+      "Field access and stops depend on stadium availability",
+      "Blackout dates apply"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Quote required",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-fort-worth-zoo",
+    "cityId": "dallas-tx",
+    "name": "Fort Worth Zoo",
+    "category": "Outdoors",
+    "address": "1989 Colonial Pkwy, Fort Worth, TX 76110",
+    "lat": 32.721,
+    "lon": -97.3563,
+    "website": "https://www.fortworthzoo.org/group-tickets",
+    "regularSource": "https://www.fortworthzoo.org/plan-a-visit/",
+    "groupSource": "https://www.fortworthzoo.org/group-tickets",
+    "regularPrice": "$22 adult",
+    "regularDetails": [
+      "$18 child ages 3–12",
+      "$18 senior",
+      "Parking $5"
+    ],
+    "groupPrice": "Discounted admission by quote",
+    "groupDetails": [
+      "Field trips: $9 Pre-K–5 students",
+      "Field trips: $11 grade 6–college students"
+    ],
+    "savings": "Exact general-group savings supplied by Event Sales",
+    "minimum": "15+ guests",
+    "eligibility": "General groups; qualifying school groups have separate rates",
+    "bookingNotes": [
+      "General groups reserve at least one week ahead",
+      "Field trips reserve at least 10 days ahead",
+      "Contact Event Sales for groups of 50+"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Quote required; published field-trip rates",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-kimbell-art-museum",
+    "cityId": "dallas-tx",
+    "name": "Kimbell Art Museum",
+    "category": "Museums & art",
+    "address": "3333 Camp Bowie Blvd, Fort Worth, TX 76107",
+    "lat": 32.7486,
+    "lon": -97.3653,
+    "website": "https://kimbellart.org/visit",
+    "regularSource": "https://kimbellart.org/tickets",
+    "groupSource": "https://kimbellart.org/visit",
+    "regularPrice": "Permanent collection admission is free",
+    "regularDetails": [
+      "Special-exhibition prices vary"
+    ],
+    "groupPrice": "$2",
+    "groupDetails": [
+      "Permanent-collection and architecture tours are free",
+      "Special-exhibition docent tours require admission"
+    ],
+    "savings": "Save $2 per special-exhibition ticket",
+    "minimum": "10+ tickets",
+    "eligibility": "General adult, university and school groups",
+    "bookingNotes": [
+      "Discount applies Wednesday–Friday",
+      "Tours generally require three weeks’ notice",
+      "Group capacity typically 10–60 per hour"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-fort-worth-museum-of-science-and-history",
+    "cityId": "dallas-tx",
+    "name": "Fort Worth Museum of Science and History",
+    "category": "Museums & art",
+    "address": "1600 Gendy St, Fort Worth, TX 76107",
+    "lat": 32.7441,
+    "lon": -97.3693,
+    "website": "https://www.fwmuseum.org/visit/plan-your-visit/",
+    "regularSource": "https://www.fwmuseum.org/visit/plan-your-visit/",
+    "groupSource": "https://www.fwmuseum.org/learn/field-trips/",
+    "regularPrice": "$16 adult",
+    "regularDetails": [
+      "$14 senior",
+      "$12 junior ages 3–11",
+      "Planetarium included",
+      "Omni Theater separately ticketed"
+    ],
+    "groupPrice": "Group pricing by request",
+    "groupDetails": [
+      "Field-trip and weekend/adult group request forms are available"
+    ],
+    "savings": "Exact group savings supplied by Group Sales",
+    "minimum": "Advance group request required",
+    "eligibility": "School, weekend and adult groups",
+    "bookingNotes": [
+      "Field trips are unavailable during the Fort Worth Stock Show and Rodeo",
+      "Separate entrances are used for school groups and general visitors",
+      "Group Sales confirms rates and availability"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Quote required",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-national-cowgirl-museum-and-hall-of-fame",
+    "cityId": "dallas-tx",
+    "name": "National Cowgirl Museum and Hall of Fame",
+    "category": "Museums & art",
+    "address": "1720 Gendy St, Fort Worth, TX 76107",
+    "lat": 32.7435,
+    "lon": -97.3681,
+    "website": "https://www.cowgirl.net/museum/plan-your-visit/",
+    "regularSource": "https://www.cowgirl.net/museum/plan-your-visit/",
+    "groupSource": "https://www.cowgirl.net/museum/plan-your-visit/",
+    "regularPrice": "$10 adult",
+    "regularDetails": [
+      "$7 senior, military or first responder",
+      "$4 child ages 4–12",
+      "Family special $28"
+    ],
+    "groupPrice": "$10",
+    "groupDetails": [
+      "$4.50 student",
+      "One free chaperone per 10 students",
+      "Additional chaperones $7"
+    ],
+    "savings": "Save $3 per adult",
+    "minimum": "10+ guests",
+    "eligibility": "General and school groups",
+    "bookingNotes": [
+      "Maximum 30 guests at one time under current policy",
+      "Reserve at least two weeks ahead",
+      "Groups divide into parties of no more than 10"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-frontiers-of-flight-museum",
+    "cityId": "dallas-tx",
+    "name": "Frontiers of Flight Museum",
+    "category": "Museums & art",
+    "address": "6911 Lemmon Ave, Dallas, TX 75209",
+    "lat": 32.8426,
+    "lon": -96.8356,
+    "website": "https://flightmuseum.com/group-visits/",
+    "regularSource": "https://flightmuseum.com/visit/",
+    "groupSource": "https://flightmuseum.com/group-visits/",
+    "regularPrice": "$20 adult",
+    "regularDetails": [
+      "$12 child ages 3–12",
+      "$10 senior, veteran, first responder or active duty"
+    ],
+    "groupPrice": "$10 adult",
+    "groupDetails": [
+      "$8 senior",
+      "$6 youth",
+      "Field-trip students $6",
+      "One free chaperone per 10 students"
+    ],
+    "savings": "Save $10 per adult",
+    "minimum": "15+ tickets",
+    "eligibility": "General groups; separate school, youth and scout programs",
+    "bookingNotes": [
+      "Advance reservation required",
+      "Guided tours depend on docent availability",
+      "Requests inside two weeks require contacting the education department"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Published group information",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-dallas-world-aquarium",
+    "cityId": "dallas-tx",
+    "name": "The Dallas World Aquarium",
+    "category": "Outdoors",
+    "address": "1801 N Griffin St, Dallas, TX 75202",
+    "lat": 32.7835,
+    "lon": -96.8052,
+    "website": "https://dwazoo.com/hours-prices/",
+    "regularSource": "https://dwazoo.com/hours-prices/",
+    "groupSource": "https://dwazoo.com/hours-prices/",
+    "regularPrice": "$34.95 adult + tax",
+    "regularDetails": [
+      "$24.95 child ages 3–12 + tax",
+      "$28.95 senior + tax"
+    ],
+    "groupPrice": "Group information by email",
+    "groupDetails": [
+      "Email groups@dwazoo.com for rates and restrictions"
+    ],
+    "savings": "Exact group rate not publicly listed",
+    "minimum": "20+ paying guests",
+    "eligibility": "General groups",
+    "bookingNotes": [
+      "Group restrictions and pricing are supplied by email",
+      "Admission prices are subject to tax"
+    ],
+    "lastVerified": "2026-08-12",
+    "sourceBacked": true,
+    "rateStatus": "Quote required",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "curated-dallas-tx-nasher-sculpture-center",
+    "cityId": "dallas-tx",
+    "name": "Nasher Sculpture Center",
+    "category": "Museums & art",
+    "address": "2001 Flora St, Dallas, TX 75201",
+    "lat": 32.7882,
+    "lon": -96.8002,
+    "website": "https://www.nashersculpturecenter.org/visit/plan-a-visit/tour",
+    "regularSource": "https://www.nashersculpturecenter.org/visit/plan-a-visit/tour",
+    "groupSource": "https://www.nashersculpturecenter.org/policies",
+    "regularPrice": "$10 adult",
+    "regularDetails": [
+      "$7 senior",
+      "$5 student or educator",
+      "Free for children under 12, military and first responders"
+    ],
+    "groupPrice": "Special adult group rate by booking",
+    "groupDetails": [
+      "School guided and self-guided visits are free with advance reservation",
+      "Additional docent for groups over 20: $50"
+    ],
+    "savings": "Exact adult group admission rate supplied when booking",
+    "minimum": "10+ guests",
+    "eligibility": "Adult, school and educational groups",
+    "bookingNotes": [
+      "Self-guided adult groups schedule at least two weeks ahead",
+      "Guided tours schedule at least three weeks ahead",
+      "School tours are free when booked in advance"
+    ],
+    "lastVerified": "2026-08-06",
+    "sourceBacked": true,
+    "rateStatus": "Quote required; free school visits",
+    "confidence": 1.0,
+    "lastChecked": "2026-08-12",
+    "verificationStatus": "needs_recheck"
+  }
+]
