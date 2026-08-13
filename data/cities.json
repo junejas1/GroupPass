@@ -118,7 +118,8 @@
       "Jax"
     ],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-13",
+    "parts": 1
   },
   {
     "id": "austin-tx",
@@ -127,7 +128,8 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-13",
+    "parts": 1
   },
   {
     "id": "san-jose-ca",
@@ -138,7 +140,8 @@
       "San José"
     ],
     "venueCount": 20,
-    "lastVerified": "2026-08-06"
+    "lastVerified": "2026-08-13",
+    "parts": 1
   },
   {
     "id": "charlotte-nc",
