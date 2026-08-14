@@ -1,0 +1,83 @@
+[
+  {
+    "id": "verified-baltimore-md-national-aquarium-baltimore",
+    "cityId": "baltimore-md",
+    "name": "National Aquarium (Baltimore)",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.aqua.org",
+    "regularSource": "http://www.aqua.org",
+    "groupSource": "https://aqua.org/education/field-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$75",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-baltimore-md-jewish-museum-of-maryland",
+    "cityId": "baltimore-md",
+    "name": "Jewish Museum of Maryland",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.jewishmuseummd.org",
+    "regularSource": "http://www.jewishmuseummd.org",
+    "groupSource": "https://jewishmuseummd.org/visit/school-groups/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-baltimore-md-oxon-cove-park-and-oxon-hill-farm",
+    "cityId": "baltimore-md",
+    "name": "Oxon Cove Park and Oxon Hill Farm",
+    "category": "Entertainment",
+    "address": "",
+    "website": "https://www.nps.gov/oxhi/index.htm",
+    "regularSource": "https://www.nps.gov/oxhi/index.htm",
+    "groupSource": "https://www.nps.gov/oxhi/learn/education/farm-field-trips.htm",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

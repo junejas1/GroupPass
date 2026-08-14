@@ -243,13 +243,84 @@
     "lastVerified": "2026-08-06"
   },
   {
+    "id": "el-paso-tx",
+    "name": "El Paso",
+    "region": "TX",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 3,
+    "parts": 1,
+    "lastVerified": "2026-08-14"
+  },
+  {
+    "id": "las-vegas-nv",
+    "name": "Las Vegas",
+    "region": "NV",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-14"
+  },
+  {
     "id": "boston-ma",
     "name": "Boston",
     "region": "Massachusetts",
     "country": "United States",
     "aliases": [],
+    "venueCount": 4,
+    "lastVerified": "2026-08-14",
+    "parts": 1
+  },
+  {
+    "id": "detroit-mi",
+    "name": "Detroit",
+    "region": "MI",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-14"
+  },
+  {
+    "id": "louisville-ky",
+    "name": "Louisville",
+    "region": "KY",
+    "country": "United States",
+    "aliases": [],
     "venueCount": 2,
-    "lastVerified": "2026-08-05"
+    "parts": 1,
+    "lastVerified": "2026-08-14"
+  },
+  {
+    "id": "portland-or",
+    "name": "Portland",
+    "region": "OR",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 6,
+    "parts": 1,
+    "lastVerified": "2026-08-14"
+  },
+  {
+    "id": "memphis-tn",
+    "name": "Memphis",
+    "region": "TN",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-14"
+  },
+  {
+    "id": "baltimore-md",
+    "name": "Baltimore",
+    "region": "MD",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 3,
+    "parts": 1,
+    "lastVerified": "2026-08-14"
   },
   {
     "id": "orlando-fl",

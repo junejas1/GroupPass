@@ -1,0 +1,56 @@
+[
+  {
+    "id": "verified-las-vegas-nv-world-of-coca-cola",
+    "cityId": "las-vegas-nv",
+    "name": "World of Coca-Cola",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://worldofcoca-cola.com",
+    "regularSource": "https://worldofcoca-cola.com",
+    "groupSource": "https://www.worldofcoca-cola.com:443/groups",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-las-vegas-nv-grand-canyon-skywalk",
+    "cityId": "las-vegas-nv",
+    "name": "Grand Canyon Skywalk",
+    "category": "Attractions",
+    "address": "",
+    "website": "https://grandcanyonwest.com/explore/west-rim/skywalk-eagle-point/",
+    "regularSource": "https://grandcanyonwest.com/explore/west-rim/skywalk-eagle-point/",
+    "groupSource": "https://grandcanyonwest.com/groups-events/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

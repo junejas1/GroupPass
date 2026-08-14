@@ -1,0 +1,83 @@
+[
+  {
+    "id": "verified-el-paso-tx-moody-gardens",
+    "cityId": "el-paso-tx",
+    "name": "Moody Gardens",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.moodygardens.com",
+    "regularSource": "http://www.moodygardens.com",
+    "groupSource": "https://www.moodygardens.com/educate/field-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-el-paso-tx-denver-trolley",
+    "cityId": "el-paso-tx",
+    "name": "Denver Trolley",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.denvertrolley.org/",
+    "regularSource": "http://www.denvertrolley.org/",
+    "groupSource": "http://www.denvertrolley.org/group-reservations--charters.html",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-el-paso-tx-houston-zoo",
+    "cityId": "el-paso-tx",
+    "name": "Houston Zoo",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.houstonzoo.org",
+    "regularSource": "http://www.houstonzoo.org",
+    "groupSource": "https://www.houstonzoo.org/make-memories/educators/field-trips/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

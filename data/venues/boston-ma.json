@@ -9,19 +9,30 @@
     "lon": -71.0491,
     "website": "https://www.neaq.org/visit/groups/",
     "regularSource": "https://www.neaq.org/visit/tickets/",
-    "groupSource": "https://www.neaq.org/visit/groups/",
+    "groupSource": "https://www.neaq.org/visit/groups-and-tours/",
     "regularPrice": "$39.95 adult",
-    "regularDetails": ["$37.95 senior", "$30.95 child"],
-    "groupPrice": "$30 adult",
-    "groupDetails": ["$28 senior", "$21 child"],
+    "regularDetails": [
+      "$37.95 senior",
+      "$30.95 child"
+    ],
+    "groupPrice": "$30",
+    "groupDetails": [
+      "$28 senior",
+      "$21 child"
+    ],
     "savings": "Save $9.95 per adult",
     "minimum": "10+ guests",
     "eligibility": "General groups",
-    "bookingNotes": ["Advance group reservation required", "Group payment rules apply"],
-    "lastVerified": "2026-08-05",
+    "bookingNotes": [
+      "Advance group reservation required",
+      "Group payment rules apply"
+    ],
+    "lastVerified": "2026-08-14",
     "sourceBacked": true,
     "rateStatus": "Published group information",
-    "confidence": 1.0
+    "confidence": 1.0,
+    "lastChecked": "2026-08-14",
+    "verificationStatus": "verified"
   },
   {
     "id": "curated-boston-ma-institute-of-contemporary-art-boston",
@@ -35,16 +46,79 @@
     "regularSource": "https://www.icaboston.org/visit/",
     "groupSource": "https://www.icaboston.org/visit/groups/",
     "regularPrice": "$20 adult",
-    "regularDetails": ["$17 senior"],
+    "regularDetails": [
+      "$17 senior"
+    ],
     "groupPrice": "$16 adult self-guided",
-    "groupDetails": ["$14 senior"],
+    "groupDetails": [
+      "$14 senior"
+    ],
     "savings": "Save $4 per adult",
     "minimum": "Advance group request",
     "eligibility": "General self-guided groups",
-    "bookingNotes": ["Maximum group size may be limited", "Advance scheduling required"],
+    "bookingNotes": [
+      "Maximum group size may be limited",
+      "Advance scheduling required"
+    ],
     "lastVerified": "2026-08-05",
     "sourceBacked": true,
     "rateStatus": "Published group information",
-    "confidence": 1.0
+    "confidence": 1.0,
+    "lastChecked": "2026-08-14",
+    "verificationStatus": "needs_recheck"
+  },
+  {
+    "id": "verified-boston-ma-mount-auburn-cemetery",
+    "cityId": "boston-ma",
+    "name": "Mount Auburn Cemetery",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://mountauburn.org/",
+    "regularSource": "http://mountauburn.org/",
+    "groupSource": "https://mountauburn.org/tours/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-boston-ma-canobie-lake-park",
+    "cityId": "boston-ma",
+    "name": "Canobie Lake Park",
+    "category": "Entertainment",
+    "address": "",
+    "website": "http://www.canobie.com/",
+    "regularSource": "http://www.canobie.com/",
+    "groupSource": "https://www.canobie.com/groups/field-trips-other-groups/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$31",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-14",
+    "lastVerified": "2026-08-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
   }
 ]
