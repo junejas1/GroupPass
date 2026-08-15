@@ -1,0 +1,56 @@
+[
+  {
+    "id": "verified-milwaukee-wi-national-museum-of-transportation",
+    "cityId": "milwaukee-wi",
+    "name": "National Museum of Transportation",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://tnmot.org/",
+    "regularSource": "https://tnmot.org/",
+    "groupSource": "https://tnmot.org/school-groups/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$7",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-milwaukee-wi-little-amerricka",
+    "cityId": "milwaukee-wi",
+    "name": "Little Amerricka",
+    "category": "Entertainment",
+    "address": "",
+    "website": "http://www.littleamerricka.com",
+    "regularSource": "http://www.littleamerricka.com",
+    "groupSource": "https://www.littleamerricka.com/admission/groups",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

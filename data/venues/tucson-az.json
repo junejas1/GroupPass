@@ -1,0 +1,83 @@
+[
+  {
+    "id": "verified-tucson-az-national-museum-of-transportation",
+    "cityId": "tucson-az",
+    "name": "National Museum of Transportation",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://tnmot.org/",
+    "regularSource": "https://tnmot.org/",
+    "groupSource": "https://tnmot.org/school-groups/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$7",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-tucson-az-mission-garden",
+    "cityId": "tucson-az",
+    "name": "Mission Garden",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.missiongarden.org/",
+    "regularSource": "https://www.missiongarden.org/",
+    "groupSource": "https://www.missiongarden.org/field-trip",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-tucson-az-boyce-thompson-arboretum",
+    "cityId": "tucson-az",
+    "name": "Boyce Thompson Arboretum",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://btarboretum.org/",
+    "regularSource": "https://btarboretum.org/",
+    "groupSource": "https://btarboretum.org/school-field-trips/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$9",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "verified-fresno-ca-the-gentle-barn",
+    "cityId": "fresno-ca",
+    "name": "The Gentle Barn",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.gentlebarn.org/",
+    "regularSource": "https://www.gentlebarn.org/",
+    "groupSource": "https://www.gentlebarn.org/visit/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$600",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-fresno-ca-living-desert-zoo-and-gardens",
+    "cityId": "fresno-ca",
+    "name": "Living Desert Zoo and Gardens",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.livingdesert.org",
+    "regularSource": "http://www.livingdesert.org",
+    "groupSource": "https://www.livingdesert.org/learn/field-trips-and-school-groups/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

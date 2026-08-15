@@ -323,6 +323,86 @@
     "lastVerified": "2026-08-14"
   },
   {
+    "id": "milwaukee-wi",
+    "name": "Milwaukee",
+    "region": "WI",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-15"
+  },
+  {
+    "id": "albuquerque-nm",
+    "name": "Albuquerque",
+    "region": "NM",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-15"
+  },
+  {
+    "id": "fresno-ca",
+    "name": "Fresno",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-15"
+  },
+  {
+    "id": "tucson-az",
+    "name": "Tucson",
+    "region": "AZ",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 3,
+    "parts": 1,
+    "lastVerified": "2026-08-15"
+  },
+  {
+    "id": "sacramento-ca",
+    "name": "Sacramento",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-15"
+  },
+  {
+    "id": "atlanta-ga",
+    "name": "Atlanta",
+    "region": "GA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 3,
+    "parts": 1,
+    "lastVerified": "2026-08-15"
+  },
+  {
+    "id": "kansas-city-mo",
+    "name": "Kansas City",
+    "region": "MO",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-15"
+  },
+  {
+    "id": "raleigh-nc",
+    "name": "Raleigh",
+    "region": "NC",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 6,
+    "parts": 1,
+    "lastVerified": "2026-08-15"
+  },
+  {
     "id": "orlando-fl",
     "name": "Orlando",
     "region": "Florida",

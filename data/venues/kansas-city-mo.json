@@ -1,0 +1,56 @@
+[
+  {
+    "id": "verified-kansas-city-mo-kansas-city-zoo-aquarium",
+    "cityId": "kansas-city-mo",
+    "name": "Kansas City Zoo & Aquarium",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.kansascityzoo.org/",
+    "regularSource": "https://www.kansascityzoo.org/",
+    "groupSource": "https://kansascityzoo.org/education/field-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$12",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-kansas-city-mo-national-world-war-i-museum-and-memorial",
+    "cityId": "kansas-city-mo",
+    "name": "National World War I Museum and Memorial",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.theworldwar.org",
+    "regularSource": "https://www.theworldwar.org",
+    "groupSource": "https://www.theworldwar.org/visit/groups",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$17",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-15",
+    "lastVerified": "2026-08-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]
