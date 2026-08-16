@@ -403,6 +403,76 @@
     "lastVerified": "2026-08-15"
   },
   {
+    "id": "miami-fl",
+    "name": "Miami",
+    "region": "FL",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 5,
+    "parts": 1,
+    "lastVerified": "2026-08-16"
+  },
+  {
+    "id": "virginia-beach-va",
+    "name": "Virginia Beach",
+    "region": "VA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-16"
+  },
+  {
+    "id": "long-beach-ca",
+    "name": "Long Beach",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-16"
+  },
+  {
+    "id": "oakland-ca",
+    "name": "Oakland",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-16"
+  },
+  {
+    "id": "minneapolis-mn",
+    "name": "Minneapolis",
+    "region": "MN",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 4,
+    "parts": 1,
+    "lastVerified": "2026-08-16"
+  },
+  {
+    "id": "bakersfield-ca",
+    "name": "Bakersfield",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-16"
+  },
+  {
+    "id": "tampa-fl",
+    "name": "Tampa",
+    "region": "FL",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 3,
+    "parts": 1,
+    "lastVerified": "2026-08-16"
+  },
+  {
     "id": "orlando-fl",
     "name": "Orlando",
     "region": "Florida",

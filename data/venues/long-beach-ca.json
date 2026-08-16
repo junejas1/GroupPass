@@ -1,0 +1,29 @@
+[
+  {
+    "id": "verified-long-beach-ca-the-gentle-barn",
+    "cityId": "long-beach-ca",
+    "name": "The Gentle Barn",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.gentlebarn.org/",
+    "regularSource": "https://www.gentlebarn.org/",
+    "groupSource": "https://www.gentlebarn.org/visit/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$600",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-16",
+    "lastVerified": "2026-08-16",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

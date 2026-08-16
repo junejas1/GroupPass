@@ -1,0 +1,83 @@
+[
+  {
+    "id": "verified-tampa-fl-zootampa-at-lowry-park",
+    "cityId": "tampa-fl",
+    "name": "ZooTampa at Lowry Park",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://zootampa.org/",
+    "regularSource": "https://zootampa.org/",
+    "groupSource": "https://zootampa.org/education/field-trips/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$16.00",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-16",
+    "lastVerified": "2026-08-16",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-tampa-fl-florida-aquarium",
+    "cityId": "tampa-fl",
+    "name": "Florida Aquarium",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.flaquarium.org",
+    "regularSource": "http://www.flaquarium.org",
+    "groupSource": "https://www.flaquarium.org/visit/tickets-pricing/group-tickets/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$35",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-16",
+    "lastVerified": "2026-08-16",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-tampa-fl-dinosaur-world-theme-parks",
+    "cityId": "tampa-fl",
+    "name": "Dinosaur World (theme parks)",
+    "category": "Attractions",
+    "address": "",
+    "website": "http://www.dinosaurworld.com",
+    "regularSource": "http://www.dinosaurworld.com",
+    "groupSource": "https://www.dinosaurworld.com/florida-field-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-16",
+    "lastVerified": "2026-08-16",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]
