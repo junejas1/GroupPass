@@ -1,0 +1,83 @@
+[
+  {
+    "id": "verified-newark-nj-the-newark-museum-of-art",
+    "cityId": "newark-nj",
+    "name": "The Newark Museum of Art",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.newarkmuseumart.org",
+    "regularSource": "https://www.newarkmuseumart.org",
+    "groupSource": "https://newarkmuseumart.org/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-17",
+    "lastVerified": "2026-08-17",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-newark-nj-new-jersey-performing-arts-center",
+    "cityId": "newark-nj",
+    "name": "New Jersey Performing Arts Center",
+    "category": "History",
+    "address": "",
+    "website": "http://www.njpac.org",
+    "regularSource": "http://www.njpac.org",
+    "groupSource": "https://www.njpac.org/tickets-events/group-sales/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-17",
+    "lastVerified": "2026-08-17",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-newark-nj-prudential-center",
+    "cityId": "newark-nj",
+    "name": "Prudential Center",
+    "category": "Sports",
+    "address": "",
+    "website": "https://www.prucenter.com/",
+    "regularSource": "https://www.prucenter.com/",
+    "groupSource": "https://www.prucenter.com/group-events",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-17",
+    "lastVerified": "2026-08-17",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

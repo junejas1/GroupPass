@@ -473,13 +473,94 @@
     "lastVerified": "2026-08-16"
   },
   {
+    "id": "arlington-tx",
+    "name": "Arlington",
+    "region": "TX",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-17"
+  },
+  {
+    "id": "wichita-ks",
+    "name": "Wichita",
+    "region": "KS",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-17"
+  },
+  {
+    "id": "cleveland-oh",
+    "name": "Cleveland",
+    "region": "OH",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-17"
+  },
+  {
+    "id": "new-orleans-la",
+    "name": "New Orleans",
+    "region": "LA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-17"
+  },
+  {
+    "id": "anaheim-ca",
+    "name": "Anaheim",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 3,
+    "parts": 1,
+    "lastVerified": "2026-08-17"
+  },
+  {
     "id": "orlando-fl",
     "name": "Orlando",
     "region": "Florida",
     "country": "United States",
     "aliases": [],
-    "venueCount": 2,
-    "lastVerified": "2026-08-05"
+    "venueCount": 4,
+    "lastVerified": "2026-08-17",
+    "parts": 1
+  },
+  {
+    "id": "lexington-ky",
+    "name": "Lexington",
+    "region": "KY",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-17"
+  },
+  {
+    "id": "stockton-ca",
+    "name": "Stockton",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-17"
+  },
+  {
+    "id": "newark-nj",
+    "name": "Newark",
+    "region": "NJ",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 3,
+    "parts": 1,
+    "lastVerified": "2026-08-17"
   },
   {
     "id": "plano-tx",

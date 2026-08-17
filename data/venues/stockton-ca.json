@@ -1,0 +1,29 @@
+[
+  {
+    "id": "verified-stockton-ca-hearst-greek-theatre",
+    "cityId": "stockton-ca",
+    "name": "Hearst Greek Theatre",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://calperformances.org/visit/venues/greek-theatre.php",
+    "regularSource": "http://calperformances.org/visit/venues/greek-theatre.php",
+    "groupSource": "https://calperformances.org/buy/discounts/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-17",
+    "lastVerified": "2026-08-17",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]

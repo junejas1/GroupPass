@@ -1,0 +1,83 @@
+[
+  {
+    "id": "verified-anaheim-ca-los-angeles-angels",
+    "cityId": "anaheim-ca",
+    "name": "Los Angeles Angels",
+    "category": "Museums & art",
+    "address": "",
+    "website": "http://losangeles.angels.mlb.com",
+    "regularSource": "http://losangeles.angels.mlb.com",
+    "groupSource": "https://www.mlb.com/angels/tickets/group-tickets",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-17",
+    "lastVerified": "2026-08-17",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-anaheim-ca-angel-stadium",
+    "cityId": "anaheim-ca",
+    "name": "Angel Stadium",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://www.mlb.com/angels/ballpark",
+    "regularSource": "https://www.mlb.com/angels/ballpark",
+    "groupSource": "https://www.mlb.com/angels/tickets/group-tickets",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-17",
+    "lastVerified": "2026-08-17",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-anaheim-ca-hearst-greek-theatre",
+    "cityId": "anaheim-ca",
+    "name": "Hearst Greek Theatre",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://calperformances.org/visit/venues/greek-theatre.php",
+    "regularSource": "http://calperformances.org/visit/venues/greek-theatre.php",
+    "groupSource": "https://calperformances.org/buy/discounts/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-17",
+    "lastVerified": "2026-08-17",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]
