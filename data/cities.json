@@ -563,6 +563,86 @@
     "lastVerified": "2026-08-17"
   },
   {
+    "id": "riverside-ca",
+    "name": "Riverside",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-18"
+  },
+  {
+    "id": "irvine-ca",
+    "name": "Irvine",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-18"
+  },
+  {
+    "id": "santa-ana-ca",
+    "name": "Santa Ana",
+    "region": "CA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-18"
+  },
+  {
+    "id": "cincinnati-oh",
+    "name": "Cincinnati",
+    "region": "OH",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 2,
+    "parts": 1,
+    "lastVerified": "2026-08-18"
+  },
+  {
+    "id": "greensboro-nc",
+    "name": "Greensboro",
+    "region": "NC",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 6,
+    "parts": 1,
+    "lastVerified": "2026-08-18"
+  },
+  {
+    "id": "pittsburgh-pa",
+    "name": "Pittsburgh",
+    "region": "PA",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 4,
+    "parts": 1,
+    "lastVerified": "2026-08-18"
+  },
+  {
+    "id": "st-paul-mn",
+    "name": "St. Paul",
+    "region": "MN",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-18"
+  },
+  {
+    "id": "jersey-city-nj",
+    "name": "Jersey City",
+    "region": "NJ",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-18"
+  },
+  {
     "id": "plano-tx",
     "name": "Plano",
     "region": "TX",

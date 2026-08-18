@@ -1,0 +1,56 @@
+[
+  {
+    "id": "verified-riverside-ca-living-desert-zoo-and-gardens",
+    "cityId": "riverside-ca",
+    "name": "Living Desert Zoo and Gardens",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.livingdesert.org",
+    "regularSource": "http://www.livingdesert.org",
+    "groupSource": "https://www.livingdesert.org/learn/field-trips-and-school-groups/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-18",
+    "lastVerified": "2026-08-18",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-riverside-ca-castle-park-amusement-park",
+    "cityId": "riverside-ca",
+    "name": "Castle Park (amusement park)",
+    "category": "Attractions",
+    "address": "",
+    "website": "http://www.castlepark.com/",
+    "regularSource": "http://www.castlepark.com/",
+    "groupSource": "https://castlepark.com/groups/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "Quote required",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-18",
+    "lastVerified": "2026-08-18",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]
