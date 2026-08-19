@@ -18,8 +18,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-09",
-    "lastVerified": "2026-08-09",
+    "lastChecked": "2026-08-19",
+    "lastVerified": "2026-08-19",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -45,8 +45,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-09",
-    "lastVerified": "2026-08-09",
+    "lastChecked": "2026-08-19",
+    "lastVerified": "2026-08-19",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-gilbert-az-major-league-baseball",
+    "cityId": "gilbert-az",
+    "name": "Major League Baseball",
+    "category": "Entertainment",
+    "address": "",
+    "website": "https://www.mlb.com/",
+    "regularSource": "https://www.mlb.com/",
+    "groupSource": "https://www.mlb.com/tickets/group-tickets",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-19",
+    "lastVerified": "2026-08-19",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
