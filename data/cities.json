@@ -720,7 +720,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-10"
+    "lastVerified": "2026-08-20"
   },
   {
     "id": "buffalo-ny",
@@ -730,7 +730,17 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-10"
+    "lastVerified": "2026-08-20"
+  },
+  {
+    "id": "lubbock-tx",
+    "name": "Lubbock",
+    "region": "TX",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-20"
   },
   {
     "id": "st-petersburg-fl",
@@ -740,7 +750,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-10"
+    "lastVerified": "2026-08-20"
   },
   {
     "id": "toledo-oh",
@@ -750,7 +760,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-10"
+    "lastVerified": "2026-08-20"
   },
   {
     "id": "glendale-az",
@@ -760,7 +770,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-10"
+    "lastVerified": "2026-08-20"
   },
   {
     "id": "winston-salem-nc",
@@ -770,7 +780,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-10"
+    "lastVerified": "2026-08-20"
   },
   {
     "id": "irving-tx",
@@ -780,7 +790,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-10"
+    "lastVerified": "2026-08-20"
   },
   {
     "id": "chesapeake-va",
