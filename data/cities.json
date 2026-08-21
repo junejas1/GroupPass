@@ -800,7 +800,17 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-11"
+    "lastVerified": "2026-08-21"
+  },
+  {
+    "id": "garland-tx",
+    "name": "Garland",
+    "region": "TX",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-08-21"
   },
   {
     "id": "richmond-va",
@@ -810,7 +820,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-11"
+    "lastVerified": "2026-08-21"
   },
   {
     "id": "frisco-tx",
@@ -818,9 +828,9 @@
     "region": "TX",
     "country": "United States",
     "aliases": [],
-    "venueCount": 1,
+    "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-11"
+    "lastVerified": "2026-08-21"
   },
   {
     "id": "mckinney-tx",
@@ -828,8 +838,8 @@
     "region": "TX",
     "country": "United States",
     "aliases": [],
-    "venueCount": 1,
+    "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-11"
+    "lastVerified": "2026-08-21"
   }
 ]
