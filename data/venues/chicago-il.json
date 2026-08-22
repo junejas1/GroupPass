@@ -24,7 +24,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group rate",
     "confidence": 1,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -52,8 +52,8 @@
     "sourceBacked": true,
     "rateStatus": "Published group rate",
     "confidence": 1,
-    "lastChecked": "2026-08-12",
-    "verificationStatus": "verified"
+    "lastChecked": "2026-08-22",
+    "verificationStatus": "needs_recheck"
   },
   {
     "id": "curated-chicago-il-field-museum",
@@ -81,7 +81,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group-rate range",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -110,7 +110,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group-rate range",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -139,7 +139,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group rate",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -166,7 +166,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -189,11 +189,11 @@
       "Advance group reservation required",
       "Sky shows may cost extra"
     ],
-    "lastVerified": "2026-08-12",
+    "lastVerified": "2026-08-22",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "verified"
   },
   {
@@ -216,11 +216,11 @@
       "Advance reservation required",
       "TILT is an optional add-on"
     ],
-    "lastVerified": "2026-08-12",
+    "lastVerified": "2026-08-22",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "verified"
   },
   {
@@ -247,7 +247,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -276,7 +276,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group-rate range",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -299,11 +299,11 @@
       "Advance group booking required",
       "Attraction bundles may be available"
     ],
-    "lastVerified": "2026-08-12",
+    "lastVerified": "2026-08-22",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "verified"
   },
   {
@@ -330,7 +330,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -356,7 +356,7 @@
     "sourceBacked": true,
     "rateStatus": "Free admission",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -379,11 +379,11 @@
       "Advance reservation required",
       "Parking and attractions may cost extra"
     ],
-    "lastVerified": "2026-08-12",
+    "lastVerified": "2026-08-22",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "verified"
   },
   {
@@ -409,7 +409,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -436,7 +436,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -463,7 +463,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -485,11 +485,11 @@
     "bookingNotes": [
       "Game and event schedules affect availability"
     ],
-    "lastVerified": "2026-08-12",
+    "lastVerified": "2026-08-22",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "verified"
   },
   {
@@ -515,7 +515,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -542,7 +542,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-12",
+    "lastChecked": "2026-08-22",
     "verificationStatus": "needs_recheck"
   }
 ]
