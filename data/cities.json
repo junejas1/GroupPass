@@ -250,7 +250,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-14"
+    "lastVerified": "2026-08-24"
   },
   {
     "id": "las-vegas-nv",
@@ -260,7 +260,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-14"
+    "lastVerified": "2026-08-24"
   },
   {
     "id": "boston-ma",
@@ -269,7 +269,7 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 4,
-    "lastVerified": "2026-08-14",
+    "lastVerified": "2026-08-24",
     "parts": 1
   },
   {
@@ -278,9 +278,9 @@
     "region": "MI",
     "country": "United States",
     "aliases": [],
-    "venueCount": 1,
+    "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-14"
+    "lastVerified": "2026-08-24"
   },
   {
     "id": "louisville-ky",
@@ -290,7 +290,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-14"
+    "lastVerified": "2026-08-24"
   },
   {
     "id": "portland-or",
@@ -298,9 +298,9 @@
     "region": "OR",
     "country": "United States",
     "aliases": [],
-    "venueCount": 6,
+    "venueCount": 7,
     "parts": 1,
-    "lastVerified": "2026-08-14"
+    "lastVerified": "2026-08-24"
   },
   {
     "id": "memphis-tn",
@@ -308,9 +308,9 @@
     "region": "TN",
     "country": "United States",
     "aliases": [],
-    "venueCount": 1,
+    "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-14"
+    "lastVerified": "2026-08-24"
   },
   {
     "id": "baltimore-md",
@@ -320,7 +320,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-14"
+    "lastVerified": "2026-08-24"
   },
   {
     "id": "milwaukee-wi",

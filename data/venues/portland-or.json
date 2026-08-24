@@ -18,8 +18,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-14",
-    "lastVerified": "2026-08-14",
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -37,7 +37,7 @@
     "groupSource": "https://www.oregonzoo.org/visit/field-trips",
     "regularPrice": "See official admission page",
     "regularDetails": [],
-    "groupPrice": "See official group page",
+    "groupPrice": "$12.00",
     "groupDetails": [],
     "savings": "",
     "minimum": "See official group page",
@@ -45,8 +45,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-14",
-    "lastVerified": "2026-08-14",
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -72,8 +72,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-14",
-    "lastVerified": "2026-08-14",
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -99,8 +99,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-14",
-    "lastVerified": "2026-08-14",
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -126,8 +126,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-14",
-    "lastVerified": "2026-08-14",
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -153,8 +153,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-14",
-    "lastVerified": "2026-08-14",
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-portland-or-oaks-amusement-park",
+    "cityId": "portland-or",
+    "name": "Oaks Amusement Park",
+    "category": "Entertainment",
+    "address": "",
+    "website": "http://www.oakspark.com/",
+    "regularSource": "http://www.oakspark.com/",
+    "groupSource": "https://www.oakspark.com/stemfieldtrips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",

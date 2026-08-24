@@ -18,8 +18,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-14",
-    "lastVerified": "2026-08-14",
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-detroit-mi-detroit-historical-museum",
+    "cityId": "detroit-mi",
+    "name": "Detroit Historical Museum",
+    "category": "Museums & art",
+    "address": "",
+    "website": "http://www.detroithistorical.org/",
+    "regularSource": "http://www.detroithistorical.org/",
+    "groupSource": "https://www.detroithistorical.org/visit/group-tours-programs",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$14",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-24",
+    "lastVerified": "2026-08-24",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
