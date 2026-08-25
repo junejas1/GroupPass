@@ -18,8 +18,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-15",
-    "lastVerified": "2026-08-15",
+    "lastChecked": "2026-08-25",
+    "lastVerified": "2026-08-25",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -45,8 +45,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-15",
-    "lastVerified": "2026-08-15",
+    "lastChecked": "2026-08-25",
+    "lastVerified": "2026-08-25",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -72,8 +72,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-15",
-    "lastVerified": "2026-08-15",
+    "lastChecked": "2026-08-25",
+    "lastVerified": "2026-08-25",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-tucson-az-chicago-white-sox",
+    "cityId": "tucson-az",
+    "name": "Chicago White Sox",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://chicago.whitesox.mlb.com",
+    "regularSource": "http://chicago.whitesox.mlb.com",
+    "groupSource": "https://www.mlb.com/whitesox/tickets/group-tickets",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-25",
+    "lastVerified": "2026-08-25",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",

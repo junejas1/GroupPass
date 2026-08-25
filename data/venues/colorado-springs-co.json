@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "id": "verified-colorado-springs-co-western-museum-of-mining-industry",
+    "cityId": "colorado-springs-co",
+    "name": "Western Museum of Mining & Industry",
+    "category": "Museums & art",
+    "address": "",
+    "website": "http://www.wmmi.org",
+    "regularSource": "http://www.wmmi.org",
+    "groupSource": "https://wmmi.org/education/school-trips.html",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-25",
+    "lastVerified": "2026-08-25",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  }
+]
