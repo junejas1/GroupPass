@@ -18,8 +18,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-17",
-    "lastVerified": "2026-08-17",
+    "lastChecked": "2026-08-27",
+    "lastVerified": "2026-08-27",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-cleveland-oh-great-lakes-theater",
+    "cityId": "cleveland-oh",
+    "name": "Great Lakes Theater",
+    "category": "Attractions",
+    "address": "",
+    "website": "https://www.greatlakestheater.org/",
+    "regularSource": "https://www.greatlakestheater.org/",
+    "groupSource": "https://www.greatlakestheater.org/shows-events/group-tickets-experiences",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-08-27",
+    "lastVerified": "2026-08-27",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
