@@ -660,7 +660,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-19"
+    "lastVerified": "2026-08-29"
   },
   {
     "id": "gilbert-az",
@@ -670,7 +670,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-19"
+    "lastVerified": "2026-08-29"
   },
   {
     "id": "anchorage-ak",
@@ -680,7 +680,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-19"
+    "lastVerified": "2026-08-29"
   },
   {
     "id": "madison-wi",
@@ -690,7 +690,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-19"
+    "lastVerified": "2026-08-29"
   },
   {
     "id": "chandler-az",
@@ -700,7 +700,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-19"
+    "lastVerified": "2026-08-29"
   },
   {
     "id": "st-louis-mo",
@@ -708,9 +708,9 @@
     "region": "MO",
     "country": "United States",
     "aliases": [],
-    "venueCount": 2,
+    "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-19"
+    "lastVerified": "2026-08-29"
   },
   {
     "id": "chula-vista-ca",
@@ -720,7 +720,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-19"
+    "lastVerified": "2026-08-29"
   },
   {
     "id": "fort-wayne-in",
