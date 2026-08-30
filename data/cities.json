@@ -730,7 +730,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-30"
   },
   {
     "id": "buffalo-ny",
@@ -740,7 +740,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-30"
   },
   {
     "id": "lubbock-tx",
@@ -750,7 +750,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-30"
   },
   {
     "id": "st-petersburg-fl",
@@ -758,9 +758,9 @@
     "region": "FL",
     "country": "United States",
     "aliases": [],
-    "venueCount": 1,
+    "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-30"
   },
   {
     "id": "toledo-oh",
@@ -770,7 +770,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-30"
   },
   {
     "id": "glendale-az",
@@ -780,7 +780,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-30"
   },
   {
     "id": "winston-salem-nc",
@@ -790,7 +790,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-30"
   },
   {
     "id": "irving-tx",
@@ -800,7 +800,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-20"
+    "lastVerified": "2026-08-30"
   },
   {
     "id": "chesapeake-va",
