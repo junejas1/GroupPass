@@ -28,11 +28,11 @@
       "Advance group reservation required",
       "Published rates valid through December 31, 2026"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -67,7 +67,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -97,11 +97,11 @@
       "Advance prepaid online reservation required",
       "Timed and dated tickets"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -131,11 +131,11 @@
       "Advance group request required",
       "Title I rates available by request"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -166,11 +166,11 @@
       "Reserve and pay at least two weeks ahead",
       "One complimentary ticket per 20 purchased"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -201,11 +201,11 @@
       "Reserve and pay at least two weeks ahead",
       "One complimentary ticket per 20 purchased"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -236,11 +236,11 @@
       "Advance reservation required",
       "Two weeks’ notice recommended"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -271,11 +271,11 @@
       "Payment due 45 days before the visit",
       "Group price may not beat the cheapest public time slot"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -305,11 +305,11 @@
       "Other group types may receive different rates",
       "Official ticket prices are date-based"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -339,11 +339,11 @@
       "Submit a group request",
       "The inquiry does not confirm the reservation"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -377,7 +377,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -406,11 +406,11 @@
       "Dedicated group-sales assistance",
       "Custom food and attraction packages available"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -440,11 +440,11 @@
       "Self-guided and guided options",
       "Seasonal exhibitions affect public ticket prices"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -476,7 +476,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -505,11 +505,11 @@
       "Allow approximately two hours",
       "Package is an upgrade, not a cheaper admission ticket"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -538,11 +538,11 @@
       "Advance group inquiry required",
       "Private sessions available by request"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -572,11 +572,11 @@
       "Limited-time bundle",
       "Cannot be combined with other promotions"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -616,7 +616,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -655,7 +655,7 @@
     "sourceBacked": true,
     "rateStatus": "Published group information",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -690,7 +690,7 @@
     "sourceBacked": true,
     "rateStatus": "Quote required",
     "confidence": 1.0,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   }
 ]

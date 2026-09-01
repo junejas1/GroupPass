@@ -21,11 +21,11 @@
       "Advance reservation required",
       "Special exhibitions may cost extra"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Published group rate",
     "confidence": 1,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -48,11 +48,11 @@
       "Advance reservation required",
       "Programs and guided tours vary"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -79,7 +79,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -105,7 +105,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -128,11 +128,11 @@
       "Advance reservation required",
       "Guided tours cost extra"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -159,7 +159,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -182,12 +182,12 @@
       "Advance reservation required",
       "Chaperone rules apply"
     ],
-    "lastVerified": "2026-08-12",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
-    "verificationStatus": "needs_recheck"
+    "lastChecked": "2026-09-01",
+    "verificationStatus": "verified"
   },
   {
     "id": "curated-philadelphia-pa-adventure-aquarium",
@@ -209,11 +209,11 @@
       "Advance reservation required",
       "Parking is separate"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -236,11 +236,11 @@
       "Advance purchase required",
       "Parking and attractions may cost extra"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -262,11 +262,11 @@
     "bookingNotes": [
       "Advance reservation required"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -292,7 +292,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -318,7 +318,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -344,7 +344,7 @@
     "sourceBacked": true,
     "rateStatus": "Mostly free federal sites",
     "confidence": 1,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -370,7 +370,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -396,7 +396,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -422,7 +422,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -448,7 +448,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -475,7 +475,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   },
   {
@@ -497,11 +497,11 @@
     "bookingNotes": [
       "Advance reservation recommended"
     ],
-    "lastVerified": "2026-08-22",
+    "lastVerified": "2026-09-01",
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.9,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "verified"
   },
   {
@@ -528,7 +528,7 @@
     "sourceBacked": true,
     "rateStatus": "Official group information; current price may require quote",
     "confidence": 0.95,
-    "lastChecked": "2026-08-22",
+    "lastChecked": "2026-09-01",
     "verificationStatus": "needs_recheck"
   }
 ]
