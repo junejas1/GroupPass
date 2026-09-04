@@ -330,7 +330,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "albuquerque-nm",
@@ -340,7 +340,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "fresno-ca",
@@ -350,7 +350,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "tucson-az",
@@ -358,9 +358,9 @@
     "region": "AZ",
     "country": "United States",
     "aliases": [],
-    "venueCount": 4,
+    "venueCount": 5,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "sacramento-ca",
@@ -370,7 +370,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "atlanta-ga",
@@ -380,7 +380,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "kansas-city-mo",
@@ -390,7 +390,17 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
+  },
+  {
+    "id": "mesa-az",
+    "name": "Mesa",
+    "region": "AZ",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "raleigh-nc",
@@ -400,7 +410,7 @@
     "aliases": [],
     "venueCount": 6,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "colorado-springs-co",
@@ -410,7 +420,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-08-25"
+    "lastVerified": "2026-09-04"
   },
   {
     "id": "miami-fl",
