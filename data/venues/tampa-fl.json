@@ -18,10 +18,10 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-26",
-    "lastVerified": "2026-08-16",
+    "lastChecked": "2026-09-05",
+    "lastVerified": "2026-09-05",
     "sourceBacked": true,
-    "verificationStatus": "needs_recheck",
+    "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
     "confidence": 1.0,
     "discoverySource": "Wikimedia discovery; official venue source verification"
@@ -45,8 +45,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-26",
-    "lastVerified": "2026-08-26",
+    "lastChecked": "2026-09-05",
+    "lastVerified": "2026-09-05",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -72,8 +72,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-26",
-    "lastVerified": "2026-08-26",
+    "lastChecked": "2026-09-05",
+    "lastVerified": "2026-09-05",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
