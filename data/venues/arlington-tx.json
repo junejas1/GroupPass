@@ -18,8 +18,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-08-27",
-    "lastVerified": "2026-08-27",
+    "lastChecked": "2026-09-06",
+    "lastVerified": "2026-09-06",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-arlington-tx-aquaman-power-wave",
+    "cityId": "arlington-tx",
+    "name": "Aquaman: Power Wave",
+    "category": "Entertainment",
+    "address": "",
+    "website": "https://www.sixflags.com/overtexas/attractions/aquaman-power-wave",
+    "regularSource": "https://www.sixflags.com/overtexas/attractions/aquaman-power-wave",
+    "groupSource": "https://www.sixflags.com/overtexas/groups",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-09-06",
+    "lastVerified": "2026-09-06",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
