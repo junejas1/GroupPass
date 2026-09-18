@@ -663,6 +663,16 @@
     "lastVerified": "2026-09-17"
   },
   {
+    "id": "lincoln-ne",
+    "name": "Lincoln",
+    "region": "NE",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-09-18"
+  },
+  {
     "id": "plano-tx",
     "name": "Plano",
     "region": "TX",
@@ -670,7 +680,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-09-08"
+    "lastVerified": "2026-09-18"
   },
   {
     "id": "gilbert-az",
@@ -680,7 +690,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-09-08"
+    "lastVerified": "2026-09-18"
   },
   {
     "id": "anchorage-ak",
@@ -690,7 +700,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-09-08"
+    "lastVerified": "2026-09-18"
   },
   {
     "id": "madison-wi",
@@ -700,7 +710,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-09-08"
+    "lastVerified": "2026-09-18"
   },
   {
     "id": "chandler-az",
@@ -710,7 +720,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-09-08"
+    "lastVerified": "2026-09-18"
   },
   {
     "id": "st-louis-mo",
@@ -720,7 +730,7 @@
     "aliases": [],
     "venueCount": 4,
     "parts": 1,
-    "lastVerified": "2026-09-08"
+    "lastVerified": "2026-09-18"
   },
   {
     "id": "chula-vista-ca",
@@ -730,7 +740,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-09-08"
+    "lastVerified": "2026-09-18"
   },
   {
     "id": "fort-wayne-in",
