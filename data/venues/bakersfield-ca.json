@@ -18,8 +18,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-10-15",
-    "lastVerified": "2026-10-15",
+    "lastChecked": "2026-10-25",
+    "lastVerified": "2026-10-25",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -45,8 +45,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-10-15",
-    "lastVerified": "2026-10-15",
+    "lastChecked": "2026-10-25",
+    "lastVerified": "2026-10-25",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-bakersfield-ca-ubc-thunderbirds",
+    "cityId": "bakersfield-ca",
+    "name": "UBC Thunderbirds",
+    "category": "Outdoors",
+    "address": "",
+    "website": "https://gothunderbirds.ca/",
+    "regularSource": "https://gothunderbirds.ca/",
+    "groupSource": "https://gothunderbirds.ca/sports/2024/10/3/youth-tickets.aspx",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$5.00",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-10-25",
+    "lastVerified": "2026-10-25",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
