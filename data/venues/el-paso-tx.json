@@ -18,8 +18,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-02",
-    "lastVerified": "2026-11-02",
+    "lastChecked": "2026-11-12",
+    "lastVerified": "2026-11-12",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -45,8 +45,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-02",
-    "lastVerified": "2026-11-02",
+    "lastChecked": "2026-11-12",
+    "lastVerified": "2026-11-12",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -72,8 +72,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-02",
-    "lastVerified": "2026-11-02",
+    "lastChecked": "2026-11-12",
+    "lastVerified": "2026-11-12",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-el-paso-tx-frank-buck-zoo",
+    "cityId": "el-paso-tx",
+    "name": "Frank Buck Zoo",
+    "category": "Outdoors",
+    "address": "",
+    "website": "http://www.frankbuckzoo.com",
+    "regularSource": "http://www.frankbuckzoo.com",
+    "groupSource": "https://www.gainesville.tx.us/243/School-Field-Trips-Programs",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-11-12",
+    "lastVerified": "2026-11-12",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
