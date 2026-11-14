@@ -18,8 +18,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-04",
-    "lastVerified": "2026-11-04",
+    "lastChecked": "2026-11-14",
+    "lastVerified": "2026-11-14",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -45,8 +45,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-04",
-    "lastVerified": "2026-11-04",
+    "lastChecked": "2026-11-14",
+    "lastVerified": "2026-11-14",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-oakland-ca-chabot-space-and-science-center",
+    "cityId": "oakland-ca",
+    "name": "Chabot Space and Science Center",
+    "category": "Museums & art",
+    "address": "",
+    "website": "http://www.chabotspace.org",
+    "regularSource": "http://www.chabotspace.org",
+    "groupSource": "https://chabotspace.org/group-visits/",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "$22.00",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-11-14",
+    "lastVerified": "2026-11-14",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
