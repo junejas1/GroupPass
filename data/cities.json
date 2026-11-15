@@ -510,7 +510,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-11-05"
+    "lastVerified": "2026-11-15"
   },
   {
     "id": "wichita-ks",
@@ -518,9 +518,9 @@
     "region": "KS",
     "country": "United States",
     "aliases": [],
-    "venueCount": 1,
+    "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-11-05"
+    "lastVerified": "2026-11-15"
   },
   {
     "id": "cleveland-oh",
@@ -530,7 +530,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-11-05"
+    "lastVerified": "2026-11-15"
   },
   {
     "id": "new-orleans-la",
@@ -538,9 +538,9 @@
     "region": "LA",
     "country": "United States",
     "aliases": [],
-    "venueCount": 1,
+    "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-11-05"
+    "lastVerified": "2026-11-15"
   },
   {
     "id": "anaheim-ca",
@@ -550,7 +550,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-11-05"
+    "lastVerified": "2026-11-15"
   },
   {
     "id": "orlando-fl",
@@ -559,7 +559,7 @@
     "country": "United States",
     "aliases": [],
     "venueCount": 4,
-    "lastVerified": "2026-11-05",
+    "lastVerified": "2026-11-15",
     "parts": 1
   },
   {
@@ -570,7 +570,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-11-05"
+    "lastVerified": "2026-11-15"
   },
   {
     "id": "stockton-ca",
@@ -580,7 +580,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-11-05"
+    "lastVerified": "2026-11-15"
   },
   {
     "id": "newark-nj",
@@ -590,7 +590,7 @@
     "aliases": [],
     "venueCount": 3,
     "parts": 1,
-    "lastVerified": "2026-11-05"
+    "lastVerified": "2026-11-15"
   },
   {
     "id": "riverside-ca",

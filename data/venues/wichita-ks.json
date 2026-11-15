@@ -18,10 +18,37 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-05",
+    "lastChecked": "2026-11-15",
     "lastVerified": "2026-10-16",
     "sourceBacked": true,
     "verificationStatus": "needs_recheck",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-wichita-ks-kansas-aviation-museum",
+    "cityId": "wichita-ks",
+    "name": "Kansas Aviation Museum",
+    "category": "History",
+    "address": "",
+    "website": "http://www.kansasaviationmuseum.org",
+    "regularSource": "http://www.kansasaviationmuseum.org",
+    "groupSource": "https://kansasaviationmuseum.org/education/field-trips",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-11-15",
+    "lastVerified": "2026-11-15",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
     "confidence": 1.0,
     "discoverySource": "Wikimedia discovery; official venue source verification"
