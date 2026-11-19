@@ -840,7 +840,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-11-09"
+    "lastVerified": "2026-11-19"
   },
   {
     "id": "garland-tx",
@@ -850,7 +850,17 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-11-09"
+    "lastVerified": "2026-11-19"
+  },
+  {
+    "id": "scottsdale-az",
+    "name": "Scottsdale",
+    "region": "AZ",
+    "country": "United States",
+    "aliases": [],
+    "venueCount": 1,
+    "parts": 1,
+    "lastVerified": "2026-11-19"
   },
   {
     "id": "richmond-va",
@@ -860,7 +870,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-11-09"
+    "lastVerified": "2026-11-19"
   },
   {
     "id": "frisco-tx",
@@ -870,7 +880,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-11-09"
+    "lastVerified": "2026-11-19"
   },
   {
     "id": "cape-coral-fl",
@@ -880,7 +890,7 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-11-09"
+    "lastVerified": "2026-11-19"
   },
   {
     "id": "mckinney-tx",
@@ -890,7 +900,7 @@
     "aliases": [],
     "venueCount": 2,
     "parts": 1,
-    "lastVerified": "2026-11-09"
+    "lastVerified": "2026-11-19"
   },
   {
     "id": "huntsville-al",
@@ -900,6 +910,6 @@
     "aliases": [],
     "venueCount": 1,
     "parts": 1,
-    "lastVerified": "2026-11-09"
+    "lastVerified": "2026-11-19"
   }
 ]
