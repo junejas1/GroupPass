@@ -18,8 +18,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-12",
-    "lastVerified": "2026-11-12",
+    "lastChecked": "2026-11-22",
+    "lastVerified": "2026-11-22",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -45,8 +45,8 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-12",
-    "lastVerified": "2026-11-12",
+    "lastChecked": "2026-11-22",
+    "lastVerified": "2026-11-22",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
@@ -72,8 +72,35 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-12",
-    "lastVerified": "2026-11-12",
+    "lastChecked": "2026-11-22",
+    "lastVerified": "2026-11-22",
+    "sourceBacked": true,
+    "verificationStatus": "verified",
+    "rateStatus": "Official group program confirmed",
+    "confidence": 1.0,
+    "discoverySource": "Wikimedia discovery; official venue source verification"
+  },
+  {
+    "id": "verified-baltimore-md-alumni-field-md",
+    "cityId": "baltimore-md",
+    "name": "Alumni Field (MD)",
+    "category": "Sports",
+    "address": "",
+    "website": "https://umbcretrievers.com/information/facilities/baseball/index",
+    "regularSource": "https://umbcretrievers.com/information/facilities/baseball/index",
+    "groupSource": "https://umbcretrievers.com/sports/2024/4/17/group-tickets.aspx",
+    "regularPrice": "See official admission page",
+    "regularDetails": [],
+    "groupPrice": "See official group page",
+    "groupDetails": [],
+    "savings": "",
+    "minimum": "See official group page",
+    "eligibility": "General groups; confirm with venue",
+    "bookingNotes": [
+      "Confirm final pricing on the linked official source"
+    ],
+    "lastChecked": "2026-11-22",
+    "lastVerified": "2026-11-22",
     "sourceBacked": true,
     "verificationStatus": "verified",
     "rateStatus": "Official group program confirmed",
