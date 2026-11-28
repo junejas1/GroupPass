@@ -18,10 +18,10 @@
     "bookingNotes": [
       "Confirm final pricing on the linked official source"
     ],
-    "lastChecked": "2026-11-18",
+    "lastChecked": "2026-11-28",
     "lastVerified": "2026-11-18",
     "sourceBacked": true,
-    "verificationStatus": "verified",
+    "verificationStatus": "needs_recheck",
     "rateStatus": "Official group program confirmed",
     "confidence": 1.0,
     "discoverySource": "Wikimedia discovery; official venue source verification"
